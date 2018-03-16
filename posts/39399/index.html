@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://lh3.googleusercontent.com/-OayuSUsslWA/WqdGWWHwsII/AAAAAAAAAIk/-uaMZ5aWXJgt0WxthEGuN106oBWn3ICpwCHMYCw/I/15209097753941.jpg">
 <meta property="og:image" content="https://lh3.googleusercontent.com/-vUF45QQauV0/Wqdz5bmhx7I/AAAAAAAAAJA/BRz19oZ_9CgacSPrkjZ18kztD9U2WtgvwCHMYCw/I/15209231027739.jpg">
 <meta property="og:image" content="https://lh3.googleusercontent.com/-QMb6mlL6UPQ/Wqdz6BAc-kI/AAAAAAAAAJE/OhfFweS1H60qIt3n5EcuCZ605FErg8FkQCHMYCw/I/15209234725018.jpg">
-<meta property="og:updated_time" content="2018-03-16T06:56:33.482Z">
+<meta property="og:updated_time" content="2018-03-16T07:15:04.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习00天">
 <meta name="twitter:description" content="安装和准备主要查询官网文档即可解决。官网地址：https://www.python.org Hello World终端运行  命令行运行新建以.py结尾的文件，例如hello.py;打开该文件，输入：print(&amp;quot;Hello World&amp;quot;);,最后运行：python hello.py ; 数据类型变量基本使用变量就是保存一个值的信息，将其存储起来，随着程序后面的不断赋值（要求存">
@@ -407,9 +407,8 @@
 <h4 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h4><h5 id="终端运行"><a href="#终端运行" class="headerlink" title="终端运行"></a>终端运行</h5><p> <img src="https://lh3.googleusercontent.com/-huYumIPhvak/Wqc8LEl8JBI/AAAAAAAAAIE/y4EFH7q2MzkxSlDbbziNxA_7tP3w51xqQCHMYCw/I/15209089555344.jpg" alt=""></p>
 <h5 id="命令行运行"><a href="#命令行运行" class="headerlink" title="命令行运行"></a>命令行运行</h5><p>新建以<code>.py</code>结尾的文件，例如<code>hello.py</code>;打开该文件，输入：<code>print(&quot;Hello World&quot;);</code>,最后运行：<code>python hello.py</code> ;<br><img src="https://lh3.googleusercontent.com/-pskbBl4cTf8/Wqc8L9q0F-I/AAAAAAAAAII/FPdZRl0TEOw5RP5pqN9hqFzseJv1QPYmwCHMYCw/I/15209093371416.jpg" alt=""></p>
 <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><h5 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h5><p>变量就是保存一个值的信息，将其存储起来，随着程序后面的不断赋值（要求存储一个新的值），该变量的值也会随着改变。如下图所示，<code>change</code>变量就是被重新赋值了。<br> <img src="https://lh3.googleusercontent.com/-OayuSUsslWA/WqdGWWHwsII/AAAAAAAAAIk/-uaMZ5aWXJgt0WxthEGuN106oBWn3ICpwCHMYCw/I/15209097753941.jpg" alt=""></p>
-<p>运行结果如下：<br><code>➜  day0 python hello.py
-Hello SenLin Chen!
-Hello Python SenLin!</code></p>
+<p>运行结果如下：</p>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜day0 python hello.py</span><br><span class="line">Hello SenLin Chen!</span><br><span class="line">Hello Python SenLin!</span><br></pre></td></tr></table></figure>
 <h5 id="语法和规则"><a href="#语法和规则" class="headerlink" title="语法和规则"></a>语法和规则</h5><p>语法：<br><code>变量名=赋值的值</code>，例如<code>change</code>是变量名，<code>Hello SenLin Chen!</code>是赋值的值。这样变量<code>change</code>的值就是:<code>Hello SenLin Chen!</code>;</p>
 <p>规则：</p>
 <ol>
@@ -419,21 +418,16 @@ Hello Python SenLin!</code></p>
 </ol>
 <h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><h5 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h5><p>用引号括起来就是字符串。其中有单引号和双引号。<br>例如：<code>&#39;string&#39;</code>,<code>&quot;user_name&quot;</code>等。</p>
 <h5 id="修改字符串大小写"><a href="#修改字符串大小写" class="headerlink" title="修改字符串大小写"></a>修改字符串大小写</h5><p>常用方法:<br> <code>title()</code>:将字符串的首字母设置为大写;<br> <code>upper()</code>:将字符串全部设置为大写;<br> <code>lower()</code>:将字符串全部设置为小写;</p>
-<p>代码示例:<br><code>change = &#39;hello,my name is demo chen!&#39;
- print(change.title())
- print(change.upper())
- print(change.lower())</code></p>
-<p>运行结果:<br><code>➜  day0 python hello.py
-Hello ,My Name Is Demo Chen!
-HELLO ,MY NAME IS DEMO CHEN!
-hello ,my name is demo chen!</code></p>
+<p>代码示例:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">change = <span class="string">'hello,my name is demo chen!'</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(change.title()</span></span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(change.upper()</span></span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(change.lower()</span></span>)</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  day0 python hello.py</span><br><span class="line">Hello ,My <span class="keyword">Name</span> <span class="keyword">Is</span> Demo Chen!</span><br><span class="line">HELLO ,MY <span class="keyword">NAME</span> <span class="keyword">IS</span> DEMO CHEN!</span><br><span class="line">hello ,my <span class="keyword">name</span> <span class="keyword">is</span> demo chen!</span><br></pre></td></tr></table></figure>
 <h5 id="拼接字符串"><a href="#拼接字符串" class="headerlink" title="拼接字符串"></a>拼接字符串</h5><p>使用场景:多个字符串合并为一个字符串形式。</p>
 <p>使用方法:采用<code>+</code>的形式来拼接。</p>
-<p>代码示例:<br><code>user = &#39;hello&#39;
- name = &#39;senlin&#39;
- user_name = user + &#39;_&#39; + name</code></p>
-<p>运行结果:<br><code>➜day0 python user_name.py
-hello_senlinenlin</code></p>
+<p>代码示例:</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">user</span> = <span class="string">'hello'</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">'senlin'</span></span><br><span class="line"><span class="attr">user_name</span> = user + <span class="string">'_'</span> + name</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜day0 python user_name.py</span><br><span class="line">hello_senlinenlin</span><br></pre></td></tr></table></figure>
 <h5 id="添加空白"><a href="#添加空白" class="headerlink" title="添加空白"></a>添加空白</h5><p>制表符:<code>\t</code>;换行:<code>\n</code> ;可以组合使用。</p>
 <h5 id="删除空白"><a href="#删除空白" class="headerlink" title="删除空白"></a>删除空白</h5><p><code>&#39;demo &#39;</code>不等于<code>‘demo’</code>;所以需要去除空白。</p>
 <p>相关函数:</p>
