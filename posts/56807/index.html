@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="使用列表切片要创建切片，可指定要使用的第一个元素和最后一个元素的索引。与函数range()一样，Python 在到达你指定的第二个索引前面的元素后停止。要输出列表中的前三个元素，需要指定索引0~3， 这将输出分别为0、1和2的元素。 代码示例: 123456players = [&apos;charles&apos;, &apos;martina&apos;, &apos;michael&apos;, &apos;florence&apos;, &apos;eli&apos;]print(pla">
+<meta name="description" content="主要内容：  使用列表:切片,遍历切片,复制切片;  元组的定义,遍历元组,修改元组变量;">
 <meta name="keywords" content="Python,学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习03天">
 <meta property="og:url" content="https://chensenlin.cn/posts/56807/index.html">
 <meta property="og:site_name" content="DemoChen">
-<meta property="og:description" content="使用列表切片要创建切片，可指定要使用的第一个元素和最后一个元素的索引。与函数range()一样，Python 在到达你指定的第二个索引前面的元素后停止。要输出列表中的前三个元素，需要指定索引0~3， 这将输出分别为0、1和2的元素。 代码示例: 123456players = [&apos;charles&apos;, &apos;martina&apos;, &apos;michael&apos;, &apos;florence&apos;, &apos;eli&apos;]print(pla">
+<meta property="og:description" content="主要内容：  使用列表:切片,遍历切片,复制切片;  元组的定义,遍历元组,修改元组变量;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T08:54:10.585Z">
+<meta property="og:updated_time" content="2018-03-16T13:53:34.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习03天">
-<meta name="twitter:description" content="使用列表切片要创建切片，可指定要使用的第一个元素和最后一个元素的索引。与函数range()一样，Python 在到达你指定的第二个索引前面的元素后停止。要输出列表中的前三个元素，需要指定索引0~3， 这将输出分别为0、1和2的元素。 代码示例: 123456players = [&apos;charles&apos;, &apos;martina&apos;, &apos;michael&apos;, &apos;florence&apos;, &apos;eli&apos;]print(pla">
+<meta name="twitter:description" content="主要内容：  使用列表:切片,遍历切片,复制切片;  元组的定义,遍历元组,修改元组变量;">
 
 
 
@@ -353,7 +353,7 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共779 字</span>
+            <span>全文共814 字</span>
             &nbsp; | &nbsp;
             <span>阅读时长3 分钟</span>
           </span>
@@ -396,7 +396,15 @@
       
 
       
-        <h4 id="使用列表"><a href="#使用列表" class="headerlink" title="使用列表"></a>使用列表</h4><h5 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h5><p>要创建切片，可指定要使用的第一个元素和最后一个元素的索引。与函数<code>range()</code>一样，<code>Python</code> 在到达你指定的第二个索引前面的元素后停止。要输出列表中的前三个元素，需要指定索引<code>0~3</code>， 这将输出分别为<code>0</code>、<code>1</code>和<code>2</code>的元素。</p>
+        <p>主要内容：</p>
+<ol>
+<li><p>使用列表:切片,遍历切片,复制切片;</p>
+</li>
+<li><p>元组的定义,遍历元组,修改元组变量;</p>
+</li>
+</ol>
+<a id="more"></a>
+<h4 id="使用列表"><a href="#使用列表" class="headerlink" title="使用列表"></a>使用列表</h4><h5 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h5><p>要创建切片，可指定要使用的第一个元素和最后一个元素的索引。与函数<code>range()</code>一样，<code>Python</code> 在到达你指定的第二个索引前面的元素后停止。要输出列表中的前三个元素，需要指定索引<code>0~3</code>， 这将输出分别为<code>0</code>、<code>1</code>和<code>2</code>的元素。</p>
 <p>代码示例:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">players = [<span class="string">'charles'</span>, <span class="string">'martina'</span>, <span class="string">'michael'</span>, <span class="string">'florence'</span>, <span class="string">'eli'</span>]</span><br><span class="line"><span class="built_in">print</span>(players[0:3]) <span class="comment"># 取从索引0开始到第三个结束，最后输出前三个</span></span><br><span class="line"><span class="built_in">print</span>(players[0:3]) <span class="comment"># 输出从索引1到4结束，</span></span><br><span class="line"><span class="built_in">print</span>(players[:4])  <span class="comment"># 没有索引就从列表开头开始，到指定的索引值结束</span></span><br><span class="line"><span class="built_in">print</span>(players[2:]) <span class="comment"># 没有结束索引就知道最后结束</span></span><br><span class="line"><span class="built_in">print</span>(players[-3:]) <span class="comment"># 倒数第三个</span></span><br></pre></td></tr></table></figure>
 <p>运行结果:</p>
