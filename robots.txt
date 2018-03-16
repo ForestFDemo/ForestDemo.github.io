@@ -9,4 +9,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 Sitemap: http://www.chensenlin.cn/sitemap.xml
-Sitemap: http://www.chensenlin.cn/baidusitemap.xmlml
+Sitemap: http://www.chensenlin.cn/baidusitemap.xml
