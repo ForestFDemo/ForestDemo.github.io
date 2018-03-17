@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="Python,学习," />
+  <meta name="keywords" content="学习,笔记,好好说话," />
 
 
 
@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="主要内容：条件判断和if语句的使用；">
-<meta name="keywords" content="Python,学习">
+<meta name="description" content="辩论不是说给对方听的，是说给第三方听的，要争取第三方的认可。">
+<meta name="keywords" content="学习,笔记,好好说话">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习04天">
-<meta property="og:url" content="https://chensenlin.cn/posts/43494/index.html">
+<meta property="og:title" content="《好好说话》笔记之应对反应慢">
+<meta property="og:url" content="https://chensenlin.cn/posts/45767/index.html">
 <meta property="og:site_name" content="DemoChen">
-<meta property="og:description" content="主要内容：条件判断和if语句的使用；">
+<meta property="og:description" content="辩论不是说给对方听的，是说给第三方听的，要争取第三方的认可。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-17T13:35:09.373Z">
+<meta property="og:updated_time" content="2018-03-17T14:01:52.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python学习04天">
-<meta name="twitter:description" content="主要内容：条件判断和if语句的使用；">
+<meta name="twitter:title" content="《好好说话》笔记之应对反应慢">
+<meta name="twitter:description" content="辩论不是说给对方听的，是说给第三方听的，要争取第三方的认可。">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://chensenlin.cn/posts/43494/"/>
+  <link rel="canonical" href="https://chensenlin.cn/posts/45767/"/>
 
 
 
 
 
-  <title>Python学习04天 | DemoChen</title>
+  <title>《好好说话》笔记之应对反应慢 | DemoChen</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chensenlin.cn/posts/43494/">
+    <link itemprop="mainEntityOfPage" href="https://chensenlin.cn/posts/45767/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DemoChen">
@@ -304,7 +304,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Python学习04天</h2>
+          <h2 class="post-title" itemprop="name headline">《好好说话》笔记之应对反应慢</h2>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T21:33:13+08:00">
-                2018-03-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-09T08:32:54+08:00">
+                2016-11-09
               </time>
             
 
@@ -339,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
                   </a>
                 </span>
 
@@ -353,9 +353,9 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共932 字</span>
+            <span>全文共124 字</span>
             &nbsp; | &nbsp;
-            <span>阅读时长4 分钟</span>
+            <span>阅读时长1 分钟</span>
           </span>
           
 
@@ -366,9 +366,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/43494/#comments" itemprop="discussionUrl">
+                <a href="/posts/45767/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="posts/43494/" itemprop="commentCount"></span>
+                        data-disqus-identifier="posts/45767/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,41 +396,11 @@
       
 
       
-        <p>主要内容：条件判断和<code>if</code>语句的使用；</p>
+        <p>辩论不是说给对方听的，是说给第三方听的，要争取第三方的认可。</p>
 <a id="more"></a>
-<h4 id="认识条件判断"><a href="#认识条件判断" class="headerlink" title="认识条件判断"></a>认识条件判断</h4><p>在日常开发中需要用到如果怎么样就怎么样，否则就怎么样的逻辑。主要采用<code>if</code>语句来实现的。</p>
-<p>例如：假设你有一个汽车 列表，并想将其中每辆汽车的名称打印出来。对于大多数汽车，都应以首字母大写的方式打印其 名称，但对于汽车名<code>&#39;bmw&#39;</code>，应以全大写的方式打印。下面的代码遍历一个列表，并以首字母大 写的方式打印其中的汽车名，但对于汽车名<code>&#39;bmw&#39;</code>，以全大写的方式打印:</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cars = [<span class="string">'audi'</span>, <span class="string">'bmw'</span>, <span class="string">'subaru'</span>, <span class="string">'toyota'</span>]</span><br><span class="line"><span class="keyword">for</span> car <span class="keyword">in</span> cars:</span><br><span class="line">    <span class="keyword">if</span> car == <span class="string">'bmw'</span>:</span><br><span class="line">        <span class="built_in">print</span>(car.<span class="built_in">upper</span>())</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(car.title())</span><br></pre></td></tr></table></figure>
-<p>运行结果:</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Audi</span></span><br><span class="line"><span class="keyword">BMW</span></span><br><span class="line"><span class="keyword">Subaru</span></span><br><span class="line"><span class="keyword">Toyota</span></span><br></pre></td></tr></table></figure>
-<h4 id="条件测试"><a href="#条件测试" class="headerlink" title="条件测试"></a>条件测试</h4><p>每条<code>if</code>语句的核心都是一个值为<code>True</code>或<code>False</code>的表达式，这种表达式被称为条件测试。</p>
-<h5 id="判断是否相等"><a href="#判断是否相等" class="headerlink" title="判断是否相等"></a>判断是否相等</h5><p>相等的语句是:<code>==</code>，赋值的语句是:<code>=</code>，两者需要作区分。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="string">'like'</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(c == <span class="string">'Like'</span>)</span></span></span><br></pre></td></tr></table></figure>
-<p>运行结果:<code>False</code></p>
-<p>如果需要或略大小写可以采用将其转化为小写的方式，函数为:<code>lower()</code>。其余的逻辑同理。</p>
-<h5 id="判断是否不相等"><a href="#判断是否不相等" class="headerlink" title="判断是否不相等"></a>判断是否不相等</h5><p>语句:<code>!=</code>，其余的逻辑类似，不过多阐述。</p>
-<h5 id="比较数字"><a href="#比较数字" class="headerlink" title="比较数字"></a>比较数字</h5><p> 条件语句中可包含各种数学比较，如小于、小于等于、大于、大于等于。</p>
-<p>代码示例：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; num = <span class="number">29</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; num &lt; <span class="number">21</span></span><br><span class="line">False</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; num &gt;= <span class="number">4</span></span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="多个条件判断"><a href="#多个条件判断" class="headerlink" title="多个条件判断"></a>多个条件判断</h5><p>多个条件判断将条件采用关键字<code>and</code>连接，只有全部为<code>true</code>才能满足，否则整体条件就为<code>false</code>。如果是或者的关系采用关键字<code>or</code>，只要满足其中的一个整体条件就为<code>true</code>。如果不确定优先级(或者可读性)的问题，可以采用括号就没个单个条件括起来。</p>
-<p>代码示例：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; age_<span class="number">0</span> = <span class="number">22</span> </span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; age_1 = <span class="number">18</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; age_<span class="number">0</span> &gt;= <span class="number">21</span> and age_1 &gt;= <span class="number">21</span> </span><br><span class="line">False</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; age_1 = <span class="number">22</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; age_<span class="number">0</span> &gt;= <span class="number">21</span> and age_1 &gt;= <span class="number">21</span> </span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; age_<span class="number">0</span> = <span class="number">22</span> </span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; age_1 = <span class="number">18</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; age_<span class="number">0</span> &gt;= <span class="number">21</span> or age_1 &gt;= <span class="number">21</span> </span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; age_<span class="number">0</span> = <span class="number">18</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; age_<span class="number">0</span> &gt;= <span class="number">21</span> or age_1 &gt;= <span class="number">21</span> </span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; False</span><br></pre></td></tr></table></figure>
-<p>采用括号的形式提高可读性和解决优先级的问题。</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">age_0</span> &gt;= <span class="number">21</span>) and (<span class="name">age_1</span> &gt;= <span class="number">21</span>)</span><br></pre></td></tr></table></figure>
-<h5 id="检查特定的值是否包含在列表中"><a href="#检查特定的值是否包含在列表中" class="headerlink" title="检查特定的值是否包含在列表中"></a>检查特定的值是否包含在列表中</h5><p>要判断特定的值是否已包含在列表中，可使用关键字<code>in</code>。</p>
-<p>代码示例：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; requested_toppings = [<span class="string">'mushrooms'</span>, <span class="string">'onions'</span>, <span class="string">'pineapple'</span>]</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="string">'mushrooms'</span> <span class="keyword">in</span> requested_toppings</span></span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="string">'pepperoni'</span> <span class="keyword">in</span> requested_toppings</span></span><br><span class="line">False</span><br></pre></td></tr></table></figure>
-<h5 id="检查特定的值是否不包含在列表中"><a href="#检查特定的值是否不包含在列表中" class="headerlink" title="检查特定的值是否不包含在列表中"></a>检查特定的值是否不包含在列表中</h5><p>确定特定的值未包含在列表中，可使用关键字<code>not in</code>。</p>
-<p>使用方法和上面判断是否在列表中一致。</p>
-<h5 id="布尔表达式"><a href="#布尔表达式" class="headerlink" title="布尔表达式"></a>布尔表达式</h5><p>布尔表达式的结果要么为<code>True</code>，要么为<code>False</code>,布尔值通常用于记录条件。</p>
-<h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a><code>if</code>语句</h4><h5 id="简单的if语句"><a href="#简单的if语句" class="headerlink" title="简单的if语句"></a>简单的<code>if</code>语句</h5><p>代码示例:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">num</span> = <span class="number">34</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">num</span> &gt;= <span class="number">18</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"恭喜，您已经成年"</span>)</span><br></pre></td></tr></table></figure>
-<h5 id="if-else语句"><a href="#if-else语句" class="headerlink" title="if-else语句"></a><code>if-else</code>语句</h5><p>代码示例:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">num</span> = <span class="number">16</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">num</span> &gt;= <span class="number">18</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"恭喜，您已经成年"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"你好，你未成年呢"</span>)</span><br></pre></td></tr></table></figure>
-<h5 id="if-elif-else-结构"><a href="#if-elif-else-结构" class="headerlink" title="if-elif-else 结构"></a><code>if-elif-else</code> 结构</h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">num</span> = <span class="number">16</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">num</span> &gt;= <span class="number">18</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"恭喜，您已经成年"</span>)</span><br><span class="line">elif <span class="built_in">num</span> &gt; <span class="number">15</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"你好，还差3年就成年"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"122"</span>)</span><br></pre></td></tr></table></figure>
-<p><code>elif</code>可以连续多次使用，多加判断即可。同时在某些时候可以省略<code>else</code>的部分。</p>
-<h4 id="使用if语句处理列表"><a href="#使用if语句处理列表" class="headerlink" title="使用if语句处理列表"></a>使用<code>if</code>语句处理列表</h4><h5 id="检查特殊元素"><a href="#检查特殊元素" class="headerlink" title="检查特殊元素"></a>检查特殊元素</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = [<span class="string">'mushrooms'</span>, <span class="string">'green peppers'</span>, <span class="string">'extra cheese'</span>]</span><br><span class="line"><span class="keyword">for</span> requested_topping <span class="keyword">in</span> requested_toppings:</span><br><span class="line">    <span class="keyword">if</span> requested_topping == <span class="string">'green peppers'</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Sorry, we are out of green peppers right now."</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Adding "</span> + requested_topping + <span class="string">"."</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\nFinished making your pizza!"</span>)</span><br></pre></td></tr></table></figure>
-<p>循环的时候可以进行判断，然后即可，同时还可以判断是否为空列表。</p>
+<h3 id="慢半拍也能好好说话"><a href="#慢半拍也能好好说话" class="headerlink" title="慢半拍也能好好说话"></a>慢半拍也能好好说话</h3><h4 id="第一步-复述问题"><a href="#第一步-复述问题" class="headerlink" title="第一步 复述问题"></a>第一步 复述问题</h4><p>争取时间发现陷阱，用自己的语言复述，荒缪之处自然显示出来。</p>
+<h4 id="第二步-慢而不断"><a href="#第二步-慢而不断" class="headerlink" title="第二步 慢而不断"></a>第二步 慢而不断</h4><p>用一以贯之的逻辑慢慢讲，不能偏离原有逻辑，逻辑线不断。  </p>
+<h4 id="第三步-化繁为简"><a href="#第三步-化繁为简" class="headerlink" title="第三步 化繁为简"></a>第三步 化繁为简</h4><p>将大问题归纳小问题，掌握最根本的问题。</p>
 
       
     </div>
@@ -451,7 +421,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>链接：</strong>
-    <a href="https://chensenlin.cn/posts/43494/" title="Python学习04天">https://chensenlin.cn/posts/43494/</a>
+    <a href="https://chensenlin.cn/posts/45767/" title="《好好说话》笔记之应对反应慢">https://chensenlin.cn/posts/45767/</a>
   </li>
   <li class="post-copyright-license">
     <strong>声明： </strong>
@@ -466,9 +436,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
-          
             <a href="/tags/学习/" rel="tag"><i class="fa fa-tag"></i> 学习</a>
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/好好说话/" rel="tag"><i class="fa fa-tag"></i> 好好说话</a>
           
         </div>
       
@@ -481,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/56807/" rel="next" title="Python学习03天">
-                <i class="fa fa-chevron-left"></i> Python学习03天
+              <a href="/posts/49874/" rel="next" title="《好好说话》笔记之谈加薪">
+                <i class="fa fa-chevron-left"></i> 《好好说话》笔记之谈加薪
               </a>
             
           </div>
@@ -490,6 +462,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/60177/" rel="prev" title="《把时间当作朋友》阅读笔记">
+                《把时间当作朋友》阅读笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -670,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#认识条件判断"><span class="nav-number">1.</span> <span class="nav-text">认识条件判断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件测试"><span class="nav-number">2.</span> <span class="nav-text">条件测试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#判断是否相等"><span class="nav-number">2.1.</span> <span class="nav-text">判断是否相等</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断是否不相等"><span class="nav-number">2.2.</span> <span class="nav-text">判断是否不相等</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#比较数字"><span class="nav-number">2.3.</span> <span class="nav-text">比较数字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多个条件判断"><span class="nav-number">2.4.</span> <span class="nav-text">多个条件判断</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查特定的值是否包含在列表中"><span class="nav-number">2.5.</span> <span class="nav-text">检查特定的值是否包含在列表中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查特定的值是否不包含在列表中"><span class="nav-number">2.6.</span> <span class="nav-text">检查特定的值是否不包含在列表中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#布尔表达式"><span class="nav-number">2.7.</span> <span class="nav-text">布尔表达式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句"><span class="nav-number">3.</span> <span class="nav-text">if语句</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#简单的if语句"><span class="nav-number">3.1.</span> <span class="nav-text">简单的if语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#if-else语句"><span class="nav-number">3.2.</span> <span class="nav-text">if-else语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#if-elif-else-结构"><span class="nav-number">3.3.</span> <span class="nav-text">if-elif-else 结构</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用if语句处理列表"><span class="nav-number">4.</span> <span class="nav-text">使用if语句处理列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#检查特殊元素"><span class="nav-number">4.1.</span> <span class="nav-text">检查特殊元素</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#慢半拍也能好好说话"><span class="nav-number">1.</span> <span class="nav-text">慢半拍也能好好说话</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一步-复述问题"><span class="nav-number">1.1.</span> <span class="nav-text">第一步 复述问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二步-慢而不断"><span class="nav-number">1.2.</span> <span class="nav-text">第二步 慢而不断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三步-化繁为简"><span class="nav-number">1.3.</span> <span class="nav-text">第三步 化繁为简</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -859,9 +835,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://chensenlin.cn/posts/43494/';
-          this.page.identifier = 'posts/43494/';
-          this.page.title = 'Python学习04天';
+          this.page.url = 'https://chensenlin.cn/posts/45767/';
+          this.page.identifier = 'posts/45767/';
+          this.page.title = '《好好说话》笔记之应对反应慢';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://hellosenlin.disqus.com/embed.js';
