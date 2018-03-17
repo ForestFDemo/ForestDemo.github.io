@@ -248,4 +248,16 @@
         <tag>生活</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[解决安装Samba时浏览器打开不成功]]></title>
+    <url>%2Fposts%2F21067%2F</url>
+    <content type="text"><![CDATA[最开始以为是配置文件或者服务的问题，同时用testparm检测配置文件没有问题，后面发现是SElinux没有关闭。 如何关闭SELinux第一步 查看selinux状态查看selinux的详细状态，如果为enable则表示为开启 1# /usr/sbin/sestatus -v 第二步 查看selinux的模式1# getenforce 第三步 关闭SELinux 永久性关闭（这样需要重启服务器后生效） 1# sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config 临时性关闭（立即生效，但是重启服务器后失效） 12# setenforce 0#设置selinux为permissive模式（即关闭） 12# setenforce 1#设置selinux为enforcing模式（即开启）]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>问题</tag>
+      </tags>
+  </entry>
 </search>
