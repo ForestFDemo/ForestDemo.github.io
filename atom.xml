@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2018-03-17T13:35:09.373Z</updated>
+  <updated>2018-03-18T15:45:16.147Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python学习05天</title>
+    <link href="https://chensenlin.cn/posts/21991/"/>
+    <id>https://chensenlin.cn/posts/21991/</id>
+    <published>2018-03-17T13:33:13.000Z</published>
+    <updated>2018-03-18T15:45:16.147Z</updated>
+    
+    <content type="html"><![CDATA[<p>主要内容：字典的介绍和基本使用；</p><a id="more"></a><h4 id="字典及其使用"><a href="#字典及其使用" class="headerlink" title="字典及其使用"></a>字典及其使用</h4><p>在<code>Python</code>中，字典是一系列键—值对。每个键都与一个值相关联，你可以使用键来访问与之 相关联的值。与键相关联的值可以是数字、字符串、列表乃至字典。事实上，可将任何<code>Python</code>对 象用作字典中的值。<br>在Python中，字典用放在花括号<code>{}</code>中的一系列键—值对表示。<br>键—值对是两个相关联的值。指定键时，Python将返回与之相关联的值。键和值之间用冒号 分隔，而键—值对之间用逗号分隔。在字典中，你想存储多少个键—值对都可以。最简单的字典只有一个键—值对。</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>&#125;</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(alien_0[<span class="string">'color'</span>])</span></span> </span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(alien_0[<span class="string">'points'</span>])</span></span></span><br></pre></td></tr></table></figure><h5 id="访问字典的值"><a href="#访问字典的值" class="headerlink" title="访问字典的值"></a>访问字典的值</h5><p>要获取与键相关联的值，可依次指定字典名和放在方括号内的键。</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>&#125;</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(alien_0[<span class="string">'color'</span>])</span></span></span><br></pre></td></tr></table></figure><p>字典中可包含任意数量的键—值对。</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">alien_0</span> = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure><h5 id="添加键-值对"><a href="#添加键-值对" class="headerlink" title="添加键-值对"></a>添加键-值对</h5><p>字典是一种动态结构，可随时在其中添加键—值对。要添加键—值对，可依次指定字典名、用 方括号括起的键和相关联的值。</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>&#125;</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(alien_0)</span></span></span><br><span class="line">alien_0[<span class="string">'y_position'</span>] = <span class="number">25</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(alien_0)</span></span></span><br></pre></td></tr></table></figure><p>运行结果:</p><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>&#125; <span class="number">13</span></span><br><span class="line">&#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>, <span class="string">'y_position'</span>: <span class="number">25</span>&#125;</span><br></pre></td></tr></table></figure><blockquote><p>注意，键—值对的排列顺序与添加顺序不同。Python不关心键—值对的添加顺序， 而只关心键和值之间的关联关系。</p></blockquote><h5 id="创建一个空字典"><a href="#创建一个空字典" class="headerlink" title="创建一个空字典"></a>创建一个空字典</h5><p>方法：用一对空的花括号定义一个字典，再分行添加各个键—值对。使用字典来存储用户提供的数据或在编写能自动生成大量键—值对的代码时，通常都需要先 定义一个空字典。</p><p>代码:</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;&#125;</span><br><span class="line">alien_0[<span class="string">'color'</span>] = <span class="string">'green'</span> alien_0[<span class="string">'points'</span>] = <span class="number">5</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(alien_0)</span></span></span><br></pre></td></tr></table></figure><p>结果:</p><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure><h5 id="修改字典中的值"><a href="#修改字典中的值" class="headerlink" title="修改字典中的值"></a>修改字典中的值</h5><p>要修改字典中的值，可依次指定字典名、用方括号括起的键以及与该键相关联的新值。</p><p>代码示例:</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>&#125;</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"The alien is "</span> + alien_0[<span class="string">'color'</span>] + <span class="string">"."</span>)</span></span></span><br><span class="line">alien_0[<span class="string">'color'</span>] = <span class="string">'yellow'</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"The alien is now "</span> + alien_0[<span class="string">'color'</span>] + <span class="string">"."</span>)</span></span></span><br></pre></td></tr></table></figure><p>运行结果:</p><figure class="highlight mizar"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The alien <span class="keyword">is</span> green.</span><br><span class="line">The alien <span class="keyword">is</span> <span class="keyword">now</span> yellow.</span><br></pre></td></tr></table></figure><h5 id="删除键—值对"><a href="#删除键—值对" class="headerlink" title="删除键—值对"></a>删除键—值对</h5><p>对于字典中不再需要的信息，可使用del语句将相应的键—值对彻底删除。使用<code>del</code>语句时， 必须指定字典名和要删除的键。</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>&#125;</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(alien_0)</span></span></span><br><span class="line"><span class="selector-tag">del</span> alien_0[<span class="string">'points'</span>] print(alien_0)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;主要内容：字典的介绍和基本使用；&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://chensenlin.cn/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://chensenlin.cn/tags/Python/"/>
+    
+      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>Python学习04天</title>
@@ -593,30 +617,6 @@
       <category term="喜马拉雅" scheme="https://chensenlin.cn/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/"/>
     
       <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决安装Samba时浏览器打开不成功</title>
-    <link href="https://chensenlin.cn/posts/21067/"/>
-    <id>https://chensenlin.cn/posts/21067/</id>
-    <published>2016-04-09T11:00:27.000Z</published>
-    <updated>2018-03-17T14:13:10.680Z</updated>
-    
-    <content type="html"><![CDATA[<p>最开始以为是配置文件或者服务的问题，同时用<code>testparm</code>检测配置文件没有问题，后面发现是<code>SElinux</code>没有关闭。</p><a id="more"></a><h3 id="如何关闭SELinux"><a href="#如何关闭SELinux" class="headerlink" title="如何关闭SELinux"></a>如何关闭SELinux</h3><h4 id="第一步-查看selinux状态"><a href="#第一步-查看selinux状态" class="headerlink" title="第一步 查看selinux状态"></a>第一步 查看selinux状态</h4><p>查看selinux的详细状态，如果为enable则表示为开启</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /usr/sbin/sestatus -v</span></span><br></pre></td></tr></table></figure><h4 id="第二步-查看selinux的模式"><a href="#第二步-查看selinux的模式" class="headerlink" title="第二步 查看selinux的模式"></a>第二步 查看selinux的模式</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> getenforce</span></span><br></pre></td></tr></table></figure><h4 id="第三步-关闭SELinux"><a href="#第三步-关闭SELinux" class="headerlink" title="第三步 关闭SELinux"></a>第三步 关闭SELinux</h4><ol><li>永久性关闭（这样需要重启服务器后生效）</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sed -i <span class="string">'s/SELINUX=enforcing/SELINUX=disabled/'</span> /etc/selinux/config</span></span><br></pre></td></tr></table></figure><ol><li>临时性关闭（立即生效，但是重启服务器后失效）</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> setenforce 0</span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置selinux为permissive模式（即关闭）</span></span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> setenforce 1</span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置selinux为enforcing模式（即开启）</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最开始以为是配置文件或者服务的问题，同时用&lt;code&gt;testparm&lt;/code&gt;检测配置文件没有问题，后面发现是&lt;code&gt;SElinux&lt;/code&gt;没有关闭。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="https://chensenlin.cn/categories/Linux/"/>
-    
-    
-      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="问题" scheme="https://chensenlin.cn/tags/%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
