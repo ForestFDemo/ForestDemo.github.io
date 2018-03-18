@@ -10,7 +10,7 @@
   <id>https://chensenlin.cn/</id>
   
   <author>
-    <name>DemoChen</name>
+    <name>你好我是森林</name>
     
   </author>
   
@@ -601,7 +601,7 @@
     <link href="https://chensenlin.cn/posts/21067/"/>
     <id>https://chensenlin.cn/posts/21067/</id>
     <published>2016-04-09T11:00:27.000Z</published>
-    <updated>2018-03-17T14:12:58.629Z</updated>
+    <updated>2018-03-17T14:13:10.680Z</updated>
     
     <content type="html"><![CDATA[<p>最开始以为是配置文件或者服务的问题，同时用<code>testparm</code>检测配置文件没有问题，后面发现是<code>SElinux</code>没有关闭。</p><a id="more"></a><h3 id="如何关闭SELinux"><a href="#如何关闭SELinux" class="headerlink" title="如何关闭SELinux"></a>如何关闭SELinux</h3><h4 id="第一步-查看selinux状态"><a href="#第一步-查看selinux状态" class="headerlink" title="第一步 查看selinux状态"></a>第一步 查看selinux状态</h4><p>查看selinux的详细状态，如果为enable则表示为开启</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /usr/sbin/sestatus -v</span></span><br></pre></td></tr></table></figure><h4 id="第二步-查看selinux的模式"><a href="#第二步-查看selinux的模式" class="headerlink" title="第二步 查看selinux的模式"></a>第二步 查看selinux的模式</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> getenforce</span></span><br></pre></td></tr></table></figure><h4 id="第三步-关闭SELinux"><a href="#第三步-关闭SELinux" class="headerlink" title="第三步 关闭SELinux"></a>第三步 关闭SELinux</h4><ol><li>永久性关闭（这样需要重启服务器后生效）</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sed -i <span class="string">'s/SELINUX=enforcing/SELINUX=disabled/'</span> /etc/selinux/config</span></span><br></pre></td></tr></table></figure><ol><li>临时性关闭（立即生效，但是重启服务器后失效）</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> setenforce 0</span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置selinux为permissive模式（即关闭）</span></span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> setenforce 1</span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置selinux为enforcing模式（即开启）</span></span><br></pre></td></tr></table></figure>]]></content>
     
