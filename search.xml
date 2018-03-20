@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python学习06天]]></title>
+    <url>%2Fposts%2F4583%2F</url>
+    <content type="text"><![CDATA[主要内容： 用户输入和while循环； 利用while处理列表和字典。 用户输入和while循环函数input()的工作原理函数input()让程序暂停运行，等待用户输入一些文本。获取用户输入后，Python将其存储在 一个变量中，以方便你使用。 代码示例: 12input_res = input("输入你最喜欢的食物:")print(input_res) 编写清晰的程序有时候，提示可能超过一行，例如，你可能需要指出获取特定输入的原因。在这种情况下， 可将提示存储在一个变量中，再将该变量传递给函数input()。 代码示例: 1234prompt = "If you tell us who you are, we can personalize the messages you see."prompt += "\nWhat is your first name? "name = input(prompt)print("\nHello, " + name + "!") 第1行将消息的前半部分存储在变量prompt中; 在第2行中，运算符+=在存储在prompt中的字符串末尾附加一个字符串。 使用int()来获取数值输入使用函数input()时，Python将用户输入解读为字符串。如果用户输入的值需要进行和数字比较，就会发生错误，这个时候就需要转换一下。可以采用int()来进行字符串和整型之间的转换 代码示例:1234567age = input("请输入你的年龄: ")age = int(age)if age &gt;= 18: print("你已经成年")else: print("你还未成年") 运行示例: 123456➜ day6 python int.py请输入你的年龄: 12你还未成年➜ day6 python int.py请输入你的年龄: 18你已经成年 求模运算符处理数值信息时，求模运算符(%)是一个很有用的工具，它将两个数相除并返回余数。求模运算符不会指出一个数是另一个数的多少倍，而只指出余数是多少。如果一个数可被另一个数整除，余数就为0，因此求模运算符将返回0。 代码示例: 123456&gt;&gt;&gt; 4 % 31&gt;&gt;&gt; 5 % 10&gt;&gt;&gt; 4 % 20 利用这一点来判 断一个数是奇数还是偶数: 123456number = input("Enter a number, and I'll tell you if it's even or odd: ") 13 number = int(number) if number % 2 == 0: print("\nThe number " + str(number) + " is even.")else: print("\nThe number " + str(number) + " is odd.") while 循环简介for循环用于针对集合中的每个元素都一个代码块，而while循环不断地运行，直到指定的条 件不满足为止。 使用while循环1234current_number = 1while current_number &lt;= 5: print(current_number) current_number += 1 在第1行，我们将current_number设置为1，从而指定从1开始数。接下来的while循环被设置 成这样:只要current_number小于或等于5，就接着运行这个循环。循环中的代码打印 current_number的值，再使用代码current_number += 1(代码current_number = current_number + 1的简写)将其值加1。只要满足条件current_number &lt;= 5，Python就接着运行这个循环。 让用户选择何时退出123456prompt = "\nTell me something, and I will repeat it back to you:"prompt += "\nEnter 'quit' to end the program. "message = "" while message != 'quit': message = input(prompt) print(message) 只有当用户输入quit的时候才能推出，否者一直不能退出。 采用标志在要求很多条件都满足才继续运行的程序中，可定义一个变量，用于判断整个程序是否处于活动状态。这个变量被称为标志，充当了程序的交通信号灯。你可让程序在标志为True时继续运 行，并在任何事件导致标志的值为False时让程序停止运行。这样，在while语句中就只需检查一 个条件——标志的当前值是否为True，并将所有测试(是否发生了应将标志设置为False的事件) 都放在其他地方，从而让程序变得更为整洁。 使用break退出循环要立即退出while循环，不再运行循环中余下的代码，也不管条件测试的结果如何，可使用break语句。break语句用于控制程序流程，可使用它来控制哪些代码行将执行，哪些代码行不执行，从而让程序按你的要求执行你要执行的代码。 在循环中使用continue要返回到循环开头，并根据条件测试结果决定是否继续执行循环，可使用continue语句，它 不像break语句那样不再执行余下的代码并退出整个循环。 避免无限循环每个while循环都必须有停止运行的途径，这样才不会没完没了地执行下去。每一个循环必须要有一个可结束的条件。 使用while循环来处理列表和字典for循环是一种遍历列表的有效方式，但在for循环中不应修改列表，否则将导致Python难以跟踪其中的元素。要在遍历列表的同时对其进行修改，可使用while循环。通过将while循环同列表和字典结合起来使用，可收集、存储并组织大量输入，供以后查看和显示。主要的处理有：在列表之间移动元素；删除包含特定值的所有列表元素；使用用户输入来填充字典等。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python学习05天]]></title>
     <url>%2Fposts%2F21991%2F</url>
     <content type="text"><![CDATA[主要内容： 字典的介绍和基本使用； 遍历字典和字典嵌套相关知识； 字典及其使用在Python中，字典是一系列键—值对。每个键都与一个值相关联，你可以使用键来访问与之 相关联的值。与键相关联的值可以是数字、字符串、列表乃至字典。事实上，可将任何Python对 象用作字典中的值。在Python中，字典用放在花括号{}中的一系列键—值对表示。键—值对是两个相关联的值。指定键时，Python将返回与之相关联的值。键和值之间用冒号 分隔，而键—值对之间用逗号分隔。在字典中，你想存储多少个键—值对都可以。最简单的字典只有一个键—值对。 123alien_0 = &#123;'color': 'green', 'points': 5&#125;print(alien_0['color']) print(alien_0['points']) 访问字典的值要获取与键相关联的值，可依次指定字典名和放在方括号内的键。 12alien_0 = &#123;'color': 'green'&#125;print(alien_0['color']) 字典中可包含任意数量的键—值对。 1alien_0 = &#123;'color': 'green', 'points': 5&#125; 添加键-值对字典是一种动态结构，可随时在其中添加键—值对。要添加键—值对，可依次指定字典名、用 方括号括起的键和相关联的值。 1234alien_0 = &#123;'color': 'green', 'points': 5&#125;print(alien_0)alien_0['y_position'] = 25print(alien_0) 运行结果: 12&#123;'color': 'green', 'points': 5&#125; 13&#123;'color': 'green', 'points': 5, 'y_position': 25&#125; 注意，键—值对的排列顺序与添加顺序不同。Python不关心键—值对的添加顺序， 而只关心键和值之间的关联关系。 创建一个空字典方法：用一对空的花括号定义一个字典，再分行添加各个键—值对。使用字典来存储用户提供的数据或在编写能自动生成大量键—值对的代码时，通常都需要先 定义一个空字典。 代码: 123alien_0 = &#123;&#125;alien_0['color'] = 'green' alien_0['points'] = 5print(alien_0) 结果: 1&#123;'color': 'green', 'points': 5&#125; 修改字典中的值要修改字典中的值，可依次指定字典名、用方括号括起的键以及与该键相关联的新值。 代码示例: 1234alien_0 = &#123;'color': 'green'&#125;print("The alien is " + alien_0['color'] + ".")alien_0['color'] = 'yellow'print("The alien is now " + alien_0['color'] + ".") 运行结果: 12The alien is green.The alien is now yellow. 删除键—值对对于字典中不再需要的信息，可使用del语句将相应的键—值对彻底删除。使用del语句时， 必须指定字典名和要删除的键。 123alien_0 = &#123;'color': 'green', 'points': 5&#125;print(alien_0)del alien_0['points'] print(alien_0) 遍历字典一个Python字典可能只包含几个键—值对，也可能包含数百万个键—值对。鉴于字典可能包含 大量的数据，Python支持对字典遍历。字典可用于以各种方式存储信息，因此有多种遍历字典的 方式:可遍历字典的所有键—值对、键或值。 遍历所有的键-值对123456789user_0 = &#123; 'username': 'efermi', 'first': 'enrico', 'last': 'fermi',&#125;for key, value in user_0.items(): print("\nKey: " + key) print("Value: " + value) for语句的第二部分包含字典名和方法items()，它返回一个键—值对列表。 遍历字典中的所有键keys()获取字典的所有值。 代码示例: 12345678favorite_languages = &#123; 'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python', &#125;for name in favorite_languages.keys(): print(name) 运行结果: 1234jensarahedwardphil 遍历字典中的所有值values()获取字典的所有值。set()可以去除重复的值。 代码示例: 123456789101112favorite_languages = &#123; 'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python', &#125;for name in favorite_languages.values(): print(name)print("去重复的值")for name in set(favorite_languages.values()): print(name) 运行结果: 12345678pythoncrubypython去重复的值pythoncruby 嵌套有时候，需要将一系列字典存储在列表中，或将列表作为值存储在字典中，这称为嵌套。可以在列表中嵌套字典、在字典中嵌套列表甚至在字典中嵌套字典。 字典列表代码示例: 12345678alien_0 = &#123;'color': 'green', 'points': 5&#125;alien_1 = &#123;'color': 'yellow', 'points': 10&#125;alien_2 = &#123;'color': 'red', 'points': 15&#125;aliens = [alien_0, alien_1, alien_2]for alien in aliens: print(alien) 运行结果: 123&#123;'color': 'green', 'points': 5&#125;&#123;'color': 'yellow', 'points': 10&#125;&#123;'color': 'red', 'points': 15&#125; 在字典中存储列表每当需要在字典中将一个键关联到多个值时，都可以在字典中嵌套一个列表。 代码示例: 1234pizza = &#123; 'crust': 'thick', 'toppings': ['mushrooms', 'extra cheese'], &#125; 列表和字典的嵌套层级不应太多。如果嵌套层级比前面的示例多得多，很可能有更简单 的解决问题的方案。 在字典中存储字典代码示例: 1234567891011users = &#123; 'aeinstein': &#123; 'first': 'albert', 'last': 'einstein', 'location': 'princeton', &#125;, 'mcurie': &#123; 'first': 'marie', 'last': 'curie', 'location': 'paris', &#125;,&#125; 首先定义了一个名为users的字典，其中包含两个键:用户名&#39;aeinstein&#39;和&#39;mcurie&#39;; 与每个键相关联的值都是一个字典，其中包含用户的名、姓和居住地。]]></content>
@@ -93,8 +105,8 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>笔记</tag>
         <tag>阅读</tag>
+        <tag>笔记</tag>
         <tag>生活</tag>
       </tags>
   </entry>
@@ -107,8 +119,8 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>笔记</tag>
         <tag>阅读</tag>
+        <tag>笔记</tag>
         <tag>生活</tag>
       </tags>
   </entry>
@@ -369,8 +381,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>好好说话</tag>
         <tag>生活</tag>
+        <tag>好好说话</tag>
       </tags>
   </entry>
   <entry>
@@ -383,8 +395,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>好好说话</tag>
         <tag>生活</tag>
+        <tag>好好说话</tag>
         <tag>喜马拉雅</tag>
       </tags>
   </entry>
@@ -398,8 +410,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>好好说话</tag>
         <tag>生活</tag>
+        <tag>好好说话</tag>
         <tag>喜马拉雅</tag>
       </tags>
   </entry>
