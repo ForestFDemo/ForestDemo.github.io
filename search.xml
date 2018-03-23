@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python学习08天]]></title>
+    <url>%2Fposts%2F63973%2F</url>
+    <content type="text"><![CDATA[主要内容： 类的基本介绍、创建和使用； 实例化类，设置属性和和修改等。 创建和使用类创建Dog类根据约定，在Python中，首字母大写的名称指的是类。 这个类定义中的括号是空的，因为我们要从空白创建这个类。类中的函数称为方法。 代码如下: 123456789101112class dog(): # 创建一个小狗的类 def _init_(self,name,age): # 初始化属性name和age self.name = name self.age = age def sit(self): # 模拟小狗被命令时蹲下 print(self.name.title() + " is now sitting !") def roll_over(self): # 打滚 print(self.name.title() + " rolled over!") __init__方法 __init__()是一个特殊的方法，每当你根据Dog类创建新实例时，Python都会自动运行它。在这个方法的名称中，开头和末尾各有两个下划线，这是一种约定，旨在避免Python默认方法与普通方法发生名称冲突。它包含了三个形参：self、name和age，在这个方法的定义中，形 参self必不可少，还必须位于其他形参的前面。 根据类创建实例可将类视为有关如何创建实例的说明。 代码示例: 123my_dog = Dog('demo',18)print(my_dog.name.title())print(my_dog.age) 访问属性 要访问实例的属性，可使用句点表示法。例如my_dog.name 调用方法 要调用方法，可指定实例的名称和要调用的方法，并用句点分隔它们。 代码示例： 123my_dog = Dog('demo', 6)my_dog.sit()my_dog.roll_over() 创建多个实例 12my_dog = Dog('demo', 6)you_dog = Dog('demo_go', 6) 使用类和实例类编写好后，你的大部分时间都将花在使用根据类创建的实例上。你需要执行的一个重要任务是修改实例的属性。你可以直接修改实例的属性，也可以编写方法以特定的方式进行修改。 Car类12345678910111213141516class Car(): # Car类 def __init__(self,name,model,year): # 初始化 self.name = name self.model = model self.year = year def get_descript(self): # 返回描述信息 long_name = str(self.year) + '---' + self.name + '---' + self.model return long_name.title() # 示例化my_car = Car('audi','A4','2016')print(my_car.get_descript()) 处理的结果是: 12016---Audi---A4 给属性设置默认值类中的每个属性都必须有初始值，哪怕这个值是0或空字符串。在有些情况下，如设置默认值时，在方法__init__()内指定这种初始值是可行的;如果你对某个属性这样做了，就无需包含为它提供初始值的形参。 在car类在__init__的方法新增属性self.odometer_reading = 0，同时新增一个方法read_odometer()： 123def read_odometer(self): # 打印一条指出汽车里程的消息 print("汽车的里程有：" + str(self.odometer_reading)) 调用该方法: 123my_car = Car('audi','A4','2016')print(my_car.get_descript())my_car.read_odometer() 修改属性的值可以以三种不同的方式修改属性的值：直接通过实例进行修改;通过方法进行设置;通过方法进行递增(增加特定的值)。 直接修改属性的值 代码如下： 1my_new_car.odometer_reading = 23 my_new_car.read_odometer() 有时候需要像这样直接访问属性，但其他时候需要编写对属性进行更新的方法。 通过方法修改属性的值 在Car类新增一个update_odometer()的方法，专门用来修改属性的值。 代码如下： 123def update_odometer(self,update_value): # 修改里程值 self.odometer_reading = update_value 在调用的时候就很简单了: 12my_new_car.update_odometer(66)my_new_car.read_odometer() 通过方法对属性的值进行递增 递增的逻辑其实很简单，只有将之前的记录保存并且和后面传入的值进行相加操作即可。 代码如下： 123def update_odometer(self,update_value): # 修改里程值 self.odometer_reading += update_value 调用方法： 1234my_new_car.update_odometer(6)my_new_car.read_odometer()my_new_car.update_odometer(1)my_new_car.read_odometer()]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python学习07天]]></title>
     <url>%2Fposts%2F60902%2F</url>
     <content type="text"><![CDATA[主要内容： 函数的定义和使用； 传递实参和返回值； 模块的导入、使用和函数导入、使用。 函数函数是带名字的代码块，用于完 成具体的工作。要执行函数定义的特定任务，可调用该函数。需要在程序中多次 执行同一项任务时，你无需反复编写完成该任务的代码，而只需调用 执行该任务的函数，让Python运行其中的代码。 定义函数定义函数的关键字：def，由此来告诉Python这是一个函数。 代码示例： 123456def hello_user(): "函数体说明部分" mes = "你好我是森林" print(mes) hello_user() def关键字定义函数；hello_user()是该函数的函数名；冒号定义结尾；冒号后面到缩进结尾表示该函数的函数体，也就是函数需要做什么。上述函数就是打印一个变量。执行结果为：你好我是森林。而最后一行表示调用函数名为hello_user()的函数。 向函数传递信息在函数名后面的括号可以进行传参操作，例如传入简单的用户名。 代码示例： 12345def get_user(username): """用户信息""" print("我的名字叫: " + username) get_user("你好我是森林") 执行结果： 1我的名字叫：你好我是森林 实参和形参方法在定义的时候的参数称为形参，函数完成其工作所需的一项信 息；函数在调用的时候传入的参数称为实参。 例如在上面的代码中，get_user(username)的username未形参，而调用的时候输入你好我是森林`为实际参数。 传递实参鉴于函数定义中可能包含多个形参，因此函数调用中也可能包含多个实参。向函数传递实参的方式很多，可使用位置实参，这要求实参的顺序与形参的顺序相同;也可使用关键字实参，其中每个实参都由变量名和值组成;还可使用列表和字典。 位置实参调用函数时，Python必须将函数调用中的每个实参都关联到函数定义中的一个形参。为此，最简单的关联方式是基于实参的顺序。这种关联方式被称为位置实参。 12345def get_user(type,value): """用户信息""" print("我的" + type + "是: " + value) get_user("年龄",'18') 根据type的类型传入的值，输入不一样的结果。传入的年龄就存入函数的type变量中，88就存入value变量中。这样就能够完整的输出。结果为：我的年龄是: 88。 根据这个结果可以推出，该函数可以被多次调用。例如： 12345678def get_user(type,value): """用户信息""" print("我的" + type + "是: " + value) get_user("年龄",'18')get_user("体重",'100')get_user("身高",'180')get_user("性别",'男') 输出的结果是： 1234我的年龄是: 18我的体重是: 100我的身高是: 180我的性别是: 男 需要注意的是传参的位置很重要。如果传参顺序出错，就容易出现笑话。 例如: 12345678def get_user(type,value): """用户信息""" print("我的" + type + "是: " + value) get_user("年龄",'18')get_user("100",'体重')get_user("100",'身高')get_user("男",'性别') 运行的结果： 1234我的年龄是: 18我的100是: 体重我的100是: 身高我的男是: 性别 关键字实参关键字实参是传递给函数的名称—值对。直接在实参中将名称和值关联起来了，因此向函数传递实参时不会混淆。关键字实参让你无需考虑函数调用中的实参顺序，还清楚地指出了函数调用中各个值的用途。 代码示例： 123456def get_user(type,value): """用户信息""" print("我的" + type + "是: " + value) get_user("年龄",'18')get_user(value="18",type = 'age') 运行结果 12我的年龄是: 18我的age是: 18 默认值编写函数时，可给每个形参指定默认值。在调用函数中给形参提供了实参时，Python将使用 指定的实参值;否则，将使用形参的默认值。因此，给形参指定默认值后，可在函数调用中省略相应的实参。使用默认值可简化函数调用，还可清楚地指出函数的典型用法。 代码示例： 123456def get_user(type,value = '19'): """用户信息""" print("我的" + type + "是: " + value) get_user("年龄",'18')get_user("年龄") #没有传值 运行结果： 12我的年龄是: 18我的年龄是: 19 使用默认值时，在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参。 这让Python依然能够正确地解读位置实参。 等效的函数调用鉴于可混合使用位置实参、关键字实参和默认值，通常有多种等效的函数调用方式。基于这种定义，在任何情况下都必须给函数提供实参;指定该实参时可以使用位置方式，也可以使用关键字方式。同样，指定该实参时可以使用位置方式，也可以使用关键字方式。 返回值函数并非总是直接显示输出，相反，它可以处理一些数据，并返回一个或一组值。函数返回 的值被称为返回值。在函数中，可使用return语句将值返回到调用函数的代码行。返回值让你能够将程序的大部分繁重工作移到函数中去完成，从而简化主程序。 返回简单值代码示例： 1234567def get_user_info(type,info): """返回用户信息""" user_info = "我的" + type + "是: " + info return user_info.title()user_info = get_user_info('身高','190')print(user_info) 运行结果： 1我的身高是: 190 返回一条字符串类型的用户的信息，然后赋值给变量user_info，最后打印输出。 让实参变成可选的在某些时候我们的参数可能不是必选，但是需要设置默认值就可以决定是否需要传参。 返回字典将用户的信息存储在字典中。 1234567def build_person(first_name, last_name): """返回一个字典，其中包含有关一个人的信息""" person = &#123;'first': first_name, 'last': last_name&#125; return personmusician = build_person('jimi', 'hendrix')print(musician) 同时该字典还可以不断的增加。例如新增返回年龄。 调用函数： 123456789def build_person(first_name, last_name,age=''): """返回一个字典，其中包含有关一个人的信息""" person = &#123;'first': first_name, 'last': last_name&#125; if age: person['age'] = age return person musician = build_person('jimi', 'hendrix',age=19)print(musician) 返回结果： 1&#123;'first': 'jimi', 'last': 'hendrix', 'age': 19&#125; 传递列表向函数传递列表很有用，这种列表包含的可能是名字、数字或更复杂的对象(如字典)。将列表传递给函数后，函数就能直接访问其内容。 代码示例： 1234567def greet_users(names): """向列表中的每位用户都发出简单的问候""" for name in names: msg = "Hello, " + name + "!" print(msg)usernames = ['Hannah', 'Ty', 'Margot'] greet_users(usernames) 传入一个列表，进行循环遍历打印，然后得到如下结果。 运行结果： 123Hello, Hannah!Hello, Ty!Hello, Margot! 在函数中修改列表由上面的例子可以得出，函数在遍历的过程中是可以通过一些函数进行修改的。例如将传入的值全部变为大写。代码如下： 1234567def greet_users(names): """向列表中的每位用户都发出简单的问候""" for name in names: msg = "Hello, " + name.upper() + "!" print(msg)usernames = ['hannah', 'ty', 'margot'] greet_users(usernames) 当然，也可以进行复杂的修改操作。例如把传入的列表复制给第二个列表；同样，我们也可以紧致修改列表。 禁止函数修改列表将列表的副本传递给函数就可以实现没有修改列表。切片表示法[:]创建列表的副本。语法如下： 1function_name(list_name[:]) 传递任意数量的实参利用*定义为一个空元组就可以将所有传入的实参都进行打印。例如： 123456def make_pizza(*toppings): """打印顾客点的所有配料""" print(toppings) make_pizza('pepperoni')make_pizza('mushrooms', 'green peppers', 'extra cheese') 无论传入多少值都可以被打印出来。 结合使用位置实参和任意数量实参如果要让函数接受不同类型的实参，必须在函数定义中将接纳任意数量实参的形参放在最后。`Python·先匹配位置实参和关键字实参，再将余下的实参都收集到最后一个形参中。 12345678def make_pizza(size, *toppings): """概述要制作的比萨""" print("\nMaking a " + str(size) + "-inch pizza with the following toppings:") for topping in toppings: print("- " + topping) make_pizza(16, 'pepperoni')make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese') 使用任意数量的关键字实参有时候，需要接受任意数量的实参，但预先不知道传递给函数的会是什么样的信息。在这种情况下，可将函数编写成能够接受任意数量的键—值对——调用语句提供了多少就接受多少。只要坚持一个原则，无论用户输入的实参有多少信息，采用遍历的方式将其逐步返回，然后打印就可以实现无论用户输入什么信息就返回。 将函数存储在模块中函数的优点之一是，使用它们可将代码块与主程序分离。通过给函数指定描述性名称，可让 主程序容易理解得多。你还可以更进一步，将函数存储在被称为模块的独立文件中，再将模块导入到主程序中。import语句允许在当前运行的程序文件中使用模块中的代码。 导入整个模块要让函数是可导入的，得先创建模块。模块是扩展名为.py的文件，包含要导入到程序中的代码。创建模块代码示例： 123456def make_pizza(size, *toppings): """概述要制作的比萨""" print("\nMaking a " + str(size) + "-inch pizza with the following toppings:") for topping in toppings: print("- " + topping) 保存为make_pizza.py的文件，然后创建一个新的文件make.py。代码如下： 123import make_pizzamake_pizza.make_pizza(16, 'pepperoni') 运行后结果如下： 123➜ day8 python make.pyMaking a 16-inch pizza with the following toppings:- pepperoni 导入模块的某些函数既然可以导入整个模块，说明是能完全读取整个模块的信息，同理，可以推出，我们导入文件的时候是不是可以将某些函数导入进入使用呢？具体的语法如下： 导入某一个函数： 1from module_name import function_name 导入某些函数，也就是多个函数： 1from module_name import function_0, function_1, function_2 具体的使用方法同理，相当于该函数就可以被调用，和函数调用一致，没有什么区别。即： 123from pizz import make_pizzmake_pizz(12,'demo_pizz') 使用as给函数指定别名某些业务的需求，函数名可能有特别长，但是在新的模块文件中，我们不需要这样的函数名，一来影响代码的美观；二来对开发人员不太友好，于是采用关键字as可以给函数取一个在新的模块中的别名。具体的语法如下： 1from module_name import function_name as fun_name 在这里可以看到fun_name就是起的别名，在调用的时候就可以直接采用fun_name进行调用。具体调用方法如下： 123from pizz import make_install_pizz_div as mpipmpip(14,'pizz_name') 具体的调用和实际导入的函数没有什么区别，同样的使用。但是为了提高代码的可读性，建议最好将别名取的有意义。 使用as给模块指定别名由使用as给函数指定别名可以推出，同样可以为模块取一个更有意义或者更适合自己的别名。在日常的Python开发中，常用的库或模块有很多，我们同样可以进行别名的方式来实现。具体语法如下： 1import module_name as mn 使用方式不再阐述，和没有指定别名的方式是一样的。 导入模块中的所有函数在日常开发中*通常是通配符的意思，所以我们要实现一个导入模块的所有函数可以用*来实现。具体语法如下： 1from module_name import * 调用对应函数的方法和上面类似，不做过多的阐述。 函数编写指南 原文内容。 编写函数时，需要牢记几个细节。应给函数指定描述性名称，且只在其中使用小写字母和下划线。描述性名称可帮助你和别人明白代码想要做什么。给模块命名时也应遵循上述约定。 每个函数都应包含简要地阐述其功能的注释，该注释应紧跟在函数定义后面，并采用文档字符串格式。文档良好的函数让其他程序员只需阅读文档字符串中的描述就能够使用它:他们完全可以相信代码如描述的那样运行;只要知道函数的名称、需要的实参以及返回值的类型，就能在自己的程序中使用它。 给形参指定默认值时，等号两边不要有空格。PEP 8建议代码行的长度不要超过79字符，这样 只要编辑器窗口适中，就能看到整行代码。如果形参很多，导致函数定义的长度超过了79字符，可在函数定义中输入左括号后按回车键，并在下一行按两次Tab键，从而将形参列表和只缩进一层的函数体区分开来。大多数编辑器都会自动对齐后续参数列表行，使其缩进程度与你给第一个参数列表行指定的 缩进程度相同: 如果程序或模块包含多个函数，可使用两个空行将相邻的函数分开，这样将更容易知道前一个函数在什么地方结束，下一个函数从什么地方开始。所有的import语句都应放在文件开头，唯一例外的情形是，在文件开头使用了注释来描述整个程序。]]></content>
@@ -117,8 +129,8 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>阅读</tag>
         <tag>笔记</tag>
+        <tag>阅读</tag>
         <tag>生活</tag>
       </tags>
   </entry>
@@ -131,8 +143,8 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>阅读</tag>
         <tag>笔记</tag>
+        <tag>阅读</tag>
         <tag>生活</tag>
       </tags>
   </entry>
@@ -393,8 +405,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>好好说话</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -407,8 +419,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>好好说话</tag>
+        <tag>生活</tag>
         <tag>喜马拉雅</tag>
       </tags>
   </entry>
@@ -422,8 +434,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>好好说话</tag>
+        <tag>生活</tag>
         <tag>喜马拉雅</tag>
       </tags>
   </entry>
