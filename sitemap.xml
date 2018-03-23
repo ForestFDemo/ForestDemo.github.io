@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chensenlin.cn/categories/index.html</loc>
+    
+    <lastmod>2018-03-23T02:23:11.984Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://chensenlin.cn/posts/60902/</loc>
     
     <lastmod>2018-03-22T11:20:18.667Z</lastmod>
@@ -243,13 +250,6 @@
     <loc>https://chensenlin.cn/tags/index.html</loc>
     
     <lastmod>2018-03-15T11:40:13.532Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chensenlin.cn/categories/index.html</loc>
-    
-    <lastmod>2018-03-15T11:37:59.588Z</lastmod>
     
   </url>
   
