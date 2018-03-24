@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="你好我是森林">
 <meta property="og:description" content="主要内容： 类的基本介绍、创建和使用； 实例化类，设置属性和和修改等。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-23T10:50:39.486Z">
+<meta property="og:updated_time" content="2018-03-24T14:16:08.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习08天">
 <meta name="twitter:description" content="主要内容： 类的基本介绍、创建和使用； 实例化类，设置属性和和修改等。">
@@ -353,9 +353,9 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共994 字</span>
+            <span>全文共2,513 字</span>
             &nbsp; | &nbsp;
-            <span>阅读时长4 分钟</span>
+            <span>阅读时长9 分钟</span>
           </span>
           
 
@@ -442,6 +442,36 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_odometer</span><span class="params">(<span class="keyword">self</span>,update_value)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="comment"># 修改里程值</span></span><br><span class="line">    <span class="keyword">self</span>.odometer_reading += update_value</span><br></pre></td></tr></table></figure>
 <p>调用方法：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">my_new_car</span><span class="selector-class">.update_odometer</span>(6)</span><br><span class="line"><span class="selector-tag">my_new_car</span><span class="selector-class">.read_odometer</span>()</span><br><span class="line"><span class="selector-tag">my_new_car</span><span class="selector-class">.update_odometer</span>(1)</span><br><span class="line"><span class="selector-tag">my_new_car</span><span class="selector-class">.read_odometer</span>()</span><br></pre></td></tr></table></figure>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>编写类时，并非总是要从空白开始。如果你要编写的类是另一个现成类的特殊版本，可使用继承。一个类继承另一个类时，它将自动获得另一个类的所有属性和方法;原有的类称为父类，而新类称为子类。子类继承了其父类的所有属性和方法，同时还可以定义自己的属性和方法。</p>
+<h5 id="子类的方法-init"><a href="#子类的方法-init" class="headerlink" title="子类的方法__init__()"></a>子类的方法<code>__init__()</code></h5><p>创建子类的实例时，<code>Python</code>首先需要完成的任务是给父类的所有属性赋值。我们直接在上一节的汽车类基础上添加一个<code>ElectricCar</code>类，让它继承<code>Car</code>类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricCar</span><span class="params">(Car)</span>:</span></span><br><span class="line">    <span class="comment"># 电动汽车</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,model,year)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化父类的属性</span></span><br><span class="line">        super().__init__(name,model,year)</span><br><span class="line">        </span><br><span class="line"><span class="comment"># 示例化</span></span><br><span class="line">my_car = ElectricCar(<span class="string">'dian'</span>, <span class="string">'models'</span>, <span class="number">2019</span>)</span><br><span class="line">print(my_tesla.get_descriptive())</span><br></pre></td></tr></table></figure>
+<p><code>super()是</code>一个特殊函数，帮助<code>Python</code>将父类和子类关联起来。这行代码让<code>Python</code>调用<code>ElectricCar</code>的父类的方法<code>__init__()</code>，让<code>ElectricCar</code>实例包含父类的所有属性。父类也称为超 类(<code>superclass</code>)，<code>super</code>因此而得名。</p>
+<h5 id="给子类定义属性和方法"><a href="#给子类定义属性和方法" class="headerlink" title="给子类定义属性和方法"></a>给子类定义属性和方法</h5><p> 让一个类继承另一个类后，可添加区分子类和父类所需的新属性和方法。和之前的定义属性和方法的逻辑类似，不做过多的阐述。可以理解为在子类里面可以自定义一些自己需要的方法或者属性。</p>
+<h5 id="重写父类的方法"><a href="#重写父类的方法" class="headerlink" title="重写父类的方法"></a>重写父类的方法</h5><p>对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子类中定义一个这样的方法，即它与要重写的父类方法同名。这样，<code>Python</code>将不会考虑这个父类方法，而只关注你在子类中定义的相应方法。或者可以理解为在子类里面可以重写一个新的方法，重新赋值一个新的属性等。通俗的理解为：“取其精华，去其糟粕”。</p>
+<h5 id="将实例用作属性"><a href="#将实例用作属性" class="headerlink" title="将实例用作属性"></a>将实例用作属性</h5><p>使用代码模拟实物时，你可能会发现自己给类添加的细节越来越多:属性和方法清单以及文 件都越来越长。在这种情况下，可能需要将类的一部分作为一个独立的类提取出来。你可以将大 型类拆分成多个协同工作的小类。</p>
+<h4 id="导入类"><a href="#导入类" class="headerlink" title="导入类"></a>导入类</h4><h5 id="导入单个类"><a href="#导入单个类" class="headerlink" title="导入单个类"></a>导入单个类</h5><p>为了使项目代码的可读性更加高，使用该模块的程序都必须使用更具体的文件名。例如<code>my_car.py</code>。导入的方法和之前类似，具体语法结构如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> model_name <span class="keyword">import</span> Class_name</span><br></pre></td></tr></table></figure>
+<p>采用<code>improt</code>语句让<code>Python</code>打开模块<code>car</code>，并导入其中的<code>Car</code>类，剩下的就可以使用了。</p>
+<p>导入类是一种有效的编程方式。如果在这个程序中包含了整个<code>Car</code>类，它该有多长呀!通过 将这个类移到一个模块中，并导入该模块，你依然可以使用其所有功能，但主程序文件变得整洁而易于阅读。</p>
+<h5 id="在一个模块中存储多个类"><a href="#在一个模块中存储多个类" class="headerlink" title="在一个模块中存储多个类"></a>在一个模块中存储多个类</h5><p>也就是一个模块中可以有多个类，例如父类和子类。假设<code>my_car.py</code>有两个类，一个是父类<code>Car</code>，另一个是子类<code>ElectricCar</code>，那么在导入该模块时，可以选择导入某一个类。</p>
+<p>代码示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> model_name <span class="keyword">import</span> Class_name</span><br></pre></td></tr></table></figure>
+<p>现在就可以进行示例化或者其他的操作了。</p>
+<h5 id="从一个模块中导入多个类"><a href="#从一个模块中导入多个类" class="headerlink" title="从一个模块中导入多个类"></a>从一个模块中导入多个类</h5><p>和我们之前导入函数的时候原理一样，我们可以导入任意数量的类。导入模块多个类的时候，采用逗号拼接即可。语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> model_name <span class="keyword">import</span> Class_name0, Class_name1</span><br></pre></td></tr></table></figure>
+<p>导入之后，就可根据需要创建每个类的任意数量的实例。</p>
+<h5 id="导入整个模块"><a href="#导入整个模块" class="headerlink" title="导入整个模块"></a>导入整个模块</h5><p>导入整个模块的语法也特别的简单，具体如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> model_name</span><br></pre></td></tr></table></figure>
+<p>这样就可以使用整个模块的任意类。</p>
+<h5 id="导入模块中的所有类"><a href="#导入模块中的所有类" class="headerlink" title="导入模块中的所有类"></a>导入模块中的所有类</h5><p>导入多个就用逗号一个个区分，然后倒入所有的就用<code>*</code>代替。所以语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> model_name <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>引用原文。</p>
+</blockquote>
+<p>不推荐使用这种导入方式，其原因有二。首先，如果只要看一下文件开头的<code>import</code>语句，就能清楚地知道程序使用了哪些类，将大有裨益;但这种导入方式没有明确地指出你使用了模块中的哪些类。这种导入方式还可能引发名称方面的困惑。如果你不小心导入了一个与程序文件中其 他东西同名的类，将引发难以诊断的错误。这里之所以介绍这种导入方式，是因为虽然不推荐使 用这种方式，但你可能会在别人编写的代码中见到它。 </p>
+<p>需要从一个模块中导入很多类时，最好导入整个模块，并使用<code>module_name.class_name</code>语法来访问类。这样做时，虽然文件开头并没有列出用到的所有类，但你清楚地知道在程序的哪些地方使用了导入的模块;你还避免了导入模块中的每个类可能引发的名称冲突。</p>
+<h5 id="在一个模块中导入另一个模块"><a href="#在一个模块中导入另一个模块" class="headerlink" title="在一个模块中导入另一个模块"></a>在一个模块中导入另一个模块</h5><p>有时候，需要将类分散到多个模块中，以免模块太大，或在同一个模块中存储不相关的类。将类存储在多个模块中时，你可能会发现一个模块中的类依赖于另一个模块中的类。在这种情况下，可在前一个模块中导入必要的类。</p>
+<p>这部分的笔记实在是比较简单，没有过多的代码，逻辑上的问题基本在之前都涉及过了。如果不是特别了解，可以看看之前的文章，或者可以关注我，后续将继续更新。</p>
 
       
     </div>
@@ -687,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建和使用类"><span class="nav-number">1.</span> <span class="nav-text">创建和使用类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建Dog类"><span class="nav-number">1.1.</span> <span class="nav-text">创建Dog类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#根据类创建实例"><span class="nav-number">1.2.</span> <span class="nav-text">根据类创建实例</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用类和实例"><span class="nav-number">2.</span> <span class="nav-text">使用类和实例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Car类"><span class="nav-number">2.1.</span> <span class="nav-text">Car类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#给属性设置默认值"><span class="nav-number">2.2.</span> <span class="nav-text">给属性设置默认值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改属性的值"><span class="nav-number">2.3.</span> <span class="nav-text">修改属性的值</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建和使用类"><span class="nav-number">1.</span> <span class="nav-text">创建和使用类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建Dog类"><span class="nav-number">1.1.</span> <span class="nav-text">创建Dog类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#根据类创建实例"><span class="nav-number">1.2.</span> <span class="nav-text">根据类创建实例</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用类和实例"><span class="nav-number">2.</span> <span class="nav-text">使用类和实例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Car类"><span class="nav-number">2.1.</span> <span class="nav-text">Car类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#给属性设置默认值"><span class="nav-number">2.2.</span> <span class="nav-text">给属性设置默认值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改属性的值"><span class="nav-number">2.3.</span> <span class="nav-text">修改属性的值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#子类的方法-init"><span class="nav-number">3.1.</span> <span class="nav-text">子类的方法__init__()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#给子类定义属性和方法"><span class="nav-number">3.2.</span> <span class="nav-text">给子类定义属性和方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重写父类的方法"><span class="nav-number">3.3.</span> <span class="nav-text">重写父类的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将实例用作属性"><span class="nav-number">3.4.</span> <span class="nav-text">将实例用作属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入类"><span class="nav-number">4.</span> <span class="nav-text">导入类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#导入单个类"><span class="nav-number">4.1.</span> <span class="nav-text">导入单个类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在一个模块中存储多个类"><span class="nav-number">4.2.</span> <span class="nav-text">在一个模块中存储多个类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#从一个模块中导入多个类"><span class="nav-number">4.3.</span> <span class="nav-text">从一个模块中导入多个类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#导入整个模块"><span class="nav-number">4.4.</span> <span class="nav-text">导入整个模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#导入模块中的所有类"><span class="nav-number">4.5.</span> <span class="nav-text">导入模块中的所有类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在一个模块中导入另一个模块"><span class="nav-number">4.6.</span> <span class="nav-text">在一个模块中导入另一个模块</span></a></li></ol></li></ol></div>
             
 
           </div>

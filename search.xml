@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Python学习08天]]></title>
     <url>%2Fposts%2F63973%2F</url>
-    <content type="text"><![CDATA[主要内容： 类的基本介绍、创建和使用； 实例化类，设置属性和和修改等。 创建和使用类创建Dog类根据约定，在Python中，首字母大写的名称指的是类。 这个类定义中的括号是空的，因为我们要从空白创建这个类。类中的函数称为方法。 代码如下: 123456789101112class dog(): # 创建一个小狗的类 def _init_(self,name,age): # 初始化属性name和age self.name = name self.age = age def sit(self): # 模拟小狗被命令时蹲下 print(self.name.title() + " is now sitting !") def roll_over(self): # 打滚 print(self.name.title() + " rolled over!") __init__方法 __init__()是一个特殊的方法，每当你根据Dog类创建新实例时，Python都会自动运行它。在这个方法的名称中，开头和末尾各有两个下划线，这是一种约定，旨在避免Python默认方法与普通方法发生名称冲突。它包含了三个形参：self、name和age，在这个方法的定义中，形 参self必不可少，还必须位于其他形参的前面。 根据类创建实例可将类视为有关如何创建实例的说明。 代码示例: 123my_dog = Dog('demo',18)print(my_dog.name.title())print(my_dog.age) 访问属性 要访问实例的属性，可使用句点表示法。例如my_dog.name 调用方法 要调用方法，可指定实例的名称和要调用的方法，并用句点分隔它们。 代码示例： 123my_dog = Dog('demo', 6)my_dog.sit()my_dog.roll_over() 创建多个实例 12my_dog = Dog('demo', 6)you_dog = Dog('demo_go', 6) 使用类和实例类编写好后，你的大部分时间都将花在使用根据类创建的实例上。你需要执行的一个重要任务是修改实例的属性。你可以直接修改实例的属性，也可以编写方法以特定的方式进行修改。 Car类12345678910111213141516class Car(): # Car类 def __init__(self,name,model,year): # 初始化 self.name = name self.model = model self.year = year def get_descript(self): # 返回描述信息 long_name = str(self.year) + '---' + self.name + '---' + self.model return long_name.title() # 示例化my_car = Car('audi','A4','2016')print(my_car.get_descript()) 处理的结果是: 12016---Audi---A4 给属性设置默认值类中的每个属性都必须有初始值，哪怕这个值是0或空字符串。在有些情况下，如设置默认值时，在方法__init__()内指定这种初始值是可行的;如果你对某个属性这样做了，就无需包含为它提供初始值的形参。 在car类在__init__的方法新增属性self.odometer_reading = 0，同时新增一个方法read_odometer()： 123def read_odometer(self): # 打印一条指出汽车里程的消息 print("汽车的里程有：" + str(self.odometer_reading)) 调用该方法: 123my_car = Car('audi','A4','2016')print(my_car.get_descript())my_car.read_odometer() 修改属性的值可以以三种不同的方式修改属性的值：直接通过实例进行修改;通过方法进行设置;通过方法进行递增(增加特定的值)。 直接修改属性的值 代码如下： 1my_new_car.odometer_reading = 23 my_new_car.read_odometer() 有时候需要像这样直接访问属性，但其他时候需要编写对属性进行更新的方法。 通过方法修改属性的值 在Car类新增一个update_odometer()的方法，专门用来修改属性的值。 代码如下： 123def update_odometer(self,update_value): # 修改里程值 self.odometer_reading = update_value 在调用的时候就很简单了: 12my_new_car.update_odometer(66)my_new_car.read_odometer() 通过方法对属性的值进行递增 递增的逻辑其实很简单，只有将之前的记录保存并且和后面传入的值进行相加操作即可。 代码如下： 123def update_odometer(self,update_value): # 修改里程值 self.odometer_reading += update_value 调用方法： 1234my_new_car.update_odometer(6)my_new_car.read_odometer()my_new_car.update_odometer(1)my_new_car.read_odometer()]]></content>
+    <content type="text"><![CDATA[主要内容： 类的基本介绍、创建和使用； 实例化类，设置属性和和修改等。 创建和使用类创建Dog类根据约定，在Python中，首字母大写的名称指的是类。 这个类定义中的括号是空的，因为我们要从空白创建这个类。类中的函数称为方法。 代码如下: 123456789101112class dog(): # 创建一个小狗的类 def _init_(self,name,age): # 初始化属性name和age self.name = name self.age = age def sit(self): # 模拟小狗被命令时蹲下 print(self.name.title() + " is now sitting !") def roll_over(self): # 打滚 print(self.name.title() + " rolled over!") __init__方法 __init__()是一个特殊的方法，每当你根据Dog类创建新实例时，Python都会自动运行它。在这个方法的名称中，开头和末尾各有两个下划线，这是一种约定，旨在避免Python默认方法与普通方法发生名称冲突。它包含了三个形参：self、name和age，在这个方法的定义中，形 参self必不可少，还必须位于其他形参的前面。 根据类创建实例可将类视为有关如何创建实例的说明。 代码示例: 123my_dog = Dog('demo',18)print(my_dog.name.title())print(my_dog.age) 访问属性 要访问实例的属性，可使用句点表示法。例如my_dog.name 调用方法 要调用方法，可指定实例的名称和要调用的方法，并用句点分隔它们。 代码示例： 123my_dog = Dog('demo', 6)my_dog.sit()my_dog.roll_over() 创建多个实例 12my_dog = Dog('demo', 6)you_dog = Dog('demo_go', 6) 使用类和实例类编写好后，你的大部分时间都将花在使用根据类创建的实例上。你需要执行的一个重要任务是修改实例的属性。你可以直接修改实例的属性，也可以编写方法以特定的方式进行修改。 Car类12345678910111213141516class Car(): # Car类 def __init__(self,name,model,year): # 初始化 self.name = name self.model = model self.year = year def get_descript(self): # 返回描述信息 long_name = str(self.year) + '---' + self.name + '---' + self.model return long_name.title() # 示例化my_car = Car('audi','A4','2016')print(my_car.get_descript()) 处理的结果是: 12016---Audi---A4 给属性设置默认值类中的每个属性都必须有初始值，哪怕这个值是0或空字符串。在有些情况下，如设置默认值时，在方法__init__()内指定这种初始值是可行的;如果你对某个属性这样做了，就无需包含为它提供初始值的形参。 在car类在__init__的方法新增属性self.odometer_reading = 0，同时新增一个方法read_odometer()： 123def read_odometer(self): # 打印一条指出汽车里程的消息 print("汽车的里程有：" + str(self.odometer_reading)) 调用该方法: 123my_car = Car('audi','A4','2016')print(my_car.get_descript())my_car.read_odometer() 修改属性的值可以以三种不同的方式修改属性的值：直接通过实例进行修改;通过方法进行设置;通过方法进行递增(增加特定的值)。 直接修改属性的值 代码如下： 1my_new_car.odometer_reading = 23 my_new_car.read_odometer() 有时候需要像这样直接访问属性，但其他时候需要编写对属性进行更新的方法。 通过方法修改属性的值 在Car类新增一个update_odometer()的方法，专门用来修改属性的值。 代码如下： 123def update_odometer(self,update_value): # 修改里程值 self.odometer_reading = update_value 在调用的时候就很简单了: 12my_new_car.update_odometer(66)my_new_car.read_odometer() 通过方法对属性的值进行递增 递增的逻辑其实很简单，只有将之前的记录保存并且和后面传入的值进行相加操作即可。 代码如下： 123def update_odometer(self,update_value): # 修改里程值 self.odometer_reading += update_value 调用方法： 1234my_new_car.update_odometer(6)my_new_car.read_odometer()my_new_car.update_odometer(1)my_new_car.read_odometer() 继承编写类时，并非总是要从空白开始。如果你要编写的类是另一个现成类的特殊版本，可使用继承。一个类继承另一个类时，它将自动获得另一个类的所有属性和方法;原有的类称为父类，而新类称为子类。子类继承了其父类的所有属性和方法，同时还可以定义自己的属性和方法。 子类的方法__init__()创建子类的实例时，Python首先需要完成的任务是给父类的所有属性赋值。我们直接在上一节的汽车类基础上添加一个ElectricCar类，让它继承Car类。 123456789class ElectricCar(Car): # 电动汽车 def __init__(self,name,model,year): # 初始化父类的属性 super().__init__(name,model,year) # 示例化my_car = ElectricCar('dian', 'models', 2019)print(my_tesla.get_descriptive()) super()是一个特殊函数，帮助Python将父类和子类关联起来。这行代码让Python调用ElectricCar的父类的方法__init__()，让ElectricCar实例包含父类的所有属性。父类也称为超 类(superclass)，super因此而得名。 给子类定义属性和方法 让一个类继承另一个类后，可添加区分子类和父类所需的新属性和方法。和之前的定义属性和方法的逻辑类似，不做过多的阐述。可以理解为在子类里面可以自定义一些自己需要的方法或者属性。 重写父类的方法对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子类中定义一个这样的方法，即它与要重写的父类方法同名。这样，Python将不会考虑这个父类方法，而只关注你在子类中定义的相应方法。或者可以理解为在子类里面可以重写一个新的方法，重新赋值一个新的属性等。通俗的理解为：“取其精华，去其糟粕”。 将实例用作属性使用代码模拟实物时，你可能会发现自己给类添加的细节越来越多:属性和方法清单以及文 件都越来越长。在这种情况下，可能需要将类的一部分作为一个独立的类提取出来。你可以将大 型类拆分成多个协同工作的小类。 导入类导入单个类为了使项目代码的可读性更加高，使用该模块的程序都必须使用更具体的文件名。例如my_car.py。导入的方法和之前类似，具体语法结构如下： 1from model_name import Class_name 采用improt语句让Python打开模块car，并导入其中的Car类，剩下的就可以使用了。 导入类是一种有效的编程方式。如果在这个程序中包含了整个Car类，它该有多长呀!通过 将这个类移到一个模块中，并导入该模块，你依然可以使用其所有功能，但主程序文件变得整洁而易于阅读。 在一个模块中存储多个类也就是一个模块中可以有多个类，例如父类和子类。假设my_car.py有两个类，一个是父类Car，另一个是子类ElectricCar，那么在导入该模块时，可以选择导入某一个类。 代码示例： 1from model_name import Class_name 现在就可以进行示例化或者其他的操作了。 从一个模块中导入多个类和我们之前导入函数的时候原理一样，我们可以导入任意数量的类。导入模块多个类的时候，采用逗号拼接即可。语法如下： 1from model_name import Class_name0, Class_name1 导入之后，就可根据需要创建每个类的任意数量的实例。 导入整个模块导入整个模块的语法也特别的简单，具体如下： 1import model_name 这样就可以使用整个模块的任意类。 导入模块中的所有类导入多个就用逗号一个个区分，然后倒入所有的就用*代替。所以语法如下： 1from model_name import * 引用原文。 不推荐使用这种导入方式，其原因有二。首先，如果只要看一下文件开头的import语句，就能清楚地知道程序使用了哪些类，将大有裨益;但这种导入方式没有明确地指出你使用了模块中的哪些类。这种导入方式还可能引发名称方面的困惑。如果你不小心导入了一个与程序文件中其 他东西同名的类，将引发难以诊断的错误。这里之所以介绍这种导入方式，是因为虽然不推荐使 用这种方式，但你可能会在别人编写的代码中见到它。 需要从一个模块中导入很多类时，最好导入整个模块，并使用module_name.class_name语法来访问类。这样做时，虽然文件开头并没有列出用到的所有类，但你清楚地知道在程序的哪些地方使用了导入的模块;你还避免了导入模块中的每个类可能引发的名称冲突。 在一个模块中导入另一个模块有时候，需要将类分散到多个模块中，以免模块太大，或在同一个模块中存储不相关的类。将类存储在多个模块中时，你可能会发现一个模块中的类依赖于另一个模块中的类。在这种情况下，可在前一个模块中导入必要的类。 这部分的笔记实在是比较简单，没有过多的代码，逻辑上的问题基本在之前都涉及过了。如果不是特别了解，可以看看之前的文章，或者可以关注我，后续将继续更新。]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -129,8 +129,8 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>笔记</tag>
         <tag>阅读</tag>
+        <tag>笔记</tag>
         <tag>生活</tag>
       </tags>
   </entry>
@@ -143,8 +143,8 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>笔记</tag>
         <tag>阅读</tag>
+        <tag>笔记</tag>
         <tag>生活</tag>
       </tags>
   </entry>
@@ -405,8 +405,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>好好说话</tag>
         <tag>生活</tag>
+        <tag>好好说话</tag>
       </tags>
   </entry>
   <entry>
@@ -419,8 +419,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>好好说话</tag>
         <tag>生活</tag>
+        <tag>好好说话</tag>
         <tag>喜马拉雅</tag>
       </tags>
   </entry>
@@ -434,8 +434,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>好好说话</tag>
         <tag>生活</tag>
+        <tag>好好说话</tag>
         <tag>喜马拉雅</tag>
       </tags>
   </entry>
