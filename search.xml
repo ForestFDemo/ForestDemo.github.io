@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Python常用函数整理]]></title>
     <url>%2Fposts%2F26518%2F</url>
-    <content type="text"><![CDATA[主要内容： 异常的介绍和基本使用等。 文件和异常处理]]></content>
+    <content type="text"><![CDATA[主要内容： 字符串函数、集合函数、列表函数和字典函数。 Python常用函数字符串函数 方法 说明 capitalize() 返回首字母的大写副本 find(string) 返回字符串中首次出现参数string的索引，如果字符串中没有参数string则返回-1 find(s,beg) 返回字符串中索引beg之后首次出现参数s的索引，如果字符串中索引beg之后没有参数s则返回-1 find(s,beg,end) 返回字符串中索引beg与end之间首次出现参数s的索引，如果字符串中索引beg和end之间没有参数s则返回-1 islower() 测试所有字符是否均为小写形式 isupper() 测试所有字符是否均为大写形式 lower() 将所有字符穿华为小写形式并返回 replace(old,new) 将字符串中所有子串old替换为new并返回 split() 将空格分隔的单词以列表的形式返回 split(del) 将del分隔的子串以列表的形式返回 strip() 删除字符串两端的空白符并返回 strip(string) 删除字符串中的string并返回 upper() 将所有字符串转化为大写形式并返回 列表函数 方法 说明 len(L) 返回列表L中的元素数量 max(L) 返回列表L中的最大值 min(L) 返回列表L中的最小值 sum(L) 返回列表L中所有元素的和 集合函数 方法 运算符 说明 add 往集合中添加一个元素 clear 移除集合中的所有元素 difference - 根据一个集合中不存在于另一个集合中的元素，创建中一个新的集合 intersection &amp; 根据两个集合中共有的元素，创建出一个新的集合 issubset &lt;= 判断一个集合的所有元素是否都包含于另一个集合 issuperset &gt;= 判断一个集合是否包含了另一个集合中的所有元素 remove 移除集合中的一个元素 symmetric_difference ^ 根据两个集合中所有不存在于对方的元素，创建出一个新的集合 union 根据两个集合中所有的元素，创建出一个新的集合 字典函数 方法 说明 clear 清空字典内容 get 返回关键字所关联的值，如果指定键不存在，则返回默认值 keys 以列表的形式返回字典中的所有键。所得列表中的每个条目肯定是唯一的 items 返回（key,value）列表 values 以列表的形式返回字典中的所有值。所得列表中的每个条目不一定是唯一的 update 用另一个字典的内容对当前字典进行更新]]></content>
       <categories>
         <category>Python</category>
       </categories>

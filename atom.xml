@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2018-03-27T03:32:52.316Z</updated>
+  <updated>2018-03-27T03:38:32.010Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://chensenlin.cn/posts/26518/"/>
     <id>https://chensenlin.cn/posts/26518/</id>
     <published>2018-03-27T03:32:52.000Z</published>
-    <updated>2018-03-27T03:32:52.316Z</updated>
+    <updated>2018-03-27T03:38:32.010Z</updated>
     
-    <content type="html"><![CDATA[<p>主要内容：</p><p>异常的介绍和基本使用等。</p><a id="more"></a><h3 id="文件和异常处理"><a href="#文件和异常处理" class="headerlink" title="文件和异常处理"></a>文件和异常处理</h3>]]></content>
+    <content type="html"><![CDATA[<p>主要内容：</p><p>字符串函数、集合函数、列表函数和字典函数。</p><a id="more"></a><h3 id="Python常用函数"><a href="#Python常用函数" class="headerlink" title="Python常用函数"></a>Python常用函数</h3><h4 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h4><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>capitalize()</td><td>返回首字母的大写副本</td></tr><tr><td>find(string)</td><td>返回字符串中首次出现参数string的索引，如果字符串中没有参数string则返回-1</td></tr><tr><td>find(s,beg)</td><td>返回字符串中索引beg之后首次出现参数s的索引，如果字符串中索引beg之后没有参数s则返回-1</td></tr><tr><td>find(s,beg,end)</td><td>返回字符串中索引beg与end之间首次出现参数s的索引，如果字符串中索引beg和end之间没有参数s则返回-1</td></tr><tr><td>islower()</td><td>测试所有字符是否均为小写形式</td></tr><tr><td>isupper()</td><td>测试所有字符是否均为大写形式</td></tr><tr><td>lower()</td><td>将所有字符穿华为小写形式并返回</td></tr><tr><td>replace(old,new)</td><td>将字符串中所有子串old替换为new并返回</td></tr><tr><td>split()</td><td>将空格分隔的单词以列表的形式返回</td></tr><tr><td>split(del)</td><td>将del分隔的子串以列表的形式返回</td></tr><tr><td>strip()</td><td>删除字符串两端的空白符并返回</td></tr><tr><td>strip(string)</td><td>删除字符串中的string并返回</td></tr><tr><td>upper()</td><td>将所有字符串转化为大写形式并返回</td></tr></tbody></table><h4 id="列表函数"><a href="#列表函数" class="headerlink" title="列表函数"></a>列表函数</h4><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>len(L)</td><td>返回列表L中的元素数量</td></tr><tr><td>max(L)</td><td>返回列表L中的最大值</td></tr><tr><td>min(L)</td><td>返回列表L中的最小值</td></tr><tr><td>sum(L)</td><td>返回列表L中所有元素的和</td></tr></tbody></table><h4 id="集合函数"><a href="#集合函数" class="headerlink" title="集合函数"></a>集合函数</h4><table><thead><tr><th>方法</th><th>运算符</th><th>说明</th></tr></thead><tbody><tr><td>add</td><td></td><td>往集合中添加一个元素</td></tr><tr><td>clear</td><td></td><td>移除集合中的所有元素</td></tr><tr><td>difference</td><td>-</td><td>根据一个集合中不存在于另一个集合中的元素，创建中一个新的集合</td></tr><tr><td>intersection</td><td>&amp;</td><td>根据两个集合中共有的元素，创建出一个新的集合</td></tr><tr><td>issubset</td><td>&lt;=</td><td>判断一个集合的所有元素是否都包含于另一个集合</td></tr><tr><td>issuperset</td><td>&gt;=</td><td>判断一个集合是否包含了另一个集合中的所有元素</td></tr><tr><td>remove</td><td></td><td>移除集合中的一个元素</td></tr><tr><td>symmetric_difference</td><td>^</td><td>根据两个集合中所有不存在于对方的元素，创建出一个新的集合</td></tr><tr><td>union</td><td></td><td>根据两个集合中所有的元素，创建出一个新的集合</td></tr></tbody></table><h4 id="字典函数"><a href="#字典函数" class="headerlink" title="字典函数"></a>字典函数</h4><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>clear</td><td>清空字典内容</td></tr><tr><td>get</td><td>返回关键字所关联的值，如果指定键不存在，则返回默认值</td></tr><tr><td>keys</td><td>以列表的形式返回字典中的所有键。所得列表中的每个条目肯定是唯一的</td></tr><tr><td>items</td><td>返回（key,value）列表</td></tr><tr><td>values</td><td>以列表的形式返回字典中的所有值。所得列表中的每个条目不一定是唯一的</td></tr><tr><td>update</td><td>用另一个字典的内容对当前字典进行更新</td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;主要内容：&lt;/p&gt;
-&lt;p&gt;异常的介绍和基本使用等。&lt;/p&gt;
+&lt;p&gt;字符串函数、集合函数、列表函数和字典函数。&lt;/p&gt;
     
     </summary>
     
