@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="Python,学习," />
+  <meta name="keywords" content="Python,学习,数据采集,爬虫," />
 
 
 
@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="主要内容： 字符串函数、集合函数、列表函数和字典函数。">
-<meta name="keywords" content="Python,学习">
+<meta name="description" content="主要内容： 网络相关知识； BeautifulSoup介绍和使用。">
+<meta name="keywords" content="Python,学习,数据采集,爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python常用函数整理">
-<meta property="og:url" content="https://chensenlin.cn/posts/26518/index.html">
+<meta property="og:url" content="https://chensenlin.cn/posts/26519/index.html">
 <meta property="og:site_name" content="你好我是森林">
-<meta property="og:description" content="主要内容： 字符串函数、集合函数、列表函数和字典函数。">
+<meta property="og:description" content="主要内容： 网络相关知识； BeautifulSoup介绍和使用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T03:40:34.309Z">
+<meta property="og:updated_time" content="2018-03-27T09:06:34.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python常用函数整理">
-<meta name="twitter:description" content="主要内容： 字符串函数、集合函数、列表函数和字典函数。">
+<meta name="twitter:description" content="主要内容： 网络相关知识； BeautifulSoup介绍和使用。">
 
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="https://chensenlin.cn/posts/26518/"/>
+  <link rel="canonical" href="https://chensenlin.cn/posts/26519/"/>
 
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chensenlin.cn/posts/26518/">
+    <link itemprop="mainEntityOfPage" href="https://chensenlin.cn/posts/26519/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="你好我是森林">
@@ -316,7 +316,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T11:32:52+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T17:05:32+08:00">
                 2018-03-27
               </time>
             
@@ -353,9 +353,9 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共680 字</span>
+            <span>全文共1,490 字</span>
             &nbsp; | &nbsp;
-            <span>阅读时长2 分钟</span>
+            <span>阅读时长6 分钟</span>
           </span>
           
 
@@ -366,9 +366,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/26518/#comments" itemprop="discussionUrl">
+                <a href="/posts/26519/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="posts/26518/" itemprop="commentCount"></span>
+                        data-disqus-identifier="posts/26519/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,186 +397,49 @@
 
       
         <p>主要内容：</p>
-<p>字符串函数、集合函数、列表函数和字典函数。</p>
+<p>网络相关知识；</p>
+<p><code>BeautifulSoup</code>介绍和使用。</p>
 <a id="more"></a>
-<h3 id="Python常用函数"><a href="#Python常用函数" class="headerlink" title="Python常用函数"></a>Python常用函数</h3><h4 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h4><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>capitalize()</td>
-<td>返回首字母的大写副本</td>
-</tr>
-<tr>
-<td>find(string)</td>
-<td>返回字符串中首次出现参数string的索引，如果字符串中没有参数string则返回-1</td>
-</tr>
-<tr>
-<td>find(s,beg)</td>
-<td>返回字符串中索引beg之后首次出现参数s的索引，如果字符串中索引beg之后没有参数s则返回-1</td>
-</tr>
-<tr>
-<td>find(s,beg,end)</td>
-<td>返回字符串中索引beg与end之间首次出现参数s的索引，如果字符串中索引beg和end之间没有参数s则返回-1</td>
-</tr>
-<tr>
-<td>islower()</td>
-<td>测试所有字符是否均为小写形式</td>
-</tr>
-<tr>
-<td>isupper()</td>
-<td>测试所有字符是否均为大写形式</td>
-</tr>
-<tr>
-<td>lower()</td>
-<td>将所有字符穿华为小写形式并返回</td>
-</tr>
-<tr>
-<td>replace(old,new)</td>
-<td>将字符串中所有子串old替换为new并返回</td>
-</tr>
-<tr>
-<td>split()</td>
-<td>将空格分隔的单词以列表的形式返回</td>
-</tr>
-<tr>
-<td>split(del)</td>
-<td>将del分隔的子串以列表的形式返回</td>
-</tr>
-<tr>
-<td>strip()</td>
-<td>删除字符串两端的空白符并返回</td>
-</tr>
-<tr>
-<td>strip(string)</td>
-<td>删除字符串中的string并返回</td>
-</tr>
-<tr>
-<td>upper()</td>
-<td>将所有字符串转化为大写形式并返回</td>
-</tr>
-</tbody>
-</table>
-<h4 id="列表函数"><a href="#列表函数" class="headerlink" title="列表函数"></a>列表函数</h4><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>len(L)</td>
-<td>返回列表L中的元素数量</td>
-</tr>
-<tr>
-<td>max(L)</td>
-<td>返回列表L中的最大值</td>
-</tr>
-<tr>
-<td>min(L)</td>
-<td>返回列表L中的最小值</td>
-</tr>
-<tr>
-<td>sum(L)</td>
-<td>返回列表L中所有元素的和</td>
-</tr>
-</tbody>
-</table>
-<h4 id="集合函数"><a href="#集合函数" class="headerlink" title="集合函数"></a>集合函数</h4><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>运算符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>add</td>
-<td></td>
-<td>往集合中添加一个元素</td>
-</tr>
-<tr>
-<td>clear</td>
-<td></td>
-<td>移除集合中的所有元素</td>
-</tr>
-<tr>
-<td>difference</td>
-<td>-</td>
-<td>根据一个集合中不存在于另一个集合中的元素，创建中一个新的集合</td>
-</tr>
-<tr>
-<td>intersection</td>
-<td>&amp;</td>
-<td>根据两个集合中共有的元素，创建出一个新的集合</td>
-</tr>
-<tr>
-<td>issubset</td>
-<td>&lt;=</td>
-<td>判断一个集合的所有元素是否都包含于另一个集合</td>
-</tr>
-<tr>
-<td>issuperset</td>
-<td>&gt;=</td>
-<td>判断一个集合是否包含了另一个集合中的所有元素</td>
-</tr>
-<tr>
-<td>remove</td>
-<td></td>
-<td>移除集合中的一个元素</td>
-</tr>
-<tr>
-<td>symmetric_difference</td>
-<td>^</td>
-<td>根据两个集合中所有不存在于对方的元素，创建出一个新的集合</td>
-</tr>
-<tr>
-<td>union</td>
-<td></td>
-<td>根据两个集合中所有的元素，创建出一个新的集合</td>
-</tr>
-</tbody>
-</table>
-<h4 id="字典函数"><a href="#字典函数" class="headerlink" title="字典函数"></a>字典函数</h4><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>clear</td>
-<td>清空字典内容</td>
-</tr>
-<tr>
-<td>get</td>
-<td>返回关键字所关联的值，如果指定键不存在，则返回默认值</td>
-</tr>
-<tr>
-<td>keys</td>
-<td>以列表的形式返回字典中的所有键。所得列表中的每个条目肯定是唯一的</td>
-</tr>
-<tr>
-<td>items</td>
-<td>返回（key,value）列表</td>
-</tr>
-<tr>
-<td>values</td>
-<td>以列表的形式返回字典中的所有值。所得列表中的每个条目不一定是唯一的</td>
-</tr>
-<tr>
-<td>update</td>
-<td>用另一个字典的内容对当前字典进行更新</td>
-</tr>
-</tbody>
-</table>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>开始本系列的文章时，可能你需要了解一下<code>Python</code>的基础知识，熟悉<code>Python</code>的基本编程，了解一些网络知识等。如果不是特别了解，可以看看我的<code>Python</code>基础系列文章。</p>
+<h3 id="创建爬虫"><a href="#创建爬虫" class="headerlink" title="创建爬虫"></a>创建爬虫</h3><h4 id="网络链接"><a href="#网络链接" class="headerlink" title="网络链接"></a>网络链接</h4><p>网络浏览器是一个非常有用的应用，它创建信息的数据包，发送它们，然后把你获取的数据解释成漂亮的图像、声音、视频和文字。但是，网络浏览器就是代码，而代码是可以分解的，可以分解成许多基本组件，可重写、重用，以及做成我们想要的任何东西。网络浏览器可以让服务器发送一些数据，到那些对接无线(或有线)网络接口的应用上， 但是许多语言也都有实现这些功能的库文件。关于浏览器的相关介绍，可以参考维基关于<a href="https://zh.wikipedia.org/wiki/网页浏览器" target="_blank" rel="noopener">浏览器</a>的官方介绍。</p>
+<p><code>Python</code>实现抓取网页。新建文件为<code>urllib_request.py</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找 Python 的 request 模块(在 urllib 库里面)，并导入 urlopen 函数</span></span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line">html = urlopen(<span class="string">"http://www.baidu.cn"</span>)</span><br><span class="line">print(html.read())</span><br></pre></td></tr></table></figure>
+<p>执行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python urllib_request.py</span><br></pre></td></tr></table></figure>
+<p>在进行数据抓取时需要保证能够与该网页的连通性，可以尝试用<code>ping</code>的方式进行测试。这里我采用的是抓取百度的首页数据。返回的是百度首页的全部<code>HTML</code>代码。</p>
+<p><code>urllib</code> 是<code>Python</code>的标准库，包含了从网络请求数据，处理<code>cookie</code>，甚至改变像请求头和用户代理这些元数据的函数。<code>urlopen</code>用来打开并读取一个从网络获取的远程对象。<code>urlib</code>的<a href="https://docs.python.org/3/library/urllib.html" target="_blank" rel="noopener">文档地址</a>。</p>
+<blockquote>
+<p>标准库：不用额外安装的库就可以直接运行。</p>
+</blockquote>
+<h4 id="BeautifulSoup简介"><a href="#BeautifulSoup简介" class="headerlink" title="BeautifulSoup简介"></a>BeautifulSoup简介</h4><p><code>BeautifulSoup</code>通过定位<code>HTML</code>标签来格式化和组织复杂的网络信息，用简单易用的<code>Python</code>对象为我们展现<code>XML</code>结构信息。</p>
+<h5 id="安装BeautifulSoup"><a href="#安装BeautifulSoup" class="headerlink" title="安装BeautifulSoup"></a>安装BeautifulSoup</h5><p><code>BeautifulSoup</code>并不是标准库，所以需要通过安装后来使用。本人采用<code>Mac</code>的系统，同时已经安装了<code>pip</code>，所以直接可以采用<code>pip</code>来安装即可，不过需要注意版本问题。</p>
+<p><code>Mac</code>安装<code>BeautifulSoup</code>方法：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> beautifulsoup4</span><br></pre></td></tr></table></figure>
+<p>如果没有报错可以验证一下是否安装成功。验证的方式有很多。这里我举例两种最常用的验证方式。</p>
+<p>第一种验证方式：终端直接查看包是否存在。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze | grep beautifulsoup4</span><br></pre></td></tr></table></figure>
+<p>如果输出：<code>beautifulsoup4==4.6.0</code>,表示已经有了，只不过版本可能会不一致，但是模块名是一致的。</p>
+<p>第二种验证方式：进入<code>python</code>界面，然后倒入某一个函数看看是否报错，或者直接写代码执行一下。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  day0 python</span><br><span class="line">Python 3.6.4 (default, Mar  1 2018, 18:36:50)</span><br><span class="line">[GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.39.2)] on darwin</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">from</span> bs4 import BeautifulSoup</span><br><span class="line">&gt;&gt;&gt; exit();</span><br></pre></td></tr></table></figure>
+<p>综上所述，两种验证方式都通过了，说明现在已经安装完成且可以使用了。</p>
+<blockquote>
+<p>这里的安装是全局安装，如果在实际开发中不同的项目可能会有不同的环境或者版本要求，甚至会产生冲突，现在就就需要的能够支持多种的环境的需求，可以用虚拟环境保存库文件。安装一个<code>Python</code>虚拟环境来分而治之。具体的使用方法这里不做过多阐述，后续会有对应的更新，你可以关注我就可以收到更新提示。</p>
+</blockquote>
+<h5 id="运行BeautifulSoup"><a href="#运行BeautifulSoup" class="headerlink" title="运行BeautifulSoup"></a>运行BeautifulSoup</h5><p>结合之前抓取百度首页的代码，现在针对某网站的某文件进行抓取。如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = urlopen(<span class="string">"http://www.pythonscraping.com/pages/page1.html"</span>) </span><br><span class="line">bsObj = BeautifulSoup(html.read(),<span class="string">'lxml'</span>)</span><br><span class="line">print(bsObj.h1)</span><br></pre></td></tr></table></figure>
+<p>运行后就得到了该网页的标题。如下：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  day0 <span class="keyword">python</span> request.<span class="keyword">py</span></span><br><span class="line"><span class="symbol">&lt;h1&gt;</span>An Interesting Title&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+<p>这就是根据网页的源码得到了该网页的标题。未来可以通过正则等方式获取。</p>
+<h5 id="可靠的网络连接"><a href="#可靠的网络连接" class="headerlink" title="可靠的网络连接"></a>可靠的网络连接</h5><p>数据采集的问题在于保证程序与目标网站的服务器一直保持通信，否则的话爬虫就不会继续工作了。这个时候就需要进行网络异常处理。</p>
+<p>例如我们上一节的代码中有下面一行代码：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">html</span> = urlopen(<span class="string">"http://www.pythonscraping.com/pages/page1.html"</span>)</span><br></pre></td></tr></table></figure>
+<p>这里面会出现两个问题，服务器不存在或者这个页面不存在。也就是要么<code>404</code>,要么<code>500</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    html = urlopen(<span class="string">"http://www.pythonscraping.com/pages/page1.html"</span>)</span><br><span class="line"><span class="keyword">except</span> HTTPError <span class="keyword">as</span> e: </span><br><span class="line">    print(e)</span><br><span class="line">    <span class="comment"># 返回空值，中断程序，或者执行另一个方案 </span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="comment"># 程序继续。注意:如果你已经在上面异常捕捉那一段代码里返回或中断(break)， </span></span><br><span class="line">    <span class="comment"># 那么就不需要使用else语句了，这段代码也不会执行</span></span><br></pre></td></tr></table></figure>
+<p>也有可能获取的时候，该html页面就是一个空的，是不是又需要增加判断呢？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> html <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">    print(<span class="string">"URL is not found"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="comment"># 程序继续</span></span><br></pre></td></tr></table></figure>
+<p>获取到了内容，是不是需要继续判断一下该内容是否为我们所需要的内容呢？所以需要增加一个检查标签是否存在判断。</p>
+<p>最后我们的判断是不是看起来代码特别的累赘，我们简单整理一下后，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> urllib.error <span class="keyword">import</span> HTTPError</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getTitle</span><span class="params">(url)</span>:</span> </span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            html = urlopen(url) </span><br><span class="line">        <span class="keyword">except</span> HTTPError <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span> </span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            bsObj = BeautifulSoup(html.read())</span><br><span class="line">            title = bsObj.body.h1 </span><br><span class="line">        <span class="keyword">except</span> AttributeError <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">return</span> title</span><br><span class="line">    </span><br><span class="line">title = getTitle(<span class="string">"http://www.pythonscraping.com/pages/page1.html"</span>) </span><br><span class="line"><span class="keyword">if</span> title == <span class="keyword">None</span>:</span><br><span class="line">    print(<span class="string">"Title could not be found"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(title)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -597,7 +460,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>链接：</strong>
-    <a href="https://chensenlin.cn/posts/26518/" title="Python常用函数整理">https://chensenlin.cn/posts/26518/</a>
+    <a href="https://chensenlin.cn/posts/26519/" title="Python常用函数整理">https://chensenlin.cn/posts/26519/</a>
   </li>
   <li class="post-copyright-license">
     <strong>声明： </strong>
@@ -616,6 +479,10 @@
           
             <a href="/tags/学习/" rel="tag"><i class="fa fa-tag"></i> 学习</a>
           
+            <a href="/tags/数据采集/" rel="tag"><i class="fa fa-tag"></i> 数据采集</a>
+          
+            <a href="/tags/爬虫/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
+          
         </div>
       
 
@@ -627,8 +494,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/1508/" rel="next" title="Python基础学习09天">
-                <i class="fa fa-chevron-left"></i> Python基础学习09天
+              <a href="/posts/26518/" rel="next" title="Python常用函数整理">
+                <i class="fa fa-chevron-left"></i> Python常用函数整理
               </a>
             
           </div>
@@ -636,10 +503,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/26519/" rel="prev" title="Python常用函数整理">
-                Python常用函数整理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -826,7 +689,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python常用函数"><span class="nav-number">1.</span> <span class="nav-text">Python常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串函数"><span class="nav-number">1.1.</span> <span class="nav-text">字符串函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表函数"><span class="nav-number">1.2.</span> <span class="nav-text">列表函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合函数"><span class="nav-number">1.3.</span> <span class="nav-text">集合函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典函数"><span class="nav-number">1.4.</span> <span class="nav-text">字典函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建爬虫"><span class="nav-number">2.</span> <span class="nav-text">创建爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网络链接"><span class="nav-number">2.1.</span> <span class="nav-text">网络链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BeautifulSoup简介"><span class="nav-number">2.2.</span> <span class="nav-text">BeautifulSoup简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装BeautifulSoup"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装BeautifulSoup</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运行BeautifulSoup"><span class="nav-number">2.2.2.</span> <span class="nav-text">运行BeautifulSoup</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#可靠的网络连接"><span class="nav-number">2.2.3.</span> <span class="nav-text">可靠的网络连接</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1016,8 +879,8 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://chensenlin.cn/posts/26518/';
-          this.page.identifier = 'posts/26518/';
+          this.page.url = 'https://chensenlin.cn/posts/26519/';
+          this.page.identifier = 'posts/26519/';
           this.page.title = 'Python常用函数整理';
         };
         var d = document, s = d.createElement('script');
