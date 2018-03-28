@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1262381-c7d9e1d05807408e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1262381-b304361decaa8763.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1262381-398aedc12f2fbc3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-03-28T11:17:01.641Z">
+<meta property="og:updated_time" content="2018-03-28T11:25:22.160Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python网络数据采集之HTML解析|第01天">
 <meta name="twitter:description" content="主要内容： BeautifulSoup使用和find()和find_all()； 正则表达式和BeautifulSoup结合使用； Lambda表达式介绍。">
@@ -482,7 +482,7 @@
 <h4 id="获取属性"><a href="#获取属性" class="headerlink" title="获取属性"></a>获取属性</h4><p>在网络数据采集时你经常不需要查找标签的内容，而是需要查找标签属性。比如标签 <code>&lt;a&gt;</code>指向 的 <code>URL</code> 链接包含在 <code>href</code>属性中，或者 <code>&lt;img&gt;</code>标签的图片文件包含在 <code>src</code> 属性中。</p>
 <p>对于一个标签对象，可以用<code>myTag.attrs</code>获取它的全部属性,要注意这行代码返回的是一个 <code>Python</code> 字典对象，可以获取和操作这些属性。例如要获取图片的资源位置 <code>src</code>，可以用<code>myImgTag.attrs[&quot;src&quot;]</code>获取。</p>
 <h4 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h4><p><code>Lambda</code>表达式本质上是一个函数，可以作为其他函数的变量使用;也就是说，一个函数不是定义成 <code>f(x, y)</code>，而是定义成 <code>f(g(x), y)</code>，或 <code>f(g(x), h(x))</code> 的形式。</p>
-<p><code>BeautifulSoup</code> 允许我们把特定函数类型当作 <code>findAll</code> 函数的参数。唯一的限制条件是这些 函数必须把一个标签作为参数且返回结果是布尔类型。<code>BeautifulSoup</code>用这个函数来评估它遇到的每个标签对象，最后把评估结果为“真”的标签保留，把其他标签剔除。</p>
+<p><code>BeautifulSoup</code> 允许我们把特定函数类型当作 <code>findAll</code> 函数的参数。唯一的限制条件是这些函数必须把一个标签作为参数且返回结果是布尔类型。<code>BeautifulSoup</code>用这个函数来评估它遇到的每个标签对象，最后把评估结果为“真”的标签保留，把其他标签剔除。</p>
 
       
     </div>
