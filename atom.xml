@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2018-03-28T11:25:22.160Z</updated>
+  <updated>2018-03-29T11:44:20.407Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python网络数据采集之创建爬虫|第02天</title>
+    <link href="https://chensenlin.cn/posts/38026/"/>
+    <id>https://chensenlin.cn/posts/38026/</id>
+    <published>2018-03-29T11:43:03.000Z</published>
+    <updated>2018-03-29T11:44:20.407Z</updated>
+    
+    <content type="html"><![CDATA[<p>主要内容：</p><p>单个域名和网站的采集；</p><p>互联网采集和用Scrapy采集初步介绍。 </p><a id="more"></a><h3 id="开始采集"><a href="#开始采集" class="headerlink" title="开始采集"></a>开始采集</h3><p>网络爬虫是可以根据递归方式。为了找到<code>URL</code> 链接，它们必须首先获取网页内容，检查这个页面的内容，再寻找另一个 <code>URL</code>，然后获取 <code>URL</code>对应的网页内容，不断循环这一过程。</p><h4 id="遍历单个域名"><a href="#遍历单个域名" class="headerlink" title="遍历单个域名"></a>遍历单个域名</h4><p>以抓取维基百科的<code>Kevin Baco</code>为例，实现简单的数据爬取。代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup </span><br><span class="line"></span><br><span class="line">html = urlopen(<span class="string">'http://en.wikipedia.org/wiki/Kevin_Bacon'</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> bs.find_all(<span class="string">'a'</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'href'</span> <span class="keyword">in</span> link.attrs:</span><br><span class="line">        print(link.attrs[<span class="string">'href'</span>])</span><br></pre></td></tr></table></figure><p>上述代码就获取维基百科网站的任何页面并提取页面链接。去掉我们不需要的词条，进行改进获取词条链接。代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen </span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup </span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">html = urlopen(<span class="string">'http://en.wikipedia.org/wiki/Kevin_Bacon'</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> bs.find(<span class="string">'div'</span>, &#123;<span class="string">'id'</span>:<span class="string">'bodyContent'</span>&#125;).find_all(</span><br><span class="line">    <span class="string">'a'</span>, href=re.compile(<span class="string">'^(/wiki/)((?!:).)*$'</span>)):</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'href'</span> <span class="keyword">in</span> link.attrs:</span><br><span class="line">        print(link.attrs[<span class="string">'href'</span>])</span><br></pre></td></tr></table></figure><p>如果我们要做到一个函数<code>getLinks</code>，可以用维基百科词条<code>/wiki/&lt;词条名称&gt;</code>形式的<code>URL</code>链接作为参数，然后以同样的形式返回一个列表，里面包含所有的词条 <code>URL</code> 链接。一个主函数，以某个起始词条为参数调用<code>getLinks</code>，再从返回的<code>URL</code>列表里随机选择一个词条链接，再调用 <code>getLinks</code>，直到我们主动停止，或者在新的页面上没有词条链接了，程序才停止运行。<br>完善后代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">random.seed(datetime.datetime.now())</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getLinks</span><span class="params">(articleUrl)</span>:</span></span><br><span class="line">    html = urlopen(<span class="string">'http://en.wikipedia.org&#123;&#125;'</span>.format(articleUrl))</span><br><span class="line">    bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">    <span class="keyword">return</span> bs.find(<span class="string">'div'</span>, &#123;<span class="string">'id'</span>:<span class="string">'bodyContent'</span>&#125;).find_all(<span class="string">'a'</span>, href=re.compile(<span class="string">'^(/wiki/)((?!:).)*$'</span>))</span><br><span class="line"></span><br><span class="line">links = getLinks(<span class="string">'/wiki/Kevin_Bacon'</span>)</span><br><span class="line"><span class="keyword">while</span> len(links) &gt; <span class="number">0</span>:</span><br><span class="line">    newArticle = links[random.randint(<span class="number">0</span>, len(links)<span class="number">-1</span>)].attrs[<span class="string">'href'</span>]</span><br><span class="line">    print(newArticle)</span><br><span class="line">    links = getLinks(newArticle)</span><br></pre></td></tr></table></figure><h4 id="遍历整个网络"><a href="#遍历整个网络" class="headerlink" title="遍历整个网络"></a>遍历整个网络</h4><p>采集整个网站，那是非常耗费内存资源的过程，尤其是处理大型网站时，最合适的工具就是用一个数据库来储存采集的资源。</p><p>遍历整个网络的数据好处：可以生产网站地图，收集网站数据等。但是一般不会消耗大量的内存资源去做采集，本节的意义不大。</p><h4 id="通过互联网采集"><a href="#通过互联网采集" class="headerlink" title="通过互联网采集"></a>通过互联网采集</h4><p>建立网络地图，需要从一个链接跳转到另一个链接，逐步建立网站的地图信息，从而达到一个合适的网站地图，于此同时我们也不能忽略外链，从一个链接跳转到另一个链接的场景也会时有发生。相比之前的单域名采集，互联网采集的难度要高很多，所以，要求我们的寻找信息的方式和采集信息的方式都应该极具灵活性，以此达到理想的采集效果。</p><p>在做数据采集之前最好能够确定自己采集的内容，明确目标，然后根据目标的展示形式去分析，该网站是否会跳转其他的链接，是否需要继续采集等各个因素。</p><p>如果采集一个网站，有时候也会考虑到网络重定向的问题，例如我的个人博客原来链接是：<code>https://forestfdemo.github.io</code>,但是我做了一个网络的重定向，我将<code>https://chensenlin.cn</code>，重定向到原来的链接，这样无论是访问哪一个链接其本质都跳转到原来的链接，此时需要了解的是网络重定向的时候，我们采集的<code>URL</code>地址会发生变化，在<code>Python3.X</code>的版本中，我们的<code>urllib</code>会帮我完成重定向的功能。</p><h4 id="用Scrapy采集"><a href="#用Scrapy采集" class="headerlink" title="用Scrapy采集"></a>用Scrapy采集</h4><p><code>Scrapy</code>就是一个可以大幅度降低我们对网页链接查找和识别工作复杂度的<code>Python</code> 库，它可以让你轻松地采集一个或多个域名的信息。</p><blockquote><p>目前<code>Scrapy</code>仅支持<code>Python 2.7</code>，还不支持 <code>Python 3.x</code>。</p></blockquote><p>利用<code>Scrapy</code>进行爬虫项目还是有一些设置，我们可以采用<a href="http://scrapy.org/download/" target="_blank" rel="noopener">官网</a>下载，也可以采用<code>pip</code>进行安装，检验安装的方法在之前的<code>Python</code>基础系列的文章有提到过。这里不做过多的阐述。</p><p>创建一个项目：</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">➜  python scrapy startproject demourl</span><br><span class="line">New Scrapy project <span class="string">'demourl'</span>, <span class="keyword">using</span> template <span class="built_in">directory</span> <span class="string">'/usr/local/lib/python3.6/site-packages/scrapy/templates/project'</span>, created <span class="keyword">in</span>:</span><br><span class="line">    /Users/demo/Project/python/demourl</span><br><span class="line"></span><br><span class="line">You can <span class="built_in">start</span> your <span class="keyword">first</span> spider <span class="keyword">with</span>:</span><br><span class="line">    cd demourl</span><br><span class="line">    scrapy genspider example example.com</span><br></pre></td></tr></table></figure><p>我们查看一下目录结构：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">➜  demourl tree ./</span><br><span class="line">./</span><br><span class="line">├── [drwxr-xr-x]  demourl</span><br><span class="line">│   ├── [-rw-r--r--]  __init__.py</span><br><span class="line">│   ├── [drwxr-xr-x]  __pycache__</span><br><span class="line">│   ├── [-rw-r--r--]  items.py</span><br><span class="line">│   ├── [-rw-r--r--]  middlewares.py</span><br><span class="line">│   ├── [-rw-r--r--]  pipelines.py</span><br><span class="line">│   ├── [-rw-r--r--]  settings.py</span><br><span class="line">│   └── [drwxr-xr-x]  spiders</span><br><span class="line">│       ├── [-rw-r--r--]  __init__.py</span><br><span class="line">│       └── [drwxr-xr-x]  __pycache__</span><br><span class="line">└── [-rw-r--r--]  scrapy.cfg</span><br><span class="line"></span><br><span class="line">4 directories, 7 files</span><br></pre></td></tr></table></figure><p>关于<code>Scrapy</code>的内容我们后续逐一介绍，大家可以点击关注，及时收到后续更新。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;主要内容：&lt;/p&gt;
+&lt;p&gt;单个域名和网站的采集；&lt;/p&gt;
+&lt;p&gt;互联网采集和用Scrapy采集初步介绍。 &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://chensenlin.cn/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://chensenlin.cn/tags/Python/"/>
+    
+      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="数据采集" scheme="https://chensenlin.cn/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/"/>
+    
+      <category term="爬虫" scheme="https://chensenlin.cn/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>Python网络数据采集之HTML解析|第01天</title>
@@ -428,9 +458,9 @@
     
       <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
       <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
@@ -456,9 +486,9 @@
     
       <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
       <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
@@ -532,33 +562,6 @@
 &lt;li&gt;听众来了，昏昏欲睡&lt;/li&gt;
 &lt;li&gt;听完没什么影响&lt;/li&gt;
 &lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="好好说话" scheme="https://chensenlin.cn/tags/%E5%A5%BD%E5%A5%BD%E8%AF%B4%E8%AF%9D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《好好说话》笔记之用提问提逼格</title>
-    <link href="https://chensenlin.cn/posts/19031/"/>
-    <id>https://chensenlin.cn/posts/19031/</id>
-    <published>2016-12-01T15:22:04.000Z</published>
-    <updated>2018-03-19T08:57:56.953Z</updated>
-    
-    <content type="html"><![CDATA[<p>重要场景:</p><p>公司面试最后一句：你对我们公司有什么问题？</p><a id="more"></a><h3 id="提出有价值的问题"><a href="#提出有价值的问题" class="headerlink" title="提出有价值的问题"></a>提出有价值的问题</h3><h4 id="顺应"><a href="#顺应" class="headerlink" title="顺应"></a>顺应</h4><p>充分理解对方的话；<br>从对方所说的话延伸；<br>不要从自己的立场出发；</p><blockquote><p>爱因斯坦问牛顿，如果一个人顺着光跑，跑到哪儿了？</p></blockquote><h4 id="提升"><a href="#提升" class="headerlink" title="提升"></a>提升</h4><p>归纳，把一连串的小问题总结一个大问题。总结对方的问题，然后提出来问题，升华。</p><h4 id="跳跃"><a href="#跳跃" class="headerlink" title="跳跃"></a>跳跃</h4><p>遵循对方逻辑。举一反三。<br>把对方的思路跳出来到另一个他自己都没有想到的问题。<br>跨领域，跨学科。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;重要场景:&lt;/p&gt;
-&lt;p&gt;公司面试最后一句：你对我们公司有什么问题？&lt;/p&gt;
     
     </summary>
     
