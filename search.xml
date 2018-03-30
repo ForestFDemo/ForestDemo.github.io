@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python网络数据采集之使用API|第03天]]></title>
+    <url>%2Fposts%2F37773%2F</url>
+    <content type="text"><![CDATA[本节比较简单，有开发经验可以跳过。 使用APIAPI概述百度百科关于API的解释：API（Application Programming Interface,应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。 说明这就是接口，不受其语言的限制都可以调用。 API通用规则API用一套非常标准的规则生成数据，而且生成的数据也是按照非常标准的方式组织的。 方法利用HTTP请求网络服务器信息的方法有很多种，这里举例常用的四种：GET：从服务器获取数据的方法；POST：向服务器发送数据。例如提交表单到服务器处理的逻辑；PUT：主要用来更新一个对象或信息，一般很少用到；DELETE：从服务器删除一个对象。 验证API并不是随时或者谁都可以调用的。为了保证服务器上的安全或者减少资源等目的，我们会对请求的方法或者次数有限制。通常情况会对接口进行验证，一般的验证方法是令牌（token），这个令牌一般是用户登录或者注册的时候从服务器生成然后给用户。令牌可以是可变的，也可以是不可变的。令牌除了在 URL链接中传递，还会通过请求头里的 cookie 把用户信息传递给服务器。简单示例： 123token = "&lt;your api key&gt;"webRequest = urllib.request.Request("http://myapi.com", headers=&#123;"token":token&#125;)html = urlopen(webRequest) 服务器响应服务器响应的数据格式一般是JSON或者XML。目前JSON比较多，原因有很多，其中一点就是JSON 文件比完整的 XML 格式小；加上网络技术的改变，后端的语言越来越多，基本上都可以实现接口。 API调用的语法也有不同，但也有约定俗成的准则。例如，当使用 GET请求获取数据时，用URL 路径描述你要获取的数据范围，查询参数可以作为过滤器或附加请求使用;也有许多 API 会通过文件路径(path)的形式指定 API 版本、数据格式和其他属性；还有一些 API会通过请求参数(request parameter)的形式指定数据格式和 API 版本: 市面上比较多的公司或者网站都有自己的公开的接口，例如推特，Google等。 解析JSON数据例如我们采用GET的方式请求http://freegeoip.net/json/50.78.253.58,查看返回的数据。返回为： 1&#123;"ip":"50.78.253.58","country_code":"US","country_name":"United States","region_code":"MA","region_name":"Massachusetts","city":"Boston","zip_code":"02116","time_zone":"America/New_York","latitude":42.3496,"longitude":-71.0746,"metro_code":506&#125; 现在我们采用Python来解析。JSON是Python的标准库，不需要额外安装。代码如下： 123456789import jsonfrom urllib.request import urlopendef getCountry(ipAddress): res = urlopen("http://freegeoip.net/json/"+ipAddress).read().decode('utf-8') resJson = json.loads(res) return resJson.get('country_code')print(getCountry("22.18.53.22")) Python 使用了一种更加灵活的方式，把 JSON 转换成字典，JSON 数组转换成列表,JSON 字符串转换成 Python 字符串。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>学习</tag>
+        <tag>数据采集</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python网络数据采集之创建爬虫|第02天]]></title>
     <url>%2Fposts%2F38026%2F</url>
     <content type="text"><![CDATA[主要内容： 单个域名和网站的采集； 互联网采集和用Scrapy采集初步介绍。 开始采集网络爬虫是可以根据递归方式。为了找到URL 链接，它们必须首先获取网页内容，检查这个页面的内容，再寻找另一个 URL，然后获取 URL对应的网页内容，不断循环这一过程。 遍历单个域名以抓取维基百科的Kevin Baco为例，实现简单的数据爬取。代码如下： 12345678from urllib.request import urlopenfrom bs4 import BeautifulSoup html = urlopen('http://en.wikipedia.org/wiki/Kevin_Bacon')bs = BeautifulSoup(html, 'html.parser')for link in bs.find_all('a'): if 'href' in link.attrs: print(link.attrs['href']) 上述代码就获取维基百科网站的任何页面并提取页面链接。去掉我们不需要的词条，进行改进获取词条链接。代码如下： 12345678910from urllib.request import urlopen from bs4 import BeautifulSoup import rehtml = urlopen('http://en.wikipedia.org/wiki/Kevin_Bacon')bs = BeautifulSoup(html, 'html.parser')for link in bs.find('div', &#123;'id':'bodyContent'&#125;).find_all( 'a', href=re.compile('^(/wiki/)((?!:).)*$')): if 'href' in link.attrs: print(link.attrs['href']) 如果我们要做到一个函数getLinks，可以用维基百科词条/wiki/&lt;词条名称&gt;形式的URL链接作为参数，然后以同样的形式返回一个列表，里面包含所有的词条 URL 链接。一个主函数，以某个起始词条为参数调用getLinks，再从返回的URL列表里随机选择一个词条链接，再调用 getLinks，直到我们主动停止，或者在新的页面上没有词条链接了，程序才停止运行。完善后代码如下： 1234567891011121314151617from urllib.request import urlopenfrom bs4 import BeautifulSoupimport datetimeimport randomimport rerandom.seed(datetime.datetime.now())def getLinks(articleUrl): html = urlopen('http://en.wikipedia.org&#123;&#125;'.format(articleUrl)) bs = BeautifulSoup(html, 'html.parser') return bs.find('div', &#123;'id':'bodyContent'&#125;).find_all('a', href=re.compile('^(/wiki/)((?!:).)*$'))links = getLinks('/wiki/Kevin_Bacon')while len(links) &gt; 0: newArticle = links[random.randint(0, len(links)-1)].attrs['href'] print(newArticle) links = getLinks(newArticle) 遍历整个网络采集整个网站，那是非常耗费内存资源的过程，尤其是处理大型网站时，最合适的工具就是用一个数据库来储存采集的资源。 遍历整个网络的数据好处：可以生产网站地图，收集网站数据等。但是一般不会消耗大量的内存资源去做采集，本节的意义不大。 通过互联网采集建立网络地图，需要从一个链接跳转到另一个链接，逐步建立网站的地图信息，从而达到一个合适的网站地图，于此同时我们也不能忽略外链，从一个链接跳转到另一个链接的场景也会时有发生。相比之前的单域名采集，互联网采集的难度要高很多，所以，要求我们的寻找信息的方式和采集信息的方式都应该极具灵活性，以此达到理想的采集效果。 在做数据采集之前最好能够确定自己采集的内容，明确目标，然后根据目标的展示形式去分析，该网站是否会跳转其他的链接，是否需要继续采集等各个因素。 如果采集一个网站，有时候也会考虑到网络重定向的问题，例如我的个人博客原来链接是：https://forestfdemo.github.io,但是我做了一个网络的重定向，我将https://chensenlin.cn，重定向到原来的链接，这样无论是访问哪一个链接其本质都跳转到原来的链接，此时需要了解的是网络重定向的时候，我们采集的URL地址会发生变化，在Python3.X的版本中，我们的urllib会帮我完成重定向的功能。 用Scrapy采集Scrapy就是一个可以大幅度降低我们对网页链接查找和识别工作复杂度的Python 库，它可以让你轻松地采集一个或多个域名的信息。 目前Scrapy仅支持Python 2.7，还不支持 Python 3.x。 利用Scrapy进行爬虫项目还是有一些设置，我们可以采用官网下载，也可以采用pip进行安装，检验安装的方法在之前的Python基础系列的文章有提到过。这里不做过多的阐述。 创建一个项目： 1234567➜ python scrapy startproject demourlNew Scrapy project 'demourl', using template directory '/usr/local/lib/python3.6/site-packages/scrapy/templates/project', created in: /Users/demo/Project/python/demourlYou can start your first spider with: cd demourl scrapy genspider example example.com 我们查看一下目录结构： 123456789101112131415➜ demourl tree ././├── [drwxr-xr-x] demourl│ ├── [-rw-r--r--] __init__.py│ ├── [drwxr-xr-x] __pycache__│ ├── [-rw-r--r--] items.py│ ├── [-rw-r--r--] middlewares.py│ ├── [-rw-r--r--] pipelines.py│ ├── [-rw-r--r--] settings.py│ └── [drwxr-xr-x] spiders│ ├── [-rw-r--r--] __init__.py│ └── [drwxr-xr-x] __pycache__└── [-rw-r--r--] scrapy.cfg4 directories, 7 files 关于Scrapy的内容我们后续逐一介绍，大家可以点击关注，及时收到后续更新。]]></content>
@@ -195,8 +209,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>阅读</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -209,8 +223,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>阅读</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -485,8 +499,8 @@
         <tag>学习</tag>
         <tag>笔记</tag>
         <tag>好好说话</tag>
-        <tag>喜马拉雅</tag>
         <tag>生活</tag>
+        <tag>喜马拉雅</tag>
       </tags>
   </entry>
   <entry>
@@ -500,8 +514,8 @@
         <tag>学习</tag>
         <tag>笔记</tag>
         <tag>好好说话</tag>
-        <tag>喜马拉雅</tag>
         <tag>生活</tag>
+        <tag>喜马拉雅</tag>
       </tags>
   </entry>
   <entry>

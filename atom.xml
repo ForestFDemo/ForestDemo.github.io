@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2018-03-29T11:44:20.407Z</updated>
+  <updated>2018-03-30T14:13:19.677Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python网络数据采集之使用API|第03天</title>
+    <link href="https://chensenlin.cn/posts/37773/"/>
+    <id>https://chensenlin.cn/posts/37773/</id>
+    <published>2018-03-30T14:12:44.000Z</published>
+    <updated>2018-03-30T14:13:19.677Z</updated>
+    
+    <content type="html"><![CDATA[<p>本节比较简单，有开发经验可以跳过。</p><a id="more"></a><h3 id="使用API"><a href="#使用API" class="headerlink" title="使用API"></a>使用API</h3><h4 id="API概述"><a href="#API概述" class="headerlink" title="API概述"></a>API概述</h4><p>百度百科关于<code>API</code>的解释：<code>API</code>（<code>Application Programming Interface</code>,应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。</p><p>说明这就是接口，不受其语言的限制都可以调用。</p><h4 id="API通用规则"><a href="#API通用规则" class="headerlink" title="API通用规则"></a>API通用规则</h4><p><code>API</code>用一套非常标准的规则生成数据，而且生成的数据也是按照非常标准的方式组织的。</p><h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><p>利用<code>HTTP</code>请求网络服务器信息的方法有很多种，这里举例常用的四种：<br><code>GET</code>：从服务器获取数据的方法；<br><code>POST</code>：向服务器发送数据。例如提交表单到服务器处理的逻辑；<br><code>PUT</code>：主要用来更新一个对象或信息，一般很少用到；<br><code>DELETE</code>：从服务器删除一个对象。</p><h5 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h5><p><code>API</code>并不是随时或者谁都可以调用的。为了保证服务器上的安全或者减少资源等目的，我们会对请求的方法或者次数有限制。通常情况会对接口进行验证，一般的验证方法是令牌（<code>token</code>），这个令牌一般是用户登录或者注册的时候从服务器生成然后给用户。令牌可以是可变的，也可以是不可变的。令牌除了在 <code>URL</code>链接中传递，还会通过请求头里的 <code>cookie</code> 把用户信息传递给服务器。<br>简单示例：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">token = <span class="string">"&lt;your api key&gt;"</span></span><br><span class="line">webRequest = urllib.request.Request(<span class="string">"http://myapi.com"</span>, headers=&#123;<span class="string">"token"</span>:token&#125;)</span><br><span class="line">html = urlopen(webRequest)</span><br></pre></td></tr></table></figure><h4 id="服务器响应"><a href="#服务器响应" class="headerlink" title="服务器响应"></a>服务器响应</h4><p>服务器响应的数据格式一般是<code>JSON</code>或者<code>XML</code>。目前<code>JSON</code>比较多，原因有很多，其中一点就是<code>JSON</code> 文件比完整的 <code>XML</code> 格式小；加上网络技术的改变，后端的语言越来越多，基本上都可以实现接口。</p><p><code>API</code>调用的语法也有不同，但也有约定俗成的准则。例如，当使用 <code>GET</code>请求获取数据时，用<code>URL</code> 路径描述你要获取的数据范围，查询参数可以作为过滤器或附加请求使用;也有许多 <code>API</code> 会通过文件路径(path)的形式指定 <code>API</code> 版本、数据格式和其他属性；还有一些 <code>API</code>会通过请求参数<code>(request parameter)</code>的形式指定数据格式和 <code>API</code> 版本:</p><p>市面上比较多的公司或者网站都有自己的公开的接口，例如推特，<code>Google</code>等。</p><h4 id="解析JSON数据"><a href="#解析JSON数据" class="headerlink" title="解析JSON数据"></a>解析JSON数据</h4><p>例如我们采用<code>GET</code>的方式请求<code>http://freegeoip.net/json/50.78.253.58</code>,查看返回的数据。返回为：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"ip"</span>:<span class="string">"50.78.253.58"</span>,<span class="attr">"country_code"</span>:<span class="string">"US"</span>,<span class="attr">"country_name"</span>:<span class="string">"United States"</span>,<span class="attr">"region_code"</span>:<span class="string">"MA"</span>,<span class="attr">"region_name"</span>:<span class="string">"Massachusetts"</span>,<span class="attr">"city"</span>:<span class="string">"Boston"</span>,<span class="attr">"zip_code"</span>:<span class="string">"02116"</span>,<span class="attr">"time_zone"</span>:<span class="string">"America/New_York"</span>,<span class="attr">"latitude"</span>:<span class="number">42.3496</span>,<span class="attr">"longitude"</span>:<span class="number">-71.0746</span>,<span class="attr">"metro_code"</span>:<span class="number">506</span>&#125;</span><br></pre></td></tr></table></figure><p>现在我们采用<code>Python</code>来解析。<code>JSON</code>是<code>Python</code>的标准库，不需要额外安装。代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getCountry</span><span class="params">(ipAddress)</span>:</span></span><br><span class="line">    res = urlopen(<span class="string">"http://freegeoip.net/json/"</span>+ipAddress).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    resJson = json.loads(res)</span><br><span class="line">    <span class="keyword">return</span> resJson.get(<span class="string">'country_code'</span>)</span><br><span class="line"></span><br><span class="line">print(getCountry(<span class="string">"22.18.53.22"</span>))</span><br></pre></td></tr></table></figure><blockquote><p>Python 使用了一种更加灵活的方式，把 JSON 转换成字典，JSON 数组转换成列表,JSON 字符串转换成 Python 字符串。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本节比较简单，有开发经验可以跳过。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://chensenlin.cn/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://chensenlin.cn/tags/Python/"/>
+    
+      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="数据采集" scheme="https://chensenlin.cn/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/"/>
+    
+      <category term="爬虫" scheme="https://chensenlin.cn/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python网络数据采集之创建爬虫|第02天</title>
     <link href="https://chensenlin.cn/posts/38026/"/>
     <id>https://chensenlin.cn/posts/38026/</id>
     <published>2018-03-29T11:43:03.000Z</published>
-    <updated>2018-03-29T11:44:20.407Z</updated>
+    <updated>2018-03-29T11:44:46.614Z</updated>
     
     <content type="html"><![CDATA[<p>主要内容：</p><p>单个域名和网站的采集；</p><p>互联网采集和用Scrapy采集初步介绍。 </p><a id="more"></a><h3 id="开始采集"><a href="#开始采集" class="headerlink" title="开始采集"></a>开始采集</h3><p>网络爬虫是可以根据递归方式。为了找到<code>URL</code> 链接，它们必须首先获取网页内容，检查这个页面的内容，再寻找另一个 <code>URL</code>，然后获取 <code>URL</code>对应的网页内容，不断循环这一过程。</p><h4 id="遍历单个域名"><a href="#遍历单个域名" class="headerlink" title="遍历单个域名"></a>遍历单个域名</h4><p>以抓取维基百科的<code>Kevin Baco</code>为例，实现简单的数据爬取。代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup </span><br><span class="line"></span><br><span class="line">html = urlopen(<span class="string">'http://en.wikipedia.org/wiki/Kevin_Bacon'</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> bs.find_all(<span class="string">'a'</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'href'</span> <span class="keyword">in</span> link.attrs:</span><br><span class="line">        print(link.attrs[<span class="string">'href'</span>])</span><br></pre></td></tr></table></figure><p>上述代码就获取维基百科网站的任何页面并提取页面链接。去掉我们不需要的词条，进行改进获取词条链接。代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen </span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup </span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">html = urlopen(<span class="string">'http://en.wikipedia.org/wiki/Kevin_Bacon'</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> bs.find(<span class="string">'div'</span>, &#123;<span class="string">'id'</span>:<span class="string">'bodyContent'</span>&#125;).find_all(</span><br><span class="line">    <span class="string">'a'</span>, href=re.compile(<span class="string">'^(/wiki/)((?!:).)*$'</span>)):</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'href'</span> <span class="keyword">in</span> link.attrs:</span><br><span class="line">        print(link.attrs[<span class="string">'href'</span>])</span><br></pre></td></tr></table></figure><p>如果我们要做到一个函数<code>getLinks</code>，可以用维基百科词条<code>/wiki/&lt;词条名称&gt;</code>形式的<code>URL</code>链接作为参数，然后以同样的形式返回一个列表，里面包含所有的词条 <code>URL</code> 链接。一个主函数，以某个起始词条为参数调用<code>getLinks</code>，再从返回的<code>URL</code>列表里随机选择一个词条链接，再调用 <code>getLinks</code>，直到我们主动停止，或者在新的页面上没有词条链接了，程序才停止运行。<br>完善后代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">random.seed(datetime.datetime.now())</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getLinks</span><span class="params">(articleUrl)</span>:</span></span><br><span class="line">    html = urlopen(<span class="string">'http://en.wikipedia.org&#123;&#125;'</span>.format(articleUrl))</span><br><span class="line">    bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">    <span class="keyword">return</span> bs.find(<span class="string">'div'</span>, &#123;<span class="string">'id'</span>:<span class="string">'bodyContent'</span>&#125;).find_all(<span class="string">'a'</span>, href=re.compile(<span class="string">'^(/wiki/)((?!:).)*$'</span>))</span><br><span class="line"></span><br><span class="line">links = getLinks(<span class="string">'/wiki/Kevin_Bacon'</span>)</span><br><span class="line"><span class="keyword">while</span> len(links) &gt; <span class="number">0</span>:</span><br><span class="line">    newArticle = links[random.randint(<span class="number">0</span>, len(links)<span class="number">-1</span>)].attrs[<span class="string">'href'</span>]</span><br><span class="line">    print(newArticle)</span><br><span class="line">    links = getLinks(newArticle)</span><br></pre></td></tr></table></figure><h4 id="遍历整个网络"><a href="#遍历整个网络" class="headerlink" title="遍历整个网络"></a>遍历整个网络</h4><p>采集整个网站，那是非常耗费内存资源的过程，尤其是处理大型网站时，最合适的工具就是用一个数据库来储存采集的资源。</p><p>遍历整个网络的数据好处：可以生产网站地图，收集网站数据等。但是一般不会消耗大量的内存资源去做采集，本节的意义不大。</p><h4 id="通过互联网采集"><a href="#通过互联网采集" class="headerlink" title="通过互联网采集"></a>通过互联网采集</h4><p>建立网络地图，需要从一个链接跳转到另一个链接，逐步建立网站的地图信息，从而达到一个合适的网站地图，于此同时我们也不能忽略外链，从一个链接跳转到另一个链接的场景也会时有发生。相比之前的单域名采集，互联网采集的难度要高很多，所以，要求我们的寻找信息的方式和采集信息的方式都应该极具灵活性，以此达到理想的采集效果。</p><p>在做数据采集之前最好能够确定自己采集的内容，明确目标，然后根据目标的展示形式去分析，该网站是否会跳转其他的链接，是否需要继续采集等各个因素。</p><p>如果采集一个网站，有时候也会考虑到网络重定向的问题，例如我的个人博客原来链接是：<code>https://forestfdemo.github.io</code>,但是我做了一个网络的重定向，我将<code>https://chensenlin.cn</code>，重定向到原来的链接，这样无论是访问哪一个链接其本质都跳转到原来的链接，此时需要了解的是网络重定向的时候，我们采集的<code>URL</code>地址会发生变化，在<code>Python3.X</code>的版本中，我们的<code>urllib</code>会帮我完成重定向的功能。</p><h4 id="用Scrapy采集"><a href="#用Scrapy采集" class="headerlink" title="用Scrapy采集"></a>用Scrapy采集</h4><p><code>Scrapy</code>就是一个可以大幅度降低我们对网页链接查找和识别工作复杂度的<code>Python</code> 库，它可以让你轻松地采集一个或多个域名的信息。</p><blockquote><p>目前<code>Scrapy</code>仅支持<code>Python 2.7</code>，还不支持 <code>Python 3.x</code>。</p></blockquote><p>利用<code>Scrapy</code>进行爬虫项目还是有一些设置，我们可以采用<a href="http://scrapy.org/download/" target="_blank" rel="noopener">官网</a>下载，也可以采用<code>pip</code>进行安装，检验安装的方法在之前的<code>Python</code>基础系列的文章有提到过。这里不做过多的阐述。</p><p>创建一个项目：</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">➜  python scrapy startproject demourl</span><br><span class="line">New Scrapy project <span class="string">'demourl'</span>, <span class="keyword">using</span> template <span class="built_in">directory</span> <span class="string">'/usr/local/lib/python3.6/site-packages/scrapy/templates/project'</span>, created <span class="keyword">in</span>:</span><br><span class="line">    /Users/demo/Project/python/demourl</span><br><span class="line"></span><br><span class="line">You can <span class="built_in">start</span> your <span class="keyword">first</span> spider <span class="keyword">with</span>:</span><br><span class="line">    cd demourl</span><br><span class="line">    scrapy genspider example example.com</span><br></pre></td></tr></table></figure><p>我们查看一下目录结构：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">➜  demourl tree ./</span><br><span class="line">./</span><br><span class="line">├── [drwxr-xr-x]  demourl</span><br><span class="line">│   ├── [-rw-r--r--]  __init__.py</span><br><span class="line">│   ├── [drwxr-xr-x]  __pycache__</span><br><span class="line">│   ├── [-rw-r--r--]  items.py</span><br><span class="line">│   ├── [-rw-r--r--]  middlewares.py</span><br><span class="line">│   ├── [-rw-r--r--]  pipelines.py</span><br><span class="line">│   ├── [-rw-r--r--]  settings.py</span><br><span class="line">│   └── [drwxr-xr-x]  spiders</span><br><span class="line">│       ├── [-rw-r--r--]  __init__.py</span><br><span class="line">│       └── [drwxr-xr-x]  __pycache__</span><br><span class="line">└── [-rw-r--r--]  scrapy.cfg</span><br><span class="line"></span><br><span class="line">4 directories, 7 files</span><br></pre></td></tr></table></figure><p>关于<code>Scrapy</code>的内容我们后续逐一介绍，大家可以点击关注，及时收到后续更新。</p>]]></content>
     
@@ -458,9 +486,9 @@
     
       <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
       <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+      <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -486,9 +514,9 @@
     
       <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
       <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+      <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -531,37 +559,6 @@
     
       &lt;p&gt;分答不需要解释。&lt;/p&gt;
 &lt;p&gt;用提问赚钱奔小康。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="好好说话" scheme="https://chensenlin.cn/tags/%E5%A5%BD%E5%A5%BD%E8%AF%B4%E8%AF%9D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《好好说话》笔记之用提问求关注</title>
-    <link href="https://chensenlin.cn/posts/13349/"/>
-    <id>https://chensenlin.cn/posts/13349/</id>
-    <published>2016-12-08T11:22:54.000Z</published>
-    <updated>2018-03-19T08:58:00.464Z</updated>
-    
-    <content type="html"><![CDATA[<p>背景：</p><ol><li>自己讲话没人听</li><li>听众来了，昏昏欲睡</li><li>听完没什么影响</li></ol><a id="more"></a><h3 id="精彩演讲用问题串联"><a href="#精彩演讲用问题串联" class="headerlink" title="精彩演讲用问题串联"></a>精彩演讲用问题串联</h3><h4 id="第一步-用提问吸引对方来听"><a href="#第一步-用提问吸引对方来听" class="headerlink" title="第一步 用提问吸引对方来听"></a>第一步 用提问吸引对方来听</h4><p>问句作为演讲标题。<br>把所有的小问题总结从一个大问题。<br>吸引注意力(点击率)。</p><h4 id="第二步-抛问题扔答案，抓注意力"><a href="#第二步-抛问题扔答案，抓注意力" class="headerlink" title="第二步 抛问题扔答案，抓注意力"></a>第二步 抛问题扔答案，抓注意力</h4><p>不要太快公布正确答案，小问题引起好奇心。<br>好奇心来自于对于自我经验的挑战。<br>逐步抓住大家的好奇心。  </p><h4 id="第三步-用小问题引出冷知识，留下深刻影响"><a href="#第三步-用小问题引出冷知识，留下深刻影响" class="headerlink" title="第三步 用小问题引出冷知识，留下深刻影响"></a>第三步 用小问题引出冷知识，留下深刻影响</h4><p>有趣的比有用的问题比较好。</p><p>留下一个冷知识。例如为什么屁会臭？</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;背景：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;自己讲话没人听&lt;/li&gt;
-&lt;li&gt;听众来了，昏昏欲睡&lt;/li&gt;
-&lt;li&gt;听完没什么影响&lt;/li&gt;
-&lt;/ol&gt;
     
     </summary>
     
