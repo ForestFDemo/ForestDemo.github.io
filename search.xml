@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python网络数据采集之存储数据|第04天]]></title>
+    <url>%2Fposts%2F60544%2F</url>
+    <content type="text"><![CDATA[下载文件，存储数据； MySQL的基本使用，发送邮件 存储数据网络数据的采集，最本质的东西还是数据，我们爬取的数据是需要存储的。 媒体文件存储媒体文件有两种主要的方式:只获取文件 URL 链接，或者直接把源文件下载下来。 可以通过媒体文件所在的URL 链接直接引用它。这样做的优点如下: 爬虫运行得更快，耗费的流量更少，因为只要链接，不需要下载文件; 可以节省很多存储空间，因为只需要存储URL链接就可以; 存储URL的代码更容易写，也不需要实现文件下载代码; 不下载文件能够降低目标主机服务器的负载。 于此同时还会有一些缺点： 网站防盗链的问题，会带来很多的麻烦； 自主性较差，因为文件在别人的服务器上，可支配性差； 链接可能是会变化的，失效的链接数增加。 …. 下载文件的方法也很简单，在Python 3.x 版本中,urllib.request.urlretrieve可以根据文件的 URL 下载文件; 例如我们从http://pythonscraping.com 下载 logo图片，然后在程序运行的文件夹里保存为 logo.jpg 文件。 12345678from urllib.request import urlretrievefrom urllib.request import urlopenfrom bs4 import BeautifulSouphtml = urlopen('http://www.pythonscraping.com')bs = BeautifulSoup(html, 'html.parser')imageLocation = bs.find('a', &#123;'id': 'logo'&#125;).find('img')['src']urlretrieve (imageLocation, 'logo.jpg') 下载文件需要注意exe的文件，木马文件等。不要在硬盘存储敏感信息，不要用管理员权限运行他。 把数据存储到CSVCSV(Comma-Separated Values，逗号分隔值)是存储表格数据的常用文件格式。关于CSV格式的文件不做过多的介绍，自行去了解一下。 Python的csv库可以创建或者修改CSV文件。 1234567891011import csv csvFile = open("./demo.csv","我+")try: writer = csv.writer(csvFile) writer.writerow(('number', 'number plus 2', 'number times 2')) for i in rang(10): writer.writerow((i,i+2,I*2))finally: csvFile.close() 如果文件不存在就会创建demo.csv。 MySQLMySQL是目前最受欢迎的开源关系型数据库管理系统。因为它受众广泛，免费，开箱即用，所以它也是网络数据采集项目中常用的数据库。 我采用的是Mac的平台，可以直接下载安装安装也可以通过包管理器(例如homebrew)安装。 官网下载地址：http://dev.mysql.com/downloads/mysql/ 其他的平台可以去官网查看安装详情，作为一个改变世界的程序猿，安装软件应该不是问题。 基本命令创建数据库: 1CREATE DATABASE demo; 使用数据库： 1USE demo; 创建表： 1234567CREATE TABLE user( id BIGINT(7) NOT NULL AUTO_INCREMENT, name VARCHAR(10), sex tinyint(1), creatime TIMESTAMP DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY(id)); 和数据库不同，MySQL 数据表必须至少有一列，否则不能创建。为了在 MySQL 里定义字段(数据列)，你必须在 CREATE TABLE &lt;tablename&gt; 语句后面，把字段的定义放进一个带括号的、内部由逗号分隔的列表。 插入数据： 1INSERT INTO user (name, sex) VALUES ("name", "1"); 查询数据： 1SELECT * FROM user 模糊查询： 12SELECT id FROM user LIKE "%chensenlin.cn%" 删除数据： 1DELELT FROM user WHERE id = 1 更新数据： 1UPDATE user SET name = 'chensenlin' WHERE id = 66 特别强调：更新或者删除一定要加条件！否则就说灾难，哈哈哈 与Python整合Python没有内置的MySQL 支持工具。不过，有很多开源的库可以用来与 MySQL做交互，Python 2.x和Python 3.x版本都支持。最有名的一个库就是PyMySQL(https://github.com/PyMySQL/PyMySQL)。 安装： 1pip install PyMySQL 基本使用： 12345678import pymysqlconn = pymysql.connect(host='127.0.0.1', unix_socket='/tmp/mysql.sock',user='root', passwd=root, db='mysql')cur.execute("USE demo")cur.execute("SELECT * FROM user WHERE id = 1") print(cur.fetchone())cur.close()conn.close() EmailPython发送一封邮件： 12345678910import smtplibfrom email.mime.text import MIMETextmsg = MIMEText("邮件正文内容")msg['Subject'] = "这是一个测试有奖主题"msg['From'] = "fore@gmail.com"msg['To'] = "hellosenlin@sina.cn"s = smtplib.SMTP('localhost')s.send_message(msg)s.quit() 与网页通过HTTP协议传输一样，邮件是通过SMTP(Simple Mail Transfer Protocol，简单邮件传输协议)传输的。而且,和网络服务器的客户端(浏览器)处理那些通过 HTTP 协议传输的网页一样。 可以将其封装成函数作为发送邮件定时使用等。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>学习</tag>
+        <tag>数据采集</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python网络数据采集之使用API|第03天]]></title>
     <url>%2Fposts%2F37773%2F</url>
     <content type="text"><![CDATA[本节比较简单，有开发经验可以跳过。 使用APIAPI概述百度百科关于API的解释：API（Application Programming Interface,应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。 说明这就是接口，不受其语言的限制都可以调用。 API通用规则API用一套非常标准的规则生成数据，而且生成的数据也是按照非常标准的方式组织的。 方法利用HTTP请求网络服务器信息的方法有很多种，这里举例常用的四种：GET：从服务器获取数据的方法；POST：向服务器发送数据。例如提交表单到服务器处理的逻辑；PUT：主要用来更新一个对象或信息，一般很少用到；DELETE：从服务器删除一个对象。 验证API并不是随时或者谁都可以调用的。为了保证服务器上的安全或者减少资源等目的，我们会对请求的方法或者次数有限制。通常情况会对接口进行验证，一般的验证方法是令牌（token），这个令牌一般是用户登录或者注册的时候从服务器生成然后给用户。令牌可以是可变的，也可以是不可变的。令牌除了在 URL链接中传递，还会通过请求头里的 cookie 把用户信息传递给服务器。简单示例： 123token = "&lt;your api key&gt;"webRequest = urllib.request.Request("http://myapi.com", headers=&#123;"token":token&#125;)html = urlopen(webRequest) 服务器响应服务器响应的数据格式一般是JSON或者XML。目前JSON比较多，原因有很多，其中一点就是JSON 文件比完整的 XML 格式小；加上网络技术的改变，后端的语言越来越多，基本上都可以实现接口。 API调用的语法也有不同，但也有约定俗成的准则。例如，当使用 GET请求获取数据时，用URL 路径描述你要获取的数据范围，查询参数可以作为过滤器或附加请求使用;也有许多 API 会通过文件路径(path)的形式指定 API 版本、数据格式和其他属性；还有一些 API会通过请求参数(request parameter)的形式指定数据格式和 API 版本: 市面上比较多的公司或者网站都有自己的公开的接口，例如推特，Google等。 解析JSON数据例如我们采用GET的方式请求http://freegeoip.net/json/50.78.253.58,查看返回的数据。返回为： 1&#123;"ip":"50.78.253.58","country_code":"US","country_name":"United States","region_code":"MA","region_name":"Massachusetts","city":"Boston","zip_code":"02116","time_zone":"America/New_York","latitude":42.3496,"longitude":-71.0746,"metro_code":506&#125; 现在我们采用Python来解析。JSON是Python的标准库，不需要额外安装。代码如下： 123456789import jsonfrom urllib.request import urlopendef getCountry(ipAddress): res = urlopen("http://freegeoip.net/json/"+ipAddress).read().decode('utf-8') resJson = json.loads(res) return resJson.get('country_code')print(getCountry("22.18.53.22")) Python 使用了一种更加灵活的方式，把 JSON 转换成字典，JSON 数组转换成列表,JSON 字符串转换成 Python 字符串。]]></content>
@@ -208,9 +222,9 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>阅读</tag>
         <tag>笔记</tag>
         <tag>生活</tag>
+        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -222,9 +236,9 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>阅读</tag>
         <tag>笔记</tag>
         <tag>生活</tag>
+        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -484,8 +498,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>好好说话</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -498,9 +512,9 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>好好说话</tag>
         <tag>喜马拉雅</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -513,9 +527,9 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>好好说话</tag>
         <tag>喜马拉雅</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
