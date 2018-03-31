@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>你好我是森林</title>
   
-  <subtitle>你好，我是森林</subtitle>
+  <subtitle>你好我是森林</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
