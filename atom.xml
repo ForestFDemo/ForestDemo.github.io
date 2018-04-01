@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2018-03-31T15:50:29.459Z</updated>
+  <updated>2018-04-01T13:34:54.957Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python网络数据采集之读取文档第05天</title>
+    <link href="https://chensenlin.cn/posts/34041/"/>
+    <id>https://chensenlin.cn/posts/34041/</id>
+    <published>2018-04-01T13:33:54.000Z</published>
+    <updated>2018-04-01T13:34:54.957Z</updated>
+    
+    <content type="html"><![CDATA[<p>主要内容：</p><p>文档编码和类型的介绍；</p><p>读取CSV、PDF等格式的文件。</p><a id="more"></a><h3 id="读取文档"><a href="#读取文档" class="headerlink" title="读取文档"></a>读取文档</h3><h4 id="文档编码"><a href="#文档编码" class="headerlink" title="文档编码"></a>文档编码</h4><p>文档编码的方式通常可以根据文件的扩展名进行判断，虽然文件扩展名并不是由编码确定的，而是由开发者确定的。从最底层的角度看，所有文档都是由 <code>0</code>和 <code>1</code> 编码而成的。例如我我们将一个后缀为<code>png</code>的图片后缀改为<code>.py</code>。用编辑器打打开就完全不对了。</p><p>只要安装了合适的库， <code>Python</code> 就可以帮你处理任意类型的文档。纯文本文件、视频文件和图像文件的唯一区别，就是它们的 <code>0</code>和<code>1</code> 面向用户的转换方式不同。</p><h4 id="纯文本"><a href="#纯文本" class="headerlink" title="纯文本"></a>纯文本</h4><p>对于纯文本的文件获取的方式很简单，用 <code>urlopen</code> 获取了网页之后，我们会把它转变成 <code>BeautifulSoup</code>对象。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen </span><br><span class="line"></span><br><span class="line">textPage = urlopen(</span><br><span class="line"><span class="string">"http://www.pythonscraping.com/pages/warandpeace/chapter1.txt"</span>) </span><br><span class="line"></span><br><span class="line">print(textPage.read())</span><br></pre></td></tr></table></figure><h4 id="CSV-文件"><a href="#CSV-文件" class="headerlink" title="CSV 文件"></a>CSV 文件</h4><p><code>Python</code>有一个标准库对<code>CSV</code>文件的处理特别的友好，可以处理各类的<code>CSV</code>文件。<a href="https://docs.python.org/3/library/csv.html" target="_blank" rel="noopener">文档地址</a></p><h5 id="读取CSV文件"><a href="#读取CSV文件" class="headerlink" title="读取CSV文件"></a>读取CSV文件</h5><p><code>Python</code> 的<code>csv</code> 库主要是面向本地文件，就是说你的 <code>CSV</code> 文件得存储在你的电脑上。而进行网络数据采集的时候，很多文件都是在线的。有几个参考解决办法：</p><ul><li>手动把CSV文件下载到本机，然后用Python定位文件位置;</li><li>写Python程序下载文件，读取之后再把源文件删除;</li><li>从网上直接把文件读成一个字符串，然后转换成一个StringIO对象，使它具有文件的<br>属性。</li></ul><p>例如获取网上的<code>CSV</code>文件，然后输出命令行。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">data = urlopen(<span class="string">"http://pythonscraping.com/files/MontyPythonAlbums.csv"</span>).read().decode(<span class="string">'ASCII'</span>,<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line">dataFile = StringIO(data)</span><br><span class="line">csvReader = csv.reader(dataFile)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> csvReader:</span><br><span class="line">    print(row)</span><br></pre></td></tr></table></figure><p>输出的结果：</p><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">'Name</span>', <span class="symbol">'Year</span>']</span><br><span class="line">[<span class="string">"Monty Python's Flying Circus"</span>, <span class="symbol">'1970</span>']</span><br><span class="line">[<span class="symbol">'Another</span> Monty Python Record', <span class="symbol">'1971</span>']</span><br><span class="line">[<span class="string">"Monty Python's Previous Record"</span>, <span class="symbol">'1972</span>']</span><br><span class="line">[<span class="symbol">'The</span> Monty Python Matching Tie and Handkerchief', <span class="symbol">'1973</span>']</span><br><span class="line">[<span class="symbol">'Monty</span> Python Live at Drury Lane', <span class="symbol">'1974</span>']</span><br><span class="line">[<span class="symbol">'An</span> Album of the Soundtrack of the Trailer of the Film of Monty Python and the Holy Grail', <span class="symbol">'1975</span>']</span><br><span class="line">[<span class="symbol">'Monty</span> Python Live at City Center', <span class="symbol">'1977</span>']</span><br><span class="line">[<span class="symbol">'The</span> Monty Python Instant Record Collection', <span class="symbol">'1977</span>']</span><br><span class="line">[<span class="string">"Monty Python's Life of Brian"</span>, <span class="symbol">'1979</span>']</span><br><span class="line">[<span class="string">"Monty Python's Cotractual Obligation Album"</span>, <span class="symbol">'1980</span>']</span><br><span class="line">[<span class="string">"Monty Python's The Meaning of Life"</span>, <span class="symbol">'1983</span>']</span><br><span class="line">[<span class="symbol">'The</span> Final Rip Off', <span class="symbol">'1987</span>']</span><br><span class="line">[<span class="symbol">'Monty</span> Python Sings', <span class="symbol">'1989</span>']</span><br><span class="line">[<span class="symbol">'The</span> Ultimate Monty Python Rip Off', <span class="symbol">'1994</span>']</span><br><span class="line">[<span class="symbol">'Monty</span> Python Sings Again', <span class="symbol">'2014</span>']</span><br></pre></td></tr></table></figure><h4 id="PDF-文件"><a href="#PDF-文件" class="headerlink" title="PDF 文件"></a>PDF 文件</h4><p><code>PDFMiner3K</code>是一个非常好用的库(是<code>PDFMiner</code>的<code>Python 3.x</code>移植版)。它非常灵活，可以通过命令行使用，也可以整合到代码中。它还可以处理不同的语言编码，而且对网络文件的处理也非常方便。</p><p>下载解压后用<code>python setup.py install</code>完成安装。</p><blockquote><p>模块的源文件下载地址： <a href="https://pypi.python.org/pypi/pdfminer3k" target="_blank" rel="noopener">https://pypi.python.org/pypi/pdfminer3k</a></p></blockquote><p>例如可以把任意 <code>PDF</code> 读成字符串，然后用 <code>StringIO</code>转换成文件对象。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> pdfminer.pdfinterp <span class="keyword">import</span> PDFResourceManager, process_pdf</span><br><span class="line"><span class="keyword">from</span> pdfminer.converter <span class="keyword">import</span> TextConverter</span><br><span class="line"><span class="keyword">from</span> pdfminer.layout <span class="keyword">import</span> LAParams</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> open</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">readPDF</span><span class="params">(pdfFile)</span>:</span></span><br><span class="line">    rsrcmgr = PDFResourceManager()</span><br><span class="line">    retstr = StringIO()</span><br><span class="line">    laparams = LAParams()</span><br><span class="line">    device = TextConverter(rsrcmgr, retstr, laparams=laparams)</span><br><span class="line">             process_pdf(rsrcmgr, device, pdfFile)</span><br><span class="line">             device.close()</span><br><span class="line">    content = retstr.getvalue() retstr.close()</span><br><span class="line">    <span class="keyword">return</span> content</span><br><span class="line">    </span><br><span class="line">pdfFile = urlopen(<span class="string">"http://pythonscraping.com/pages/warandpeace/chapter1.pdf"</span>)</span><br><span class="line">outputString = readPDF(pdfFile)</span><br><span class="line">print(outputString)</span><br><span class="line">pdfFile.close()</span><br></pre></td></tr></table></figure><p><code>readPDF</code> 函数最大的好处是，如果<code>PDF</code>文件在电脑里，就可以直接把 <code>urlopen</code>返回的对象 <code>pdfFile</code> 替换成普通的 <code>open()</code> 文件对象:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdfFile = open(<span class="string">"./chapter1.pdf"</span>, <span class="string">'rb'</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;主要内容：&lt;/p&gt;
+&lt;p&gt;文档编码和类型的介绍；&lt;/p&gt;
+&lt;p&gt;读取CSV、PDF等格式的文件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://chensenlin.cn/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://chensenlin.cn/tags/Python/"/>
+    
+      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="数据采集" scheme="https://chensenlin.cn/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/"/>
+    
+      <category term="爬虫" scheme="https://chensenlin.cn/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>Python网络数据采集之存储数据|第04天</title>
@@ -514,11 +544,11 @@
     
       <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
       <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
@@ -542,37 +572,11 @@
     
       <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
       <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
-  </entry>
-  
-  <entry>
-    <title>《好好说话》笔记之礼貌地回避问题</title>
-    <link href="https://chensenlin.cn/posts/27069/"/>
-    <id>https://chensenlin.cn/posts/27069/</id>
-    <published>2016-12-12T08:12:27.000Z</published>
-    <updated>2018-03-19T09:01:32.205Z</updated>
-    
-    <content type="html"><![CDATA[<p>转移话题不如转移角度，从大方面回答，直接反问原因。</p><a id="more"></a><h3 id="礼貌地回避问题"><a href="#礼貌地回避问题" class="headerlink" title="礼貌地回避问题"></a>礼貌地回避问题</h3><h4 id="第一步-转移角度"><a href="#第一步-转移角度" class="headerlink" title="第一步 转移角度"></a>第一步 转移角度</h4><p>把话题重点转移到对方身上，把对方淡谈话主角自己当配角。<br>回家长辈问婚事相关，反问阿姨请教一下阿姨你们家某某好像挺幸福地，阿姨说说呗。</p><h4 id="第二步-提升层次"><a href="#第二步-提升层次" class="headerlink" title="第二步 提升层次"></a>第二步 提升层次</h4><p>隐私上升大问题，把隐私换成科普，解释机制。<br>从大方面去解释问题背后地机制，而不直接回答具体细节；绕过个人工资细节去科普行业情况。  </p><h4 id="第三步-追问原因"><a href="#第三步-追问原因" class="headerlink" title="第三步 追问原因"></a>第三步 追问原因</h4><p>追问对方问这个问题地原因，让提问的人自觉无趣。<br>例如：您为什么这么关心我的事，你是这方面有问题？？</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;转移话题不如转移角度，从大方面回答，直接反问原因。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="好好说话" scheme="https://chensenlin.cn/tags/%E5%A5%BD%E5%A5%BD%E8%AF%B4%E8%AF%9D/"/>
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
