@@ -4,6 +4,58 @@
 
     
   <url>
+    <loc>https://chensenlin.cn/posts/60177/</loc>
+    <lastmod>2018-04-04T14:51:41.394Z</lastmod>
+    <data>
+        <display>
+        <title>《把时间当作朋友》阅读笔记</title>
+        <pubTime>2017-12-03T00:32:03.000Z</pubTime>
+        
+        <tag>学习</tag>
+         
+        <tag>阅读</tag>
+         
+        <tag>笔记</tag>
+         
+        <tag>生活</tag>
+         
+         
+           
+             
+              <breadCrumb title="阅读" url="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://chensenlin.cn/posts/54692/</loc>
+    <lastmod>2018-04-04T14:44:45.637Z</lastmod>
+    <data>
+        <display>
+        <title>Python网络数据采集之处理自然语言|第07天</title>
+        <pubTime>2018-04-04T14:13:44.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>学习</tag>
+         
+        <tag>数据采集</tag>
+         
+        <tag>爬虫</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="https://chensenlin.cn/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://chensenlin.cn/posts/48792/</loc>
     <lastmod>2018-04-03T14:56:40.059Z</lastmod>
     <data>
@@ -151,32 +203,6 @@
            
              
               <breadCrumb title="Python" url="https://chensenlin.cn/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chensenlin.cn/posts/60177/</loc>
-    <lastmod>2018-03-28T01:44:00.785Z</lastmod>
-    <data>
-        <display>
-        <title>《把时间当作朋友》阅读笔记</title>
-        <pubTime>2017-12-03T00:32:03.000Z</pubTime>
-        
-        <tag>学习</tag>
-         
-        <tag>阅读</tag>
-         
-        <tag>笔记</tag>
-         
-        <tag>生活</tag>
-         
-         
-           
-             
-              <breadCrumb title="阅读" url="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
           
         </display>
     </data>
