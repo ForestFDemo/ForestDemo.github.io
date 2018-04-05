@@ -101,7 +101,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":"ture","scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":"ture","scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -396,7 +396,7 @@
       
 
       
-        <p>最开始以为是配置文件或者服务的问题，同时用<code>testparm</code>检测配置文件没有问题，后面发现是<code>SElinux</code>没有关闭。</p>
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最开始以为是配置文件或者服务的问题，同时用<code>testparm</code>检测配置文件没有问题，后面发现是<code>SElinux</code>没有关闭。</p>
 <a id="more"></a>
 <h3 id="如何关闭SELinux"><a href="#如何关闭SELinux" class="headerlink" title="如何关闭SELinux"></a>如何关闭SELinux</h3><h4 id="第一步-查看selinux状态"><a href="#第一步-查看selinux状态" class="headerlink" title="第一步 查看selinux状态"></a>第一步 查看selinux状态</h4><p>查看selinux的详细状态，如果为enable则表示为开启</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /usr/sbin/sestatus -v</span></span><br></pre></td></tr></table></figure>
@@ -698,8 +698,6 @@
       
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
           
         </div>
       
