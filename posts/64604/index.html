@@ -89,7 +89,7 @@
 <meta property="og:description" content="利用Requests库处理Cookie、session等方式的登录。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p6o0wncuf.bkt.clouddn.com/2018-04-08-15231905765646.jpg">
-<meta property="og:updated_time" content="2018-04-08T13:04:47.413Z">
+<meta property="og:updated_time" content="2018-04-08T13:19:41.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python网络数据采集之登录窗口采集处理|第08天">
 <meta name="twitter:description" content="利用Requests库处理Cookie、session等方式的登录。">
@@ -355,7 +355,7 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共1,009 字</span>
+            <span>全文共1,007 字</span>
             &nbsp; | &nbsp;
             <span>阅读时长4 分钟</span>
           </span>
@@ -431,7 +431,7 @@
 <p>不过也有<code>session</code>的方式进行登录,但是<code>Requests</code>库的<code>session</code>函数处理也很方便。具体和<code>cookie</code>类似，不过多阐述,或者查看文档了解也可以。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">session = requests.Session()</span><br><span class="line">params = &#123;<span class="string">'username'</span>: <span class="string">'username'</span>, <span class="string">'password'</span>: <span class="string">'password'</span>&#125;</span><br><span class="line">s = session.post(<span class="string">"http://pythonscraping.com/pages/cookies/welcome.php"</span>, params)</span><br><span class="line">print(<span class="string">"Cookie is set to:"</span>)</span><br><span class="line">print(s.cookies.get_dict())</span><br><span class="line">print(<span class="string">"-----------"</span>)</span><br><span class="line">print(<span class="string">"Going to profile page..."</span>)</span><br><span class="line">s = session.get(<span class="string">"http://pythonscraping.com/pages/cookies/profile.php"</span>) </span><br><span class="line">print(s.text)</span><br></pre></td></tr></table></figure>
 <p>值得注意的是，登录还有一种是用<code>HTTP</code>基本接入认证的方式。<code>Requests</code>库有一个 <code>auth</code>模块专门用来处理 <code>HTTP</code> 认证:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> requests.auth <span class="keyword">import</span> AuthBase</span><br><span class="line"><span class="keyword">from</span> requests.auth <span class="keyword">import</span> HTTPBasicAuth</span><br><span class="line">     auth = HTTPBasicAuth(<span class="string">'ryan'</span>, <span class="string">'password'</span>)</span><br><span class="line">     r = requests.post(url=<span class="string">"http://pythonscraping.com/pages/auth/login.php"</span>, auth=</span><br><span class="line">auth)</span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> requests.auth <span class="keyword">import</span> AuthBase</span><br><span class="line"><span class="keyword">from</span> requests.auth <span class="keyword">import</span> HTTPBasicAuth</span><br><span class="line">     auth = HTTPBasicAuth(<span class="string">'ryan'</span>, <span class="string">'password'</span>)</span><br><span class="line">     r = requests.post(url=<span class="string">"http://pythonscraping.com/pages/auth/login.php"</span>, auth=</span><br><span class="line">auth)</span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>
 
       
     </div>
