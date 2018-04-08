@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2018-04-04T14:44:45.637Z</updated>
+  <updated>2018-04-08T12:57:30.248Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python网络数据采集之登录窗口采集处理|第07天</title>
+    <link href="https://chensenlin.cn/posts/64604/"/>
+    <id>https://chensenlin.cn/posts/64604/</id>
+    <published>2018-04-08T12:56:14.000Z</published>
+    <updated>2018-04-08T12:57:30.248Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>利用<code>Requests</code>库处理<code>Cookie</code>、<code>session</code>等方式的登录。</p><a id="more"></a><h3 id="登录窗口采集处理"><a href="#登录窗口采集处理" class="headerlink" title="登录窗口采集处理"></a>登录窗口采集处理</h3><p>如果我们采集的网站需要我们登录后才能获取我们想要的数据，这就需要进一步处理登录这个问题。</p><p>登录的原理很简单，即前台向服务器传输数据进行验证。传输的方式有很多种，例如<code>GET</code>、<code>POST</code>；页面表单基本上可以看成是一种用户提交 <code>POST</code>请求的方式，且这种请求方式是服务器能够理解和使用的。</p><h4 id="Python-Requests库"><a href="#Python-Requests库" class="headerlink" title="Python Requests库"></a>Python Requests库</h4><p>除了<code>Python</code>的标准库<code>urllib</code>库，还有第三方库可以选择，例如：<code>Requests</code>。主要擅长处理那些复杂的 <code>HTTP</code> 请求、<code>cookie</code>、<code>header</code>(响应头和请求头)等内容的 <code>Python</code>第三方库。</p><blockquote><p>项目地址：<a href="https://github.com/kennethreitz/requests/" target="_blank" rel="noopener">https://github.com/kennethreitz/requests/</a></p></blockquote><p>安装的方式也很简单。例如<code>pip</code>安装，或者下载源码安装。</p><blockquote><p>源码地址：<a href="https://github.com/kennethreitz/requests/tarball/master" target="_blank" rel="noopener">https://github.com/kennethreitz/requests/tarball/master</a></p></blockquote><h4 id="提交表单"><a href="#提交表单" class="headerlink" title="提交表单"></a>提交表单</h4><p>提交表单一般是<code>HTML</code>的方式可以实现，且大多也采用这样的方式进行提交。例如：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"processing.php"</span>&gt;</span></span><br><span class="line">Nickename: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"nickename"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span> </span><br><span class="line">username: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure><p>我们<code>Python</code>的用<code>Requests</code>库来提交十分简单。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">params = &#123;<span class="string">'name'</span>: <span class="string">'Ryan'</span>, <span class="string">'username'</span>: <span class="string">'Mitchell'</span>&#125;</span><br><span class="line">r = requests.post(<span class="string">"http://pythonscraping.com/files/processing.php"</span>, data=params)</span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure><h4 id="单选按钮、复选框等输入"><a href="#单选按钮、复选框等输入" class="headerlink" title="单选按钮、复选框等输入"></a>单选按钮、复选框等输入</h4><p>无论表单的字段看起来多么复杂，仍然只有两件事是需要关注的:字段名称和值。字段名称可以通过查看源代码寻找<code>name</code> 属性轻易获得。而字段的值有时会比较复杂，有可能是在表单提交之前通过 <code>JavaScript</code> 生成的。</p><p>我们可以通过抓包或者浏览器的网络请求信息来判断，例如：</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">https:</span>chensenlin.cn?c=hello<span class="variable">&amp;m</span>=senlin</span><br></pre></td></tr></table></figure><p><code>Python</code>需要理解为：</p><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'c'</span>:<span class="string">'hello'</span>,<span class="string">'m'</span>:<span class="string">'senlin'</span>&#125;</span><br></pre></td></tr></table></figure><p>具体查看方法可以参考下图所示：</p><p><img src="http://p6o0wncuf.bkt.clouddn.com/2018-04-08-15231905765646.jpg" alt=""></p><h4 id="提交文件或者图像"><a href="#提交文件或者图像" class="headerlink" title="提交文件或者图像"></a>提交文件或者图像</h4><p><code>HTML</code>提交文件的时候，需要添加一个参数<code>enctype=&quot;multipart/form-data&quot;</code>,声明这是文件上传的类型。同时<code>input</code>的<code>type</code>为<code>file</code>。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">from</span> <span class="attr">action</span>=<span class="string">"uploadFile.php"</span> <span class="attr">metoh</span>=<span class="string">"post"</span>  <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">uploadFile:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"filename"</span>&gt;</span></span><br><span class="line">提交：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"上传"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br></pre></td></tr></table></figure><p>同理，<code>Python Requests</code> 库对这种表单的处理方式如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">     files = &#123;<span class="string">'uploadFile'</span>: open(<span class="string">'../files/Python-logo.png'</span>, <span class="string">'rb'</span>)&#125;</span><br><span class="line">     r = requests.post(<span class="string">"https:chensenlin.cn?c=filename&amp;m=upload"</span>,files=files)</span><br><span class="line"></span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure><h4 id="处理登录和Cookie"><a href="#处理登录和Cookie" class="headerlink" title="处理登录和Cookie"></a>处理登录和Cookie</h4><p>网站大多都用 <code>cookie</code> 跟踪用户是否已登录的状态信息。一旦网站验证了你的登录权证，它就会将它们保存在你的浏览器的 <code>cookie</code> 中，里面通常包含一个服务器生成的令牌、登录有效时限和状态跟踪信息。网站会把这个<code>cookie</code>当作信息验证的证据，在你浏览网站的每个页面时出示给服务器。</p><p>根据我们上面的逻辑用<code>Requests</code>库跟踪<code>cookie</code>的代码示例也比较简单： </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">params = &#123;<span class="string">'username'</span>: <span class="string">'demochen'</span>, <span class="string">'password'</span>: <span class="string">'password'</span>&#125;</span><br><span class="line"></span><br><span class="line">r = requests.post(<span class="string">"http://pythonscraping.com/pages/cookies/welcome.php"</span>, params) print(<span class="string">"Cookie is set to:"</span>)</span><br><span class="line">print(r.cookies.get_dict())</span><br><span class="line">print(<span class="string">"-----------"</span>)</span><br><span class="line">print(<span class="string">"Going to profile page..."</span>)</span><br><span class="line">r = requests.get(<span class="string">"http://pythonscraping.com/pages/cookies/profile.php"</span>,cookies=r.cookies)</span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure><p>不过也有<code>session</code>的方式进行登录,但是<code>Requests</code>库的<code>session</code>函数处理也很方便。具体和<code>cookie</code>类似，不过多阐述,或者查看文档了解也可以。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">session = requests.Session()</span><br><span class="line">params = &#123;<span class="string">'username'</span>: <span class="string">'username'</span>, <span class="string">'password'</span>: <span class="string">'password'</span>&#125;</span><br><span class="line">s = session.post(<span class="string">"http://pythonscraping.com/pages/cookies/welcome.php"</span>, params) print(<span class="string">"Cookie is set to:"</span>)</span><br><span class="line">print(s.cookies.get_dict())</span><br><span class="line">print(<span class="string">"-----------"</span>)</span><br><span class="line">print(<span class="string">"Going to profile page..."</span>)</span><br><span class="line">s = session.get(<span class="string">"http://pythonscraping.com/pages/cookies/profile.php"</span>) </span><br><span class="line">print(s.text)</span><br></pre></td></tr></table></figure><p>值得注意的是，登录还有一种是用<code>HTTP</code>基本接入认证的方式。<code>Requests</code>库有一个 <code>auth</code>模块专门用来处理 <code>HTTP</code> 认证:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> requests.auth <span class="keyword">import</span> AuthBase</span><br><span class="line"><span class="keyword">from</span> requests.auth <span class="keyword">import</span> HTTPBasicAuth</span><br><span class="line">     auth = HTTPBasicAuth(<span class="string">'ryan'</span>, <span class="string">'password'</span>)</span><br><span class="line">     r = requests.post(url=<span class="string">"http://pythonscraping.com/pages/auth/login.php"</span>, auth=</span><br><span class="line">auth)</span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;利用&lt;code&gt;Requests&lt;/code&gt;库处理&lt;code&gt;Cookie&lt;/code&gt;、&lt;code&gt;session&lt;/code&gt;等方式的登录。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://chensenlin.cn/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://chensenlin.cn/tags/Python/"/>
+    
+      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="数据采集" scheme="https://chensenlin.cn/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/"/>
+    
+      <category term="爬虫" scheme="https://chensenlin.cn/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>Python网络数据采集之处理自然语言|第07天</title>
@@ -546,37 +574,6 @@
       <category term="Python" scheme="https://chensenlin.cn/tags/Python/"/>
     
       <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>购买付费软件的一点感想</title>
-    <link href="https://chensenlin.cn/posts/50238/"/>
-    <id>https://chensenlin.cn/posts/50238/</id>
-    <published>2018-02-03T03:34:53.000Z</published>
-    <updated>2018-03-16T14:00:07.766Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li><p>使用付费还免费软件？</p></li><li><p>是否应该付费？</p></li><li><p>如何选择付费软件？</p></li></ol><a id="more"></a><h4 id="付费还是免费？"><a href="#付费还是免费？" class="headerlink" title="付费还是免费？"></a>付费还是免费？</h4><p>以前我使用<code>Windows</code>的时候，如果遇到付费的软件我都会选择注册机、注册码、破解工具等方式来解决，同时某盘还存了很多的破解的软件或者工具。现在我会逐步选择付费的软件，同时选择同类产品比较好的软件。因为我觉得付费购买是对人家的一种尊重和支持。同理，我是一个开发者，我希望我的作品别人也能够支持，支持别人其实自己也会得到支持。</p><h4 id="如何付费？"><a href="#如何付费？" class="headerlink" title="如何付费？"></a>如何付费？</h4><p>一般会根据自己的需求来判断自己是否需要这个软件的功能，是否能够解决我自己的问题？是否能够满足的我的需要？然后对比同类产品中付费和免费的相关的产品，如果免费的就足够就不需要考虑付费了。例如卸载软件<code>AppCleaner</code>，还有比它更加优秀的产品，但是我选择这个就可以了。同理，如果付费中我能够接受的价格能够满足就可以了，没有必要去选择最贵的活着最好的，主要是最适合自己的。例如剪切板工具有很多，我选择了<code>iPaste</code>，专注于剪切板功能。</p><p>选择付费是一种需要，也是一种支持，更是一种态度。</p><h4 id="付费软件列表"><a href="#付费软件列表" class="headerlink" title="付费软件列表"></a>付费软件列表</h4><h4 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h4><table><thead><tr><th>软件名</th><th>价格(元)</th></tr></thead><tbody><tr><td>Price Tag</td><td>30</td></tr><tr><td>V2er</td><td>8</td></tr><tr><td>白描</td><td>1+6</td></tr><tr><td>熊猫吃短信</td><td>1</td></tr><tr><td>Picsew</td><td>1</td></tr><tr><td>凤凰新闻 Pro</td><td>1</td></tr><tr><td>Holo</td><td>0.00</td></tr><tr><td>小历</td><td>1</td></tr><tr><td>落格输入法</td><td>3</td></tr><tr><td>Piiic</td><td>1</td></tr><tr><td>iPaste</td><td>58.00</td></tr><tr><td>TextGrabber</td><td>30.00</td></tr><tr><td>X.cat Pro</td><td>40</td></tr><tr><td>Cosmos</td><td>0.00</td></tr><tr><td>Shu</td><td>12.00</td></tr><tr><td>鲨鱼记账Pro</td><td>1</td></tr></tbody></table><h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h4><table><thead><tr><th>软件名</th><th>价格(元)</th></tr></thead><tbody><tr><td>Clearview</td><td>78</td></tr><tr><td>MWeb</td><td>98</td></tr><tr><td>Yummy FTP Pro</td><td>198.00</td></tr><tr><td>iPaste</td><td>58</td></tr><tr><td>Xnip</td><td>12/年</td></tr><tr><td>Disk Drill</td><td>189.00</td></tr><tr><td>Total Video Converter</td><td>0.00</td></tr><tr><td>Folx pro 5</td><td>59.00</td></tr><tr><td>iStat Menus 6</td><td>14.00</td></tr></tbody></table><p>暂时就想起来了这么点。。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;使用付费还免费软件？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;是否应该付费？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如何选择付费软件？&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="https://chensenlin.cn/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="软件" scheme="https://chensenlin.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
