@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Python网络数据采集之图像识别与文字处理|第10天]]></title>
     <url>%2Fposts%2F55181%2F</url>
-    <content type="text"><![CDATA[了解JavaScript； 使用selenium库和phantomjs。 图像识别与文字处理将图像翻译成文字一般被称为光学文字识别(Optical Character Recognition，OCR)。可以实现 OCR 的底层库并不多，目前很多库都是使用共同的几个底层 OCR 库，或者是在上面进行定制。 OCR库概述Python常用的OCR库有两个：Pillow 和 Tesseract。每个库都可以从它们的网站上下载并安装(http://pillow.readthedocs.org/installation.html 和https://pypi.python.org/pypi/pytesseract)，或者用第三方管理器(像 pip)通过“pillow”和 “pytesseract”进行安装。 PillowPillow 是从 Python 2.x版本的 Python图像库(Python Imaging Library，PIL)分出来的，支持Python 3.x版本。和PIL一样，Pillow也可以轻松地导入代码，并通过大量的过滤、修饰甚至像素级的变换操作处理图片: 123456from PIL import Image,ImageFilterkitten = Image.open("demo.jpg")#打开图片blurryKitten = kitten.filter(Imagefilter.GaussianBlur)blurryKitten.save("demo_two.jpg")#另存为blurryKitten.show() TesseractTesseract 是目前公认最优秀、最精确的开源 OCR 系统。Tesseract 也具有很高的灵活性。它可以通过训练识别出任何字体，也可以识别出任何Unicode字符。 Tesseract 是一个 Python的命令行工具，不是通过 import语句导入的库。安装之后，要用 tesseract 命令在Python的外面运行。 安装 Tesseract Windows:点击下载安装 Linux:sudo apt-get tessertact-ocr Mac: brew install tesseract;也可以下载源码安装 NumPyNumPy 是一个非常强大的库，具有大量线性代数 以及大规模科学计算的方法。因为NumPy可以用数学方法把图片表示成巨大的像素数组，所以它可以流畅地配合 Tesseract 完成任务。 NumPy 可以通过第三方包管理器(比如 pip)来安装:pip install numpy 处理格式规范的文字例如通过运行Tesseract，读取文件并把结果写到一个文本文件中: 1tesseract text.tif textoutput | cat test.txt Tesseract 最大的缺点是对渐变背景色的处理。利用Pillow 库，我们可以创建一个阈值过滤器来去掉渐变的背景色，只把文字留下来，从而让图片更加清晰，便于 Tesseract 读取: 123456789101112131415from PIL import Imageimport subprocessdef cleanFile(filePath, newFilePath): image = Image.open(filePath) # 对图片进行阈值过滤，然后保存 image = image.point(lambda x: 0 if x&lt;143 else 255) image.save(newFilePath) # 调用系统的tesseract命令对图片进行OCR识别 subprocess.call(["tesseract", newFilePath, "output"]) # 打开文件读取结果 outputFile = open("output.txt", 'r') print(outputFile.read()) outputFile.close()cleanFile("text_2.jpg", "text_2_clean.png") 在提交给 Tesseract 处理之前，那些带标题的、带有大片空白的图片，或者有其他问题的图 片，都应该做预处理。 今天的内容没有特别难，我写的比较简单，爬取网络的图片和验证码识别还没写，先从简单的消化。 欢迎你免费加入我的星球，一起分享，共同成长。]]></content>
+    <content type="text"><![CDATA[图像识别与文字处理； 使用Pillow库和Tesseract。 图像识别与文字处理将图像翻译成文字一般被称为光学文字识别(Optical Character Recognition，OCR)。可以实现 OCR 的底层库并不多，目前很多库都是使用共同的几个底层 OCR 库，或者是在上面进行定制。 OCR库概述Python常用的OCR库有两个：Pillow 和 Tesseract。每个库都可以从它们的网站上下载并安装(http://pillow.readthedocs.org/installation.html 和https://pypi.python.org/pypi/pytesseract)，或者用第三方管理器(像 pip)通过“pillow”和 “pytesseract”进行安装。 PillowPillow 是从 Python 2.x版本的 Python图像库(Python Imaging Library，PIL)分出来的，支持Python 3.x版本。和PIL一样，Pillow也可以轻松地导入代码，并通过大量的过滤、修饰甚至像素级的变换操作处理图片: 123456from PIL import Image,ImageFilterkitten = Image.open("demo.jpg")#打开图片blurryKitten = kitten.filter(Imagefilter.GaussianBlur)blurryKitten.save("demo_two.jpg")#另存为blurryKitten.show() TesseractTesseract 是目前公认最优秀、最精确的开源 OCR 系统。Tesseract 也具有很高的灵活性。它可以通过训练识别出任何字体，也可以识别出任何Unicode字符。 Tesseract 是一个 Python的命令行工具，不是通过 import语句导入的库。安装之后，要用 tesseract 命令在Python的外面运行。 安装 Tesseract Windows:点击下载安装 Linux:sudo apt-get tessertact-ocr Mac: brew install tesseract;也可以下载源码安装 NumPyNumPy 是一个非常强大的库，具有大量线性代数 以及大规模科学计算的方法。因为NumPy可以用数学方法把图片表示成巨大的像素数组，所以它可以流畅地配合 Tesseract 完成任务。 NumPy 可以通过第三方包管理器(比如 pip)来安装:pip install numpy 处理格式规范的文字例如通过运行Tesseract，读取文件并把结果写到一个文本文件中: 1tesseract text.tif textoutput | cat test.txt Tesseract 最大的缺点是对渐变背景色的处理。利用Pillow 库，我们可以创建一个阈值过滤器来去掉渐变的背景色，只把文字留下来，从而让图片更加清晰，便于 Tesseract 读取: 123456789101112131415from PIL import Imageimport subprocessdef cleanFile(filePath, newFilePath): image = Image.open(filePath) # 对图片进行阈值过滤，然后保存 image = image.point(lambda x: 0 if x&lt;143 else 255) image.save(newFilePath) # 调用系统的tesseract命令对图片进行OCR识别 subprocess.call(["tesseract", newFilePath, "output"]) # 打开文件读取结果 outputFile = open("output.txt", 'r') print(outputFile.read()) outputFile.close()cleanFile("text_2.jpg", "text_2_clean.png") 在提交给 Tesseract 处理之前，那些带标题的、带有大片空白的图片，或者有其他问题的图 片，都应该做预处理。 今天的内容没有特别难，我写的比较简单，爬取网络的图片和验证码识别还没写，先从简单的消化。 欢迎你免费加入我的星球，一起分享，共同成长。]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -304,9 +304,9 @@
       </categories>
       <tags>
         <tag>学习</tag>
+        <tag>阅读</tag>
         <tag>笔记</tag>
         <tag>生活</tag>
-        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -318,9 +318,9 @@
       </categories>
       <tags>
         <tag>学习</tag>
+        <tag>阅读</tag>
         <tag>笔记</tag>
         <tag>生活</tag>
-        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -567,8 +567,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>好好说话</tag>
         <tag>生活</tag>
+        <tag>好好说话</tag>
       </tags>
   </entry>
   <entry>
@@ -581,9 +581,9 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
+        <tag>生活</tag>
         <tag>好好说话</tag>
         <tag>喜马拉雅</tag>
-        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -596,9 +596,9 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
+        <tag>生活</tag>
         <tag>好好说话</tag>
         <tag>喜马拉雅</tag>
-        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
