@@ -602,6 +602,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[self和static的差异]]></title>
+    <url>%2Fposts%2F25071%2F</url>
+    <content type="text"><![CDATA[在没有继承的情况下是一样的。主要的差异体现在继承的情况下。 差异： self：永远绑定代码所在类。当前定义类static：调用时确定哪个类。当前调用类 123456789101112131415161718192021class Books&#123; public static $title = 'Books'; public static function getTitleSelf() &#123; return self::$title; &#125; public static function getTitleStatic() &#123; return static::$title; &#125;&#125;class SmallBook extends Books&#123; public static $title = 'small';&#125;echo SmallBook::getTitleSelf().'&lt;br /&gt;';echo SmallBook::getTitleStatic().'&lt;br /&gt;';echo Books::getTitleStatic().'';echo Books::getTitleSelf().''; 运行结果： 1234BookssmallBooksBooks]]></content>
+      <tags>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[解决安装Samba时浏览器打开不成功]]></title>
     <url>%2Fposts%2F21067%2F</url>
     <content type="text"><![CDATA[最开始以为是配置文件或者服务的问题，同时用testparm检测配置文件没有问题，后面发现是SElinux没有关闭。 如何关闭SELinux第一步 查看selinux状态查看selinux的详细状态，如果为enable则表示为开启 1# /usr/sbin/sestatus -v 第二步 查看selinux的模式1# getenforce 第三步 关闭SELinux 永久性关闭（这样需要重启服务器后生效） 1# sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config 临时性关闭（立即生效，但是重启服务器后失效） 12# setenforce 0#设置selinux为permissive模式（即关闭） 12# setenforce 1#设置selinux为enforcing模式（即开启）]]></content>
