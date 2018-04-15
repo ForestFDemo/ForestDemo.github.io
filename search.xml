@@ -304,8 +304,8 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>阅读</tag>
         <tag>笔记</tag>
+        <tag>阅读</tag>
         <tag>生活</tag>
       </tags>
   </entry>
@@ -318,8 +318,8 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>阅读</tag>
         <tag>笔记</tag>
+        <tag>阅读</tag>
         <tag>生活</tag>
       </tags>
   </entry>
@@ -576,8 +576,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>好好说话</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -590,8 +590,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>好好说话</tag>
+        <tag>生活</tag>
         <tag>喜马拉雅</tag>
       </tags>
   </entry>
@@ -605,8 +605,8 @@
       <tags>
         <tag>学习</tag>
         <tag>笔记</tag>
-        <tag>生活</tag>
         <tag>好好说话</tag>
+        <tag>生活</tag>
         <tag>喜马拉雅</tag>
       </tags>
   </entry>
@@ -628,6 +628,14 @@
       <tags>
         <tag>学习</tag>
         <tag>问题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL常用命令]]></title>
+    <url>%2Fposts%2F41388%2F</url>
+    <content type="text"><![CDATA[特别初级的写了一下。 进入MySQL管理命令行的命令： 1234mysql -u root -p``` 显示当前数据库： show databases;123显示创建数据的SQL语句: show create databases mysql;12显示创建表的SQL语句: show create table user;12显示表结构: desc tablename;12获取select相关信息: explain select * from user;12显示哪些进程正在运行： show procsslist;12显示系统变量以及值: show varables;12显示系统变量包涵 conn 的值: show varables like ‘%conn%’; `]]></content>
+      <tags>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
