@@ -4,8 +4,25 @@
 
     
   <url>
+    <loc>https://chensenlin.cn/posts/1845/</loc>
+    <lastmod>2018-04-20T08:43:52.499Z</lastmod>
+    <data>
+        <display>
+        <title>将CentOS的yum源改为阿里云的的yum源</title>
+        <pubTime>2015-04-15T10:17:44.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://chensenlin.cn/posts/62394/</loc>
-    <lastmod>2018-04-19T09:04:22.136Z</lastmod>
+    <lastmod>2018-04-19T09:04:35.264Z</lastmod>
     <data>
         <display>
         <title>Python网络数据之用爬虫测试网站|第11天</title>
@@ -70,23 +87,6 @@
         <tag>服务器</tag>
          
         <tag>网站优化</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chensenlin.cn/posts/1845/</loc>
-    <lastmod>2018-04-15T10:23:54.613Z</lastmod>
-    <data>
-        <display>
-        <title>将CentOS的yum源改为阿里云的的yum源</title>
-        <pubTime>2015-04-15T10:17:44.000Z</pubTime>
-        
-        <tag>-Linux</tag>
          
          
            
