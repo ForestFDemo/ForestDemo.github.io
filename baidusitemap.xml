@@ -4,17 +4,62 @@
 
     
   <url>
-    <loc>https://chensenlin.cn/posts/41388/</loc>
-    <lastmod>2018-04-23T07:48:02.864Z</lastmod>
+    <loc>https://chensenlin.cn/posts/25071/</loc>
+    <lastmod>2018-04-23T07:51:13.808Z</lastmod>
     <data>
         <display>
-        <title>MySQL常用命令</title>
-        <pubTime>2015-07-15T03:46:31.000Z</pubTime>
+        <title>self和static的差异</title>
+        <pubTime>2016-04-15T10:12:44.000Z</pubTime>
         
-        <tag>MySQL</tag>
+        <tag>PHP</tag>
          
          
            
+             
+              <breadCrumb title="PHP" url="https://chensenlin.cn/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://chensenlin.cn/posts/1845/</loc>
+    <lastmod>2018-04-23T07:51:07.306Z</lastmod>
+    <data>
+        <display>
+        <title>将CentOS的yum源改为阿里云的的yum源</title>
+        <pubTime>2015-04-15T10:17:44.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="服务器" url="https://chensenlin.cn/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://chensenlin.cn/posts/60091/</loc>
+    <lastmod>2018-04-23T07:51:01.826Z</lastmod>
+    <data>
+        <display>
+        <title>大流量网站该如何配置优化</title>
+        <pubTime>2016-12-15T10:25:28.000Z</pubTime>
+        
+        <tag>服务器</tag>
+         
+        <tag>网站优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="服务器" url="https://chensenlin.cn/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+          
         </display>
     </data>
     </url>
@@ -22,7 +67,7 @@
     
   <url>
     <loc>https://chensenlin.cn/posts/56894/</loc>
-    <lastmod>2018-04-23T07:33:04.634Z</lastmod>
+    <lastmod>2018-04-23T07:50:47.046Z</lastmod>
     <data>
         <display>
         <title>微信使用小技巧</title>
@@ -32,6 +77,29 @@
          
          
            
+             
+              <breadCrumb title="生活" url="https://chensenlin.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://chensenlin.cn/posts/41388/</loc>
+    <lastmod>2018-04-23T07:50:15.301Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL常用命令</title>
+        <pubTime>2015-07-15T03:46:31.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="MySQL" url="https://chensenlin.cn/categories/MySQL/"/>
+          
         </display>
     </data>
     </url>
@@ -1229,59 +1297,6 @@
              
               <breadCrumb title="Python" url="https://chensenlin.cn/categories/Python/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chensenlin.cn/posts/1845/</loc>
-    <lastmod>2018-04-20T08:43:52.499Z</lastmod>
-    <data>
-        <display>
-        <title>将CentOS的yum源改为阿里云的的yum源</title>
-        <pubTime>2015-04-15T10:17:44.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chensenlin.cn/posts/60091/</loc>
-    <lastmod>2018-04-15T10:29:27.286Z</lastmod>
-    <data>
-        <display>
-        <title>大流量网站该如何配置优化</title>
-        <pubTime>2016-12-15T10:25:28.000Z</pubTime>
-        
-        <tag>服务器</tag>
-         
-        <tag>网站优化</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chensenlin.cn/posts/25071/</loc>
-    <lastmod>2018-04-15T10:23:43.477Z</lastmod>
-    <data>
-        <display>
-        <title>self和static的差异</title>
-        <pubTime>2016-04-15T10:12:44.000Z</pubTime>
-        
-        <tag>PHP</tag>
-         
-         
-           
         </display>
     </data>
     </url>

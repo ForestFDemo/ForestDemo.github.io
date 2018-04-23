@@ -41,6 +41,9 @@
     <title><![CDATA[微信使用小技巧]]></title>
     <url>%2Fposts%2F56894%2F</url>
     <content type="text"><![CDATA[小技巧，大实用。 微信日常小技巧00 朋友圈文字展示，7行不折叠。 01 査看群里已有哪些好友，通讯录-插 签-新建标签-从群里导入-选择群聊 査看关注同一个公众号的好友数，取消 关注-搜索该公众号。 02 批量査看是否好友，建30人以下群聊 不发消息，这29人不会收到提醒。 03 建单人群（发起群聊-面对面建群，拉两人删除）。 04 査看好友某个时间段朋友圈（搜索-朋 友圈-好友-蹄选）。 05 某条朋友圈互动不再提示 当已点赞或者评论某条朋友圈，朋友们也在下面互动，如果不想收到大量的提醒，iOS用户只要将这条消息向左划然 后选择不再通知就可以，安卓用户则是长按这个提醒，然后选择不再通知。 删除好友后再次添加不会提醒对方长按头像可在群聊里@该用户。 06 朋友圈长按头像可直接设置朋友圈权限 微信发送高清照片，聊天窗口-加号长按相册按钮。 07 微信拍照不自动保存，设置内关掉自动 存储的开关。设置-通用-照片和视频。 08 主页面添加好友，输入 [:recover] ,注意有冒号，就可以进行一些问题的排查修复。 09 长按朋友圈小视频，选择静音播放。 长按朋友圈图片可直接再次编辑朋友圈图片。 10 微信PG端可直接右键消息引用其他人。 11 在微信的拍摄页面，双击屏幕，可以切换前后摄像头 。 12 长按拍照按钮，然后上下滑动手指，可以调节焦距。 13 在手机上删除掉与某人的全部聊天记录 之后，再登陆网页版，还可以看到依据最后聊天时间排序的好友。 14 在二人对话栏里，长按对方的微信头像，对话框里会出现对方的微信昵称。 把gif动图发到微信网页版，可以自动转为动画表情。]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
       <tags>
         <tag>微信</tag>
       </tags>
@@ -395,6 +398,9 @@
     <title><![CDATA[大流量网站该如何配置优化]]></title>
     <url>%2Fposts%2F60091%2F</url>
     <content type="text"><![CDATA[服务器、静态化、数据库优化、负载均衡应多管齐下。 初步的优化方案： 1、服务器环境的选择，建议采用Linux服务器。选择理由：毕竟Linux现在的市场主要是服务器领域，其次开源的，如果网站发展到一定的水平，选择开源与否决定了网站以后的命运。 2、采用Nginx作为HTTP服务器，是由俄罗斯人开发的，俄罗斯人在计算机软件方面是很出色的，包括像世界第一杀毒软件卡巴斯基就是俄罗斯出品。 3、页面纯静态化，不要使用伪静态，如果是非静态页面，都需要服务器端利用一定的CPU资源进行编译之后才能显示出来，而静态页面则直接显示，另外千万不能使用伪静态，伪静态实际上只是为了迎合搜索引擎而产生的一门技术，在使用过程中，会加大服务器的资源消耗，当访问量大的时候要慎用。 4、负载均衡技术，通俗点讲就是将网页上的元素分开放置到不同的服务器上来分担单台服务器的压力，如：数据库单独一台服务器，静态页面一台服务器，图片单独一台服务器等等，具体应该视情况而定，流量越大，就越应该分得越细，像国内的门户网站就是这样做的，看看他们的图片就能知道，图片都是用子域名或者其他域名引用在其他图片服务器的。 5、数据库优化，很多大型网站应用的时候大部分世界都花在这个上面，当网站数据变大，访问量上升，数据库首当其冲成为第一个需要解决的瓶颈。]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
       <tags>
         <tag>服务器</tag>
         <tag>网站优化</tag>
@@ -679,6 +685,9 @@
     <title><![CDATA[self和static的差异]]></title>
     <url>%2Fposts%2F25071%2F</url>
     <content type="text"><![CDATA[其实很简单。 在没有继承的情况下是一样的。主要的差异体现在继承的情况下。 差异： self：永远绑定代码所在类。当前定义类static：调用时确定哪个类。当前调用类 123456789101112131415161718192021class Books&#123; public static $title = 'Books'; public static function getTitleSelf() &#123; return self::$title; &#125; public static function getTitleStatic() &#123; return static::$title; &#125;&#125;class SmallBook extends Books&#123; public static $title = 'small';&#125;echo SmallBook::getTitleSelf().'&lt;br /&gt;';echo SmallBook::getTitleStatic().'&lt;br /&gt;';echo Books::getTitleStatic().'';echo Books::getTitleSelf().''; 运行结果： 1234BookssmallBooksBooks]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
       <tags>
         <tag>PHP</tag>
       </tags>
@@ -699,6 +708,9 @@
     <title><![CDATA[MySQL常用命令]]></title>
     <url>%2Fposts%2F41388%2F</url>
     <content type="text"><![CDATA[特别初级的写了一下。 进入MySQL管理命令行的命令： 1mysql -u root -p 显示当前数据库： 1show databases; 显示创建数据的SQL语句: 1show create databases mysql; 显示创建表的SQL语句: 1show create table user; 显示表结构: 1desc tablename; 获取select相关信息: 1explain select * from user; 显示哪些进程正在运行： 1show procsslist; 显示系统变量以及值: 1show varables; 显示系统变量包涵 conn 的值: 1show varables like '%conn%';]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
       <tags>
         <tag>MySQL</tag>
       </tags>
@@ -707,6 +719,9 @@
     <title><![CDATA[将CentOS的yum源改为阿里云的的yum源]]></title>
     <url>%2Fposts%2F1845%2F</url>
     <content type="text"><![CDATA[主要是提高加载速度。 阿里云Linux安装镜像源地址：http://mirrors.aliyun.com/ CentOS系统更换软件安装源 第一步：备份你的原镜像文件，以免出错后可以恢复。 1mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup 第二步：下载新的CentOS-Base.repo 到/etc/yum.repos.d/ 1wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo 第三步：运行yum makecache生成缓存 12yum clean allyum makecache]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
       <tags>
         <tag>Linux</tag>
       </tags>
