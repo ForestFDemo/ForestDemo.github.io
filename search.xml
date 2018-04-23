@@ -698,7 +698,7 @@
   <entry>
     <title><![CDATA[MySQL常用命令]]></title>
     <url>%2Fposts%2F41388%2F</url>
-    <content type="text"><![CDATA[特别初级的写了一下。 进入MySQL管理命令行的命令： 1234mysql -u root -p``` 显示当前数据库： show databases;123显示创建数据的SQL语句: show create databases mysql;12显示创建表的SQL语句: show create table user;12显示表结构: desc tablename;12获取select相关信息: explain select * from user;12显示哪些进程正在运行： show procsslist;12显示系统变量以及值: show varables;12显示系统变量包涵 conn 的值: show varables like ‘%conn%’;`]]></content>
+    <content type="text"><![CDATA[特别初级的写了一下。 进入MySQL管理命令行的命令： 1mysql -u root -p 显示当前数据库： 1show databases; 显示创建数据的SQL语句: 1show create databases mysql; 显示创建表的SQL语句: 1show create table user; 显示表结构: 1desc tablename; 获取select相关信息: 1explain select * from user; 显示哪些进程正在运行： 1show procsslist; 显示系统变量以及值: 1show varables; 显示系统变量包涵 conn 的值: 1show varables like '%conn%';]]></content>
       <tags>
         <tag>MySQL</tag>
       </tags>
