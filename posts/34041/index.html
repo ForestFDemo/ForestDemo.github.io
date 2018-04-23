@@ -88,12 +88,10 @@
 <meta property="og:site_name" content="你好我是森林">
 <meta property="og:description" content="主要内容： 文档编码和类型的介绍； 读取CSV、PDF等格式的文件。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1262381-313de7cb370f2060.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-04-11T11:01:07.435Z">
+<meta property="og:updated_time" content="2018-04-23T07:30:50.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python网络数据采集之读取文档|第05天">
 <meta name="twitter:description" content="主要内容： 文档编码和类型的介绍； 读取CSV、PDF等格式的文件。">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1262381-313de7cb370f2060.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -355,7 +353,7 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共918 字</span>
+            <span>全文共897 字</span>
             &nbsp; | &nbsp;
             <span>阅读时长4 分钟</span>
           </span>
@@ -426,8 +424,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> pdfminer.pdfinterp <span class="keyword">import</span> PDFResourceManager, process_pdf</span><br><span class="line"><span class="keyword">from</span> pdfminer.converter <span class="keyword">import</span> TextConverter</span><br><span class="line"><span class="keyword">from</span> pdfminer.layout <span class="keyword">import</span> LAParams</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> open</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">readPDF</span><span class="params">(pdfFile)</span>:</span></span><br><span class="line">    rsrcmgr = PDFResourceManager()</span><br><span class="line">    retstr = StringIO()</span><br><span class="line">    laparams = LAParams()</span><br><span class="line">    device = TextConverter(rsrcmgr, retstr, laparams=laparams)</span><br><span class="line">             process_pdf(rsrcmgr, device, pdfFile)</span><br><span class="line">             device.close()</span><br><span class="line">    content = retstr.getvalue() retstr.close()</span><br><span class="line">    <span class="keyword">return</span> content</span><br><span class="line">    </span><br><span class="line">pdfFile = urlopen(<span class="string">"http://pythonscraping.com/pages/warandpeace/chapter1.pdf"</span>)</span><br><span class="line">outputString = readPDF(pdfFile)</span><br><span class="line">print(outputString)</span><br><span class="line">pdfFile.close()</span><br></pre></td></tr></table></figure>
 <p><code>readPDF</code> 函数最大的好处是，如果<code>PDF</code>文件在电脑里，就可以直接把 <code>urlopen</code>返回的对象 <code>pdfFile</code> 替换成普通的 <code>open()</code> 文件对象:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdfFile = open(<span class="string">"./chapter1.pdf"</span>, <span class="string">'rb'</span>)</span><br></pre></td></tr></table></figure>
-<p>正式邀请你免费加入我的星球，一起分享，共同成长。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1262381-313de7cb370f2060.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="知识星球"></p>
 
       
     </div>
@@ -781,7 +777,7 @@
 <i class="fa fa-pencil"></i>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共67.8k字，欢迎访问</span>
+  <span class="post-count">博客全站共67.5k字，欢迎访问</span>
 </div>
 
         

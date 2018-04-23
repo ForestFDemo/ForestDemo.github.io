@@ -88,12 +88,10 @@
 <meta property="og:site_name" content="你好我是森林">
 <meta property="og:description" content="图像识别与文字处理； 使用Pillow库和Tesseract。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1262381-313de7cb370f2060.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-04-15T10:05:50.600Z">
+<meta property="og:updated_time" content="2018-04-23T07:31:17.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python网络数据采集之图像识别与文字处理|第10天">
 <meta name="twitter:description" content="图像识别与文字处理； 使用Pillow库和Tesseract。">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1262381-313de7cb370f2060.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -355,7 +353,7 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共768 字</span>
+            <span>全文共749 字</span>
             &nbsp; | &nbsp;
             <span>阅读时长3 分钟</span>
           </span>
@@ -419,8 +417,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cleanFile</span><span class="params">(filePath, newFilePath)</span>:</span> </span><br><span class="line">    image = Image.open(filePath)</span><br><span class="line">    <span class="comment"># 对图片进行阈值过滤，然后保存</span></span><br><span class="line">    image = image.point(<span class="keyword">lambda</span> x: <span class="number">0</span> <span class="keyword">if</span> x&lt;<span class="number">143</span> <span class="keyword">else</span> <span class="number">255</span>)</span><br><span class="line">    image.save(newFilePath)</span><br><span class="line">    <span class="comment"># 调用系统的tesseract命令对图片进行OCR识别 </span></span><br><span class="line">    subprocess.call([<span class="string">"tesseract"</span>, newFilePath, <span class="string">"output"</span>])</span><br><span class="line">    <span class="comment"># 打开文件读取结果</span></span><br><span class="line">    outputFile = open(<span class="string">"output.txt"</span>, <span class="string">'r'</span>) </span><br><span class="line">    print(outputFile.read())</span><br><span class="line">    outputFile.close()</span><br><span class="line"></span><br><span class="line">cleanFile(<span class="string">"text_2.jpg"</span>, <span class="string">"text_2_clean.png"</span>)</span><br></pre></td></tr></table></figure>
 <p>在提交给 <code>Tesseract</code> 处理之前，那些带标题的、带有大片空白的图片，或者有其他问题的图 片，都应该做预处理。</p>
 <p>今天的内容没有特别难，我写的比较简单，爬取网络的图片和验证码识别还没写，先从简单的消化。</p>
-<p>欢迎你免费加入我的星球，一起分享，共同成长。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1262381-313de7cb370f2060.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="知识星球"></p>
 
       
     </div>
@@ -770,7 +766,7 @@
 <i class="fa fa-pencil"></i>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共67.8k字，欢迎访问</span>
+  <span class="post-count">博客全站共67.5k字，欢迎访问</span>
 </div>
 
         
