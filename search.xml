@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Mac完全删除Vagrant]]></title>
     <url>%2Fposts%2F38898%2F</url>
-    <content type="text"><![CDATA[Vagrant 依赖比较多 几行命令，同样搞定 卸载程序和依赖123rm -rf /opt/vagrantrm -f /usr/local/bin/vagrantsudo pkgutil --forget com.vagrant.vagrant 删除用户数据rm -rf ~/.vagrant ~/.vagrant.d]]></content>
+    <content type="text"><![CDATA[Vagrant 依赖比较多 几行命令，同样搞定 卸载程序和依赖123rm -rf /opt/vagrantrm -f /usr/local/bin/vagrantsudo pkgutil --forget com.vagrant.vagrant 删除用户数据12rm -rf ~/.vagrant rm -rf ~/.vagrant.d]]></content>
       <tags>
         <tag>Mac</tag>
         <tag>Vagrant</tag>
