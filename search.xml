@@ -23,8 +23,8 @@
     <url>%2Fposts%2F36403%2F</url>
     <content type="text"><![CDATA[官网地址：https://github.com/laruence/yaf 基础环境最基本的几个软件应该有的。 Homebrew,PHP,Nginx,MySQL(暂时用不到)。 或者，电脑应该有一个PHP的开发环境。 本次的环境： 12345678910➜ ~ php -vPHP 7.1.14 (cli) (built: Feb 2 2018 08:42:59) ( NTS )Copyright (c) 1997-2018 The PHP GroupZend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies with Xdebug v2.5.5, Copyright (c) 2002-2017, by Derick Rethans➜ ~ nginx -vnginx version: nginx/1.12.1➜ ~ brew -vHomebrew 1.6.4Homebrew/homebrew-core (git revision 530af; last commit 2018-05-20) 安装扩展直接采用brew进行扩展安装。 brew install php71-yaf 检查： 12➜ ~ php -m | grep yafyaf 表示yaf的扩展安装完成。 配置项目仓库地址：https://github.com/laruence/yaf 123456git clone https://github.com/laruence/yafcd toolscd cgphp yaf_cg yafApicd outputcp -R yafApi /User/demo/project/yafApi 配置虚拟主机我的环境目录： 12➜ conf.d pwd/usr/local/etc/nginx/conf.d 新建虚拟主机 检查nginx配置文件 123➜ conf.d nginx -tnginx: the configuration file /usr/local/etc/nginx/nginx.conf syntax is oknginx: configuration file /usr/local/etc/nginx/nginx.conf test is successful 重启nginx服务 1brew services restart nginx 配置hostssudo vim /etc/hosts 12# yaf api 127.0.0.1 www.yaf.com 测试]]></content>
       <tags>
-        <tag>Mac</tag>
         <tag>PHP</tag>
+        <tag>Mac</tag>
         <tag>yaf</tag>
         <tag>Nginx</tag>
       </tags>
@@ -399,8 +399,8 @@
         <category>阅读</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>阅读</tag>
         <tag>生活</tag>
       </tags>
@@ -413,8 +413,8 @@
         <category>阅读</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>阅读</tag>
         <tag>生活</tag>
       </tags>
@@ -463,8 +463,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -476,8 +476,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -489,8 +489,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -502,8 +502,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -515,8 +515,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -540,8 +540,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -553,8 +553,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -566,8 +566,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -579,8 +579,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -592,8 +592,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -605,8 +605,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -618,8 +618,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -631,8 +631,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -644,8 +644,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -657,8 +657,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -670,8 +670,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
         <tag>沟通表达</tag>
       </tags>
@@ -684,8 +684,8 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
       </tags>
   </entry>
@@ -697,10 +697,10 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
-        <tag>生活</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -708,10 +708,10 @@
     <url>%2Fposts%2F12618%2F</url>
     <content type="text"><![CDATA[谈判如何砍价？ 不懂“掀桌”，只能滚蛋！ 掀桌的三步，一步不能缺第一步表达自己想上桌的意愿，给对方一种稳赚的感觉，把对方拉上谈判桌； 第二步等对方上桌之后，告诉对方还有一个不友好的第三者也在这张桌上，为后面掀桌埋下伏笔，同时也建立一张安全网，让对方依然和你保持一个船上； 第三步当对方给出条件之后，态度立即来个大逆转，从极度开心到极度不开心，吓死对方，让对方面临两种选择交易失败（之前他的所有聊天成本泡汤）和交易继续（接受你的条件），突然把对方一脚踢开； 注意事项不要进店立即问价，要在最后关头问价！ 不完全会成功，因为你的条件要在对方的底线内！ 掀桌的核心不在于掀桌，在于上桌和安全网！]]></content>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
-        <tag>生活</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
+        <tag>生活</tag>
         <tag>喜马拉雅</tag>
       </tags>
   </entry>
@@ -723,10 +723,10 @@
         <category>好好说话</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>学习</tag>
-        <tag>生活</tag>
+        <tag>笔记</tag>
         <tag>好好说话</tag>
+        <tag>生活</tag>
         <tag>喜马拉雅</tag>
       </tags>
   </entry>
