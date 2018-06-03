@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2018-05-31T06:57:22.314Z</updated>
+  <updated>2018-06-03T09:16:14.538Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP如何解决网站大流量和高并发的问题</title>
+    <link href="https://chensenlin.cn/posts/16446/"/>
+    <id>https://chensenlin.cn/posts/16446/</id>
+    <published>2018-06-03T09:10:22.000Z</published>
+    <updated>2018-06-03T09:16:14.538Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>基础篇</p><p>高并发架构基础概念和优化思路</p><a id="more"></a><h3 id="高并发架构相关概念"><a href="#高并发架构相关概念" class="headerlink" title="高并发架构相关概念"></a>高并发架构相关概念</h3><p><strong>并发</strong>，在操作系统中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理机上运行，但任一个时刻点上只有一个程序在处理机上运行</p><p>通常我们所定义的高并发并非上述解释，简单的来说就是<strong>在某个时间点、有多少个访问同时到来</strong>。 </p><p><strong>高并发</strong>：通常如果一个日PV在千万以上，就有可能是一个高并发的系统</p><p><strong>QPS</strong>:每秒钟请求或查询的数量，在互联网领域，指每秒响应请求数（HTTP请求）</p><p><strong>吞吐量</strong>：单位时间内处理的请求数量（通常由QPS和并发数决定）</p><p><strong>响应时间</strong>：从请求发出到收到响应花费的时间。例如系统处理一个HTTP请求需要10s，这个10s就是响应时间</p><p><strong>PV</strong>：综合浏览量（Page View）,即页面浏览量或者点击量，一个访客在24小时内访问的页面数量</p><p><strong>UV</strong>：独立访客（UniQue Visitor），即一定时间范围内相同访客多次访问网站，只计算为1个独立访客</p><p><strong>带宽</strong>：计算带宽大小需关注两个指标，峰值流量和页面的平均大小</p><p>日网站带宽 = PV / 统计时间（秒）<em> 平均页面大小（KB） </em> 8</p><p>峰值是平均值的倍数，根据实际情况来定</p><p><strong>QPS VS 并发连接数</strong></p><p>QPS 不等于并发连接数</p><p>QPS 是每秒 HTTP 请求数量，并发连接数是系统同时处理的请求数量</p><p>（总 PV 数<em> 80%)1 (6 小时秒数</em> 20%) = 峰值每秒请求数（QPS)</p><blockquote><p>80%的访问量主要集中在20%的时间</p></blockquote><h3 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h3><p><strong>目的</strong>：测试能承受的最大并发 和 测试最大承受的QPS </p><p>常用性能测试工具 </p><p>ab、wrk、http_ load. Web Bench、Siege、Apache JMeter</p><p><strong>Ab</strong></p><p>全称是 apache benchmark，是 apache 官方推出的工具</p><p>创建多个并发访问线程，模拟多个访问者同时对某一 URL 地址进行访问。它的测试目标是基于 URL 的，因此，它既可以用来测试 apache 的负载压力，也可以测试 nginx、lighthttp、 Tomcat、IIS 等其它 Web 服务器的压力。</p><p><strong>Ab的使用</strong></p><p>模拟并发请求 100 次，总共请求 5000 次 ；Ab-c 100 -n 5000 待测试网站</p><p><strong>注意事项</strong></p><p>测试机器与被测试机器分开;<br>不要对线上服务做压力测试;<br>观察(top)测试工具 ab 所在机器以及被测试的前端机的 CPU，内存，网络等都不超过最高限度的75%。</p><h3 id="QPS-达到极限的解决方案"><a href="#QPS-达到极限的解决方案" class="headerlink" title="QPS 达到极限的解决方案"></a>QPS 达到极限的解决方案</h3><p>随着 QPS 的增长，每个阶段需要根据实际情况来进行优化，优化的方案也与硬件条件、网络带宽息息相关。</p><ol><li><p>QPS达到50，基本不需要优化。</p></li><li><p>QPS 达到 100</p></li></ol><p>假设关系型数据库的每次请求在 0.01 秒完成</p><p>假设单页面只有一个 SQL 查询，那么 100 QPS 意味着 1 秒钟完成 100 次请求，但是此时我们并不能保证数据库查询能完成 100 次。</p><p>方案：<strong>数据库缓存层、数据库的负载均衡</strong></p><ol><li>QPS 达到 800</li></ol><p>假设我们使用百兆带宽，意味着网站出口的实际带宽是 8 M 左右</p><p>假设每个页面只有 10 K，在这个并发条件下，百兆带宽已经吃完方案：CDN 加速、负载均衡</p><ol><li>QPS 达到 1000</li></ol><p>假设使用 Memcache 绶存数据库查询数据，每个页面对 Memcache 的请求远大于直接对 DB 的请求</p><p>Memcache 的悲观并发数在 2 w 左右，但有可能在之前内网带宽已经吃光，表现出不稳定</p><p>方案：<strong>静态 HTML 缓存</strong></p><ol><li>QPS 达到 2000</li></ol><p>这个级别下，文件系统访向锁都成为了灾难</p><p>方案：<strong>做业务分离，分布式存储</strong></p><h3 id="高并发解决方案案例"><a href="#高并发解决方案案例" class="headerlink" title="高并发解决方案案例"></a>高并发解决方案案例</h3><p><strong>流量优化</strong></p><p>防盗链处理</p><p><strong>前端优化</strong></p><p>减少HTTP请求；例如合并CSS js，图片<br>添加异步请求；延迟加载暂时不需要的内容<br>启用浏览器缓存和文件压缩；<br>CDN加速；<br>建立独立的图片服务器；</p><p><strong>服务端优化</strong></p><p>页面静态化；并发处理；队列处理</p><p><strong>数据库优化</strong></p><p>数据库缓存；分库分表、分区操作；读写分离；负载均衡</p><p><strong>Web服务器优化</strong></p><p>负载均衡</p><blockquote><p>本文的学习笔记来自于在imooc学习。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;基础篇&lt;/p&gt;
+&lt;p&gt;高并发架构基础概念和优化思路&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="PHP" scheme="https://chensenlin.cn/tags/PHP/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac完全删除Vagrant</title>
@@ -81,9 +102,9 @@
     </summary>
     
     
-      <category term="PHP" scheme="https://chensenlin.cn/tags/PHP/"/>
-    
       <category term="Mac" scheme="https://chensenlin.cn/tags/Mac/"/>
+    
+      <category term="PHP" scheme="https://chensenlin.cn/tags/PHP/"/>
     
       <category term="yaf" scheme="https://chensenlin.cn/tags/yaf/"/>
     
@@ -526,33 +547,6 @@
       <category term="数据采集" scheme="https://chensenlin.cn/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/"/>
     
       <category term="爬虫" scheme="https://chensenlin.cn/tags/%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python常用函数整理</title>
-    <link href="https://chensenlin.cn/posts/26518/"/>
-    <id>https://chensenlin.cn/posts/26518/</id>
-    <published>2018-03-27T03:32:52.000Z</published>
-    <updated>2018-04-20T08:46:48.103Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>主要内容：</p><p>字符串函数、集合函数、列表函数和字典函数。</p><a id="more"></a><h3 id="Python常用函数"><a href="#Python常用函数" class="headerlink" title="Python常用函数"></a>Python常用函数</h3><h4 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h4><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>capitalize()</td><td>返回首字母的大写副本</td></tr><tr><td>find(string)</td><td>返回字符串中首次出现参数string的索引，如果字符串中没有参数string则返回-1</td></tr><tr><td>find(s,beg)</td><td>返回字符串中索引beg之后首次出现参数s的索引，如果字符串中索引beg之后没有参数s则返回-1</td></tr><tr><td>find(s,beg,end)</td><td>返回字符串中索引beg与end之间首次出现参数s的索引，如果字符串中索引beg和end之间没有参数s则返回-1</td></tr><tr><td>islower()</td><td>测试所有字符是否均为小写形式</td></tr><tr><td>isupper()</td><td>测试所有字符是否均为大写形式</td></tr><tr><td>lower()</td><td>将所有字符穿华为小写形式并返回</td></tr><tr><td>replace(old,new)</td><td>将字符串中所有子串old替换为new并返回</td></tr><tr><td>split()</td><td>将空格分隔的单词以列表的形式返回</td></tr><tr><td>split(del)</td><td>将del分隔的子串以列表的形式返回</td></tr><tr><td>strip()</td><td>删除字符串两端的空白符并返回</td></tr><tr><td>strip(string)</td><td>删除字符串中的string并返回</td></tr><tr><td>upper()</td><td>将所有字符串转化为大写形式并返回</td></tr></tbody></table><h4 id="列表函数"><a href="#列表函数" class="headerlink" title="列表函数"></a>列表函数</h4><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>len(L)</td><td>返回列表L中的元素数量</td></tr><tr><td>max(L)</td><td>返回列表L中的最大值</td></tr><tr><td>min(L)</td><td>返回列表L中的最小值</td></tr><tr><td>sum(L)</td><td>返回列表L中所有元素的和</td></tr></tbody></table><h4 id="集合函数"><a href="#集合函数" class="headerlink" title="集合函数"></a>集合函数</h4><table><thead><tr><th>方法</th><th>运算符</th><th>说明</th></tr></thead><tbody><tr><td>add</td><td></td><td>往集合中添加一个元素</td></tr><tr><td>clear</td><td></td><td>移除集合中的所有元素</td></tr><tr><td>difference</td><td>-</td><td>根据一个集合中不存在于另一个集合中的元素，创建中一个新的集合</td></tr><tr><td>intersection</td><td>&amp;</td><td>根据两个集合中共有的元素，创建出一个新的集合</td></tr><tr><td>issubset</td><td>&lt;=</td><td>判断一个集合的所有元素是否都包含于另一个集合</td></tr><tr><td>issuperset</td><td>&gt;=</td><td>判断一个集合是否包含了另一个集合中的所有元素</td></tr><tr><td>remove</td><td></td><td>移除集合中的一个元素</td></tr><tr><td>symmetric_difference</td><td>^</td><td>根据两个集合中所有不存在于对方的元素，创建出一个新的集合</td></tr><tr><td>union</td><td></td><td>根据两个集合中所有的元素，创建出一个新的集合</td></tr></tbody></table><h4 id="字典函数"><a href="#字典函数" class="headerlink" title="字典函数"></a>字典函数</h4><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>clear</td><td>清空字典内容</td></tr><tr><td>get</td><td>返回关键字所关联的值，如果指定键不存在，则返回默认值</td></tr><tr><td>keys</td><td>以列表的形式返回字典中的所有键。所得列表中的每个条目肯定是唯一的</td></tr><tr><td>items</td><td>返回（key,value）列表</td></tr><tr><td>values</td><td>以列表的形式返回字典中的所有值。所得列表中的每个条目不一定是唯一的</td></tr><tr><td>update</td><td>用另一个字典的内容对当前字典进行更新</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;主要内容：&lt;/p&gt;
-&lt;p&gt;字符串函数、集合函数、列表函数和字典函数。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="https://chensenlin.cn/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="https://chensenlin.cn/tags/Python/"/>
-    
-      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="Python从入门到实践" scheme="https://chensenlin.cn/tags/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/"/>
     
   </entry>
   
