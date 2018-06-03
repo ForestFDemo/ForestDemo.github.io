@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="你好我是森林">
 <meta property="og:description" content="基础篇 高并发架构基础概念和优化思路">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-03T13:42:08.503Z">
+<meta property="og:updated_time" content="2018-06-03T14:55:51.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础篇|PHP如何解决网站大流量和高并发">
 <meta name="twitter:description" content="基础篇 高并发架构基础概念和优化思路">
@@ -321,7 +321,7 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共1,172 字</span>
+            <span>全文共1,176 字</span>
             &nbsp; | &nbsp;
             <span>阅读时长4 分钟</span>
           </span>
@@ -365,12 +365,12 @@
 <p><strong>PV</strong>：综合浏览量（Page View）,即页面浏览量或者点击量，一个访客在24小时内访问的页面数量</p>
 <p><strong>UV</strong>：独立访客（UniQue Visitor），即一定时间范围内相同访客多次访问网站，只计算为1个独立访客</p>
 <p><strong>带宽</strong>：计算带宽大小需关注两个指标，峰值流量和页面的平均大小</p>
-<p>日网站带宽 = PV / 统计时间（秒）<em> 平均页面大小（KB） </em> 8</p>
+<p>日网站带宽 = PV / 统计时间（秒）x 平均页面大小（KB） x 8</p>
 <p>峰值是平均值的倍数，根据实际情况来定</p>
 <p><strong>QPS VS 并发连接数</strong></p>
 <p>QPS 不等于并发连接数</p>
 <p>QPS 是每秒 HTTP 请求数量，并发连接数是系统同时处理的请求数量</p>
-<p>（总 PV 数<em> 80%)1 (6 小时秒数</em> 20%) = 峰值每秒请求数（QPS)</p>
+<p>（总 PV 数 x 80%)1 (6 小时秒数 x 20%) = 峰值每秒请求数（QPS)</p>
 <blockquote>
 <p>80%的访问量主要集中在20%的时间</p>
 </blockquote>
