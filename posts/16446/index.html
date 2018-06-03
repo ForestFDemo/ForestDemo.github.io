@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="你好我是森林">
 <meta property="og:description" content="基础篇 高并发架构基础概念和优化思路">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-03T09:19:13.376Z">
+<meta property="og:updated_time" content="2018-06-03T09:22:51.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP如何解决网站大流量和高并发的问题">
 <meta name="twitter:description" content="基础篇 高并发架构基础概念和优化思路">
@@ -321,7 +321,7 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共1,177 字</span>
+            <span>全文共1,172 字</span>
             &nbsp; | &nbsp;
             <span>阅读时长4 分钟</span>
           </span>
@@ -385,30 +385,16 @@
 <p><strong>注意事项</strong></p>
 <p>测试机器与被测试机器分开;<br>不要对线上服务做压力测试;<br>观察(top)测试工具 ab 所在机器以及被测试的前端机的 CPU，内存，网络等都不超过最高限度的75%。</p>
 <h3 id="QPS-达到极限的解决方案"><a href="#QPS-达到极限的解决方案" class="headerlink" title="QPS 达到极限的解决方案"></a>QPS 达到极限的解决方案</h3><p>随着 QPS 的增长，每个阶段需要根据实际情况来进行优化，优化的方案也与硬件条件、网络带宽息息相关。</p>
-<ol>
-<li><p>QPS达到50，基本不需要优化。</p>
-</li>
-<li><p>QPS 达到 100</p>
-</li>
-</ol>
-<p>假设关系型数据库的每次请求在 0.01 秒完成</p>
+<h4 id="QPS达到50"><a href="#QPS达到50" class="headerlink" title="QPS达到50"></a>QPS达到50</h4><p>基本不需要优化。</p>
+<h4 id="QPS-达到-100"><a href="#QPS-达到-100" class="headerlink" title="QPS 达到 100"></a>QPS 达到 100</h4><p>假设关系型数据库的每次请求在 0.01 秒完成</p>
 <p>假设单页面只有一个 SQL 查询，那么 100 QPS 意味着 1 秒钟完成 100 次请求，但是此时我们并不能保证数据库查询能完成 100 次。</p>
 <p>方案：<strong>数据库缓存层、数据库的负载均衡</strong></p>
-<ol>
-<li>QPS 达到 800</li>
-</ol>
-<p>假设我们使用百兆带宽，意味着网站出口的实际带宽是 8 M 左右</p>
+<h4 id="QPS-达到-800"><a href="#QPS-达到-800" class="headerlink" title="QPS 达到 800"></a>QPS 达到 800</h4><p>假设我们使用百兆带宽，意味着网站出口的实际带宽是 8 M 左右</p>
 <p>假设每个页面只有 10 K，在这个并发条件下，百兆带宽已经吃完方案：CDN 加速、负载均衡</p>
-<ol>
-<li>QPS 达到 1000</li>
-</ol>
-<p>假设使用 Memcache 绶存数据库查询数据，每个页面对 Memcache 的请求远大于直接对 DB 的请求</p>
+<h4 id="QPS-达到-1000"><a href="#QPS-达到-1000" class="headerlink" title="QPS 达到 1000"></a>QPS 达到 1000</h4><p>假设使用 Memcache 绶存数据库查询数据，每个页面对 Memcache 的请求远大于直接对 DB 的请求</p>
 <p>Memcache 的悲观并发数在 2 w 左右，但有可能在之前内网带宽已经吃光，表现出不稳定</p>
 <p>方案：<strong>静态 HTML 缓存</strong></p>
-<ol>
-<li>QPS 达到 2000</li>
-</ol>
-<p>这个级别下，文件系统访向锁都成为了灾难</p>
+<h4 id="QPS-达到-2000"><a href="#QPS-达到-2000" class="headerlink" title="QPS 达到 2000"></a>QPS 达到 2000</h4><p>这个级别下，文件系统访向锁都成为了灾难</p>
 <p>方案：<strong>做业务分离，分布式存储</strong></p>
 <h3 id="高并发解决方案案例"><a href="#高并发解决方案案例" class="headerlink" title="高并发解决方案案例"></a>高并发解决方案案例</h3><p><strong>流量优化</strong></p>
 <p>防盗链处理</p>
@@ -690,7 +676,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#高并发架构相关概念"><span class="nav-number">1.</span> <span class="nav-text">高并发架构相关概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压力测试"><span class="nav-number">2.</span> <span class="nav-text">压力测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QPS-达到极限的解决方案"><span class="nav-number">3.</span> <span class="nav-text">QPS 达到极限的解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高并发解决方案案例"><span class="nav-number">4.</span> <span class="nav-text">高并发解决方案案例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#高并发架构相关概念"><span class="nav-number">1.</span> <span class="nav-text">高并发架构相关概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压力测试"><span class="nav-number">2.</span> <span class="nav-text">压力测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QPS-达到极限的解决方案"><span class="nav-number">3.</span> <span class="nav-text">QPS 达到极限的解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#QPS达到50"><span class="nav-number">3.1.</span> <span class="nav-text">QPS达到50</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QPS-达到-100"><span class="nav-number">3.2.</span> <span class="nav-text">QPS 达到 100</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QPS-达到-800"><span class="nav-number">3.3.</span> <span class="nav-text">QPS 达到 800</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QPS-达到-1000"><span class="nav-number">3.4.</span> <span class="nav-text">QPS 达到 1000</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QPS-达到-2000"><span class="nav-number">3.5.</span> <span class="nav-text">QPS 达到 2000</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高并发解决方案案例"><span class="nav-number">4.</span> <span class="nav-text">高并发解决方案案例</span></a></li></ol></div>
             
 
           </div>
