@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="Python,学习,数据采集,爬虫," />
+  <meta name="keywords" content="笔记,阅读,学习之道," />
 
 
 
@@ -80,18 +80,20 @@
 
 
 
-<meta name="description" content="了解JavaScript； 使用selenium库和phantomjs。">
-<meta name="keywords" content="Python,学习,数据采集,爬虫">
+<meta name="description" content="学习即创造 组块构建与避免能力错觉">
+<meta name="keywords" content="笔记,阅读,学习之道">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python网络数据采集之采集JavaScript|第09天">
-<meta property="og:url" content="https://chensenlin.cn/posts/12496/index.html">
+<meta property="og:title" content="《学习之道》阅读第1天-学习是一个组块的过程">
+<meta property="og:url" content="https://chensenlin.cn/posts/48039/index.html">
 <meta property="og:site_name" content="你好我是森林">
-<meta property="og:description" content="了解JavaScript； 使用selenium库和phantomjs。">
+<meta property="og:description" content="学习即创造 组块构建与避免能力错觉">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-23T07:31:13.083Z">
+<meta property="og:image" content="http://p6o0wncuf.bkt.clouddn.com/2018-06-06-15282911825196.jpg">
+<meta property="og:updated_time" content="2018-06-06T13:36:55.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python网络数据采集之采集JavaScript|第09天">
-<meta name="twitter:description" content="了解JavaScript； 使用selenium库和phantomjs。">
+<meta name="twitter:title" content="《学习之道》阅读第1天-学习是一个组块的过程">
+<meta name="twitter:description" content="学习即创造 组块构建与避免能力错觉">
+<meta name="twitter:image" content="http://p6o0wncuf.bkt.clouddn.com/2018-06-06-15282911825196.jpg">
 
 
 
@@ -121,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://chensenlin.cn/posts/12496/"/>
+  <link rel="canonical" href="https://chensenlin.cn/posts/48039/"/>
 
 
 
 
 
-  <title>Python网络数据采集之采集JavaScript|第09天 | 你好我是森林</title>
+  <title>《学习之道》阅读第1天-学习是一个组块的过程 | 你好我是森林</title>
   
 
 
@@ -287,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chensenlin.cn/posts/12496/">
+    <link itemprop="mainEntityOfPage" href="https://chensenlin.cn/posts/48039/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="你好我是森林">
@@ -304,7 +306,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Python网络数据采集之采集JavaScript|第09天</h2>
+          <h2 class="post-title" itemprop="name headline">《学习之道》阅读第1天-学习是一个组块的过程</h2>
         
 
         <div class="post-meta">
@@ -316,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T18:53:21+08:00">
-                2018-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-06T21:35:14+08:00">
+                2018-06-06
               </time>
             
 
@@ -339,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/阅读/" itemprop="url" rel="index">
+                    <span itemprop="name">阅读</span>
                   </a>
                 </span>
 
@@ -353,7 +355,7 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共1,364 字</span>
+            <span>全文共1,378 字</span>
             &nbsp; | &nbsp;
             <span>阅读时长5 分钟</span>
           </span>
@@ -385,29 +387,43 @@
       
 
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>了解JavaScript；</p>
-<p>使用<code>selenium</code>库和<code>phantomjs</code>。</p>
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>学习即创造</p>
+<p>组块构建与避免能力错觉</p>
 <a id="more"></a>
-<h3 id="采集JavaScript"><a href="#采集JavaScript" class="headerlink" title="采集JavaScript"></a>采集JavaScript</h3><p>客户端脚本语言是运行在浏览器而非服务器上的语言。客户端语言成功的前提是浏览器拥有正确地解释和执行这类语言的能力。</p>
-<p>到目前为止，<code>JavaScript</code> 是网络上最常用也是支持者最多的客户端脚本语言。它可以收集 用户的跟踪数据，不需要重载页面直接提交表单，在页面嵌入多媒体文件，甚至运行网页游戏。那些看起来非常简单的页面背后通常使用了许多 <code>JavaScript</code> 文件。</p>
-<p>例如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> &gt;</span><br><span class="line">    alert(<span class="string">"这是一个JavaScript的文件！"</span>)</span><br><span class="line">&lt;script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="JavaScript简介"><a href="#JavaScript简介" class="headerlink" title="JavaScript简介"></a>JavaScript简介</h4><p>几个关键字了解一下：弱类型语言，其他语言有的基本都有。<code>JavaScript</code>里所有的变量都用 <code>var</code>关键词字进行定义，可以把函数作为变量使用。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> fibonacci = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> temp = b; b = a + b;</span><br><span class="line">        a = temp; <span class="keyword">return</span> b;</span><br><span class="line">    &#125; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fibInstance = fibonacci();</span><br><span class="line"><span class="built_in">console</span>.log(fibInstance()+<span class="string">" is in the Fibonacci sequence"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(fibInstance()+<span class="string">" is in the Fibonacci sequence"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(fibInstance()+<span class="string">" is in the Fibonacci sequence"</span>); </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上面的例子看一下就好，熟悉一下就可以，就是这么简单。</p>
-<p>常用的JavaScript库有很多。例如<a href="https://jquery.com" target="_blank" rel="noopener">jQuery</a>,<a href="https://analytics.google.com/" target="_blank" rel="noopener">Google Analytics</a>,<a href="https://facebook.github.io/react/" target="_blank" rel="noopener">React</a>等等，了解一下。</p>
-<h4 id="Ajax和动态HTML"><a href="#Ajax和动态HTML" class="headerlink" title="Ajax和动态HTML"></a>Ajax和动态HTML</h4><p>与网站服务器通信的唯一方式，就是发出<code>HTTP</code>请求获取新页面,如果提交表单之后，或从服务器获取信息之后，网站的页面不需要重新刷新，那么你访问的网站就在用<code>Ajax</code> 技术。</p>
-<p><code>Ajax</code>全称是<code>Asynchronous JavaScript and XML</code>(异步 <code>JavaScript</code>和 <code>XML</code>)，网站不需要使用单独的页面请求就可以和网络服务器进行交互 (收发信息)。</p>
-<p>在<code>Python</code>中用<code>Selenium</code>执行<code>JavaScript</code><a href="http://www.seleniumhq.org/" target="_blank" rel="noopener">Selenium</a>是一个强大的网络数据采集工具，其最初是为网站自动化测试而开发的。近几年，它还被广泛用于获取精确的网站快照，因为它们可以直接运行在浏览器上。<code>Selenium</code>可以让浏览器自动加载页面，获取需要的数据，甚至页面截屏，或者判断网站上某些动作是否发生。<code>Selenium</code> 自己不带浏览器，它需要与第三方浏览器结合在一起使用。</p>
-<p>我们可以用一个叫<a href="http://phantomjs.org/download.html" target="_blank" rel="noopener">PhantomJS</a>的工具代替真实的浏览器。<code>PhantomJS</code> 是一个“无头”(<code>headless</code>)浏览器。它会把网站加载到内存并执行页面上的 <code>JavaScript</code>，但是它不会向用户展示网页的图形界面。把 <code>Selenium</code>和 <code>PhantomJS</code> 结合在一 起，就可以运行一个非常强大的网络爬虫了，可以处理 <code>cookie</code>、<code>JavaScrip</code>、<code>header</code>，以及任何你需要做的事情。</p>
-<p>安装<code>Selenium</code>可以去其官网下载安装，也可以直接<code>pip</code>来安装这个库，非常简单。但是<code>PhantomJS</code>不是库，不能直接用<code>pip</code>安装，可以直接去官网<a href="http://phantomjs.org/download.html" target="_blank" rel="noopener">下载页面</a>下载安装，同时如果你是Mac的用户可以通过<code>homebrew</code>安装：</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>phantomjs</span><br></pre></td></tr></table></figure>
-<p><code>Selenium</code> 库是一个在 <code>WebDriver</code> 上调用的 <code>API</code>。<code>WebDriver</code> 有点儿像可以加载网站的浏览器，但是它也可以像 <code>BeautifulSoup</code> 对象一样用来查找页面元素，与页面上的元素进行交互 (发送文本、点击等)，以及执行其他动作来运行网络爬虫。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">driver = webdriver.PhantomJS(executable_path=<span class="string">'/usr/local/Cellar/phantomjs/2.1.1/bin/phantomjs'</span>) <span class="comment">#创建了一个新的Selenium WebDriver，需要指定自己的phantomjs路径</span></span><br><span class="line">driver.get(<span class="string">"http://pythonscraping.com/pages/javascript/ajaxDemo.html"</span>) <span class="comment">#用WebDriver加载页面</span></span><br><span class="line">time.sleep(<span class="number">3</span>) <span class="comment">#暂停3秒执行</span></span><br><span class="line">print(driver.find_element_by_id(<span class="string">'content'</span>).text) <span class="comment">#查看页面内容</span></span><br><span class="line">driver.close()</span><br></pre></td></tr></table></figure>
-<h4 id="处理重定向"><a href="#处理重定向" class="headerlink" title="处理重定向"></a>处理重定向</h4><p>客户端重定向是在服务器将页面内容发送到浏览器之前，由浏览器执行 <code>JavaScript</code> 完成的 页面跳转，而不是服务器完成的跳转。当使用浏览器访问页面的时候，有时很难区分这两种重定向。由于客户端重定向执行很快，加载页面时你甚至感觉不到任何延迟，所以会让你觉得这个重定向就是一个服务器端重定向。</p>
-<p>服务端重定向可以通过<code>urllib</code>库来解决，但是客户端的重定向不能这样处理。<code>Selenium</code> 可以执行这种 <code>JavaScript</code> 重定向，和它处理其他 <code>JavaScript</code> 的方式一样;但是这类重定向的主要问题是什么时候停止页面监控，也就是说，怎么识别一个页面已经完成重定向。</p>
-<p>我们可以用一种智能的方法来检测客户端重定向是否完成，首先从页面开始加载 时就“监视”<code>DOM</code> 中的一个元素，然后重复调用这个元素直到 <code>Selenium</code> 抛出一个<code>StaleElementReferenceException</code> 异常;也就是说，元素不在页面的 <code>DOM</code> 里了，说明这时网站已经跳转:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.remote.webelement <span class="keyword">import</span> WebElement</span><br><span class="line"><span class="keyword">from</span> selenium.common.exceptions <span class="keyword">import</span> StaleElementReferenceException</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">waitForLoad</span><span class="params">(driver)</span>:</span></span><br><span class="line">    elem = driver.find_element_by_tag_name(<span class="string">"html"</span>)</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> count &gt; <span class="number">20</span>:</span><br><span class="line">            print(<span class="string">"Timing out after 10 seconds and returning"</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        time.sleep(<span class="number">.5</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            elem == driver.find_element_by_tag_name(<span class="string">"html"</span>)</span><br><span class="line">        <span class="keyword">except</span> StaleElementReferenceException:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">driver = webdriver.PhantomJS(executable_path=<span class="string">'drivers/phantomjs/phantomjs-2.1.1-macosx/bin/phantomjs'</span>)</span><br><span class="line">driver.get(<span class="string">"http://pythonscraping.com/pages/javascript/redirectDemo1.html"</span>)</span><br><span class="line">waitForLoad(driver)</span><br><span class="line">print(driver.page_source)</span><br></pre></td></tr></table></figure>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本系列笔记主要是《学习之道》的读书笔记。<a href="https://book.douban.com/subject/2345548/" target="_blank" rel="noopener">《学习之道》简介</a></p>
+<p>本系列阅读笔记：</p>
+<p><a href="https://chensenlin.cn/posts/32089/">《学习之道》阅读第0天-专注思维和发散思维</a></p>
+<h3 id="学习即创造"><a href="#学习即创造" class="headerlink" title="学习即创造"></a>学习即创造</h3><p><strong>专注模式和发散模式之间的转换</strong></p>
+<p>只要你放下手中的工作，停下来喘口气，发散模式就会乘虚而入，上蹿下跳，高屋建瓴地搜寻解决方案。适当的放松一下自己可能就会收获一些意外的解决方案，同时对问题的理解会更加深入。</p>
+<p><strong>创造力就是对自身能力的驾驭和拓展</strong></p>
+<p>发散模式能让你的学习更有深度和创造力，解决数学和科学问题的背后往往正是创造力在运筹帷幄。</p>
+<p>同时，不要指望通过某中思维解决问题。要让大脑捕捉问题，首先要借助于专注模式调动全部注意力。研究表明，对于特定思考类型的问题，可用的精神能量，即意志力总量是有限的。</p>
+<p>在紧凑的专注模式后，利用发散模式的方法奖励自己，给自己一个小目标，同时设置一个奖励。</p>
+<p>自制力很强的人反而会更难关闭专注模式，好让发散模式进入工作状态。每一个人的思维模式和思维习惯不是相同的。有人坚持不懈，奋起直追；也有人休息一下，养精蓄锐。</p>
+<p>遇到数学或科学上的概念和难题，首先要让专注模式打头阵。</p>
+<p>遇到问题，放松一下，给发散思维一个展示的机会。</p>
+<p>让两种模式有足够的时间各行其是，你才能理解自己所学的知识。</p>
+<h3 id="组块构建与避免能力错觉"><a href="#组块构建与避免能力错觉" class="headerlink" title="组块构建与避免能力错觉"></a>组块构建与避免能力错觉</h3><p>专注模式学习的一个重要部分，就是让注意力把大脑各个部分连接在一起。有趣的是，注意力触手会在紧张状态下失去部分连接能力。这就是当你愤怒、紧张或害怕时，总觉得脑袋有点不够用的原因。</p>
+<p><strong>专注的练习和重复</strong>是创造记忆痕迹的过程。</p>
+<p><strong>组块</strong>是根据意义将信息碎片组成的集合。<strong>思维组块</strong>都是绝大多数科学、文学和艺术知识的构成基础。</p>
+<p>要熟练地掌握数学和科学知识，就要创造一些概念组块——这是通过意义将分散的信息碎片组合起来的过程。</p>
+<p><strong>构成组块的基本步骤</strong></p>
+<p>第一步：把注意力集中在需要组块的信息上；<br>第二步：理解。要把基本概念打包成组块，首先要理解这个基本概念；<br>第三步：获取背景信息。你所看到的将不仅是如何进行组块，还有何时何地使用它们。</p>
+<p><img src="http://p6o0wncuf.bkt.clouddn.com/2018-06-06-15282911825196.jpg" alt="学习组块"></p>
+<p>案例：</p>
+<p>快速浏览章节，或去听一场条理清晰的演讲，都能让你获得宏观图景。它会指引你看到自己构建的组块在宏观图景中的位置。要最先了解重点概念和要点——它们往往是一位合格老师的关键教学部分或是书籍的章节大纲、流程图、表格，或思维导图的核心内容。只要完成这一步，接下来就可以填充细节了。在学习即将收尾时，完整知识版图就算还缺上几块“拼图碎块”，也不会影响你总览宏观图景。</p>
+<p><strong>能力错觉与回想的重要性</strong></p>
+<p>试着回想学习材料，即提取练习，效果比单纯阅读材料好得多。</p>
+<p>在学习中进行回想——让大脑提取关键概念，而非通过重复阅读被动地获取知识，将让你更加集中高效地利用学习时间。</p>
+<p>通过冥想回顾自己的记忆，不要搬运书中的观点，学会独立思考和总结，不断的去探索真知。不断把零散的记忆组块打包，形成一块块拼图，逐步完成记忆的组装。直到能够独立的解决问题，寻找问题本身的真谛，而不是仅仅看一眼问题的答案就以为自己会的错觉。</p>
+<p>在数学和科学的学习中，必须进行适量的练习和重复，否则就无法构建组块来支撑专业技能。</p>
+<p>相同时间内，仅靠对材料的练习和回想，学生的习得内容和学习深度都远远超过了其他方法。</p>
+<p><strong>穿插学习法</strong></p>
+<p>穿插学习，是指把解题策略不同的题目混在一起练习。</p>
+<p>解决混杂交错的各种问题，而非在同一个问题上过度学习，做到“口默念而心得解”的最后一个重点提示。要掌握一门新学科，是要学会挑选使用恰当的解题技巧。唯一的解决途径就是去<strong>练习各种题目</strong>，<strong>运用不同技巧解决这些问题</strong>。</p>
+<p>仅知道怎样使用特定的解题技巧还不够，还得知道何时何地去使用才行。</p>
+<p>简单回想，试着关上书回忆要点，是促进组块形成的最好办法之一。</p>
+<p>我在想是不是以解决问题为导向呢？</p>
 
       
     </div>
@@ -452,7 +468,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>链接：</strong>
-    <a href="https://chensenlin.cn/posts/12496/" title="Python网络数据采集之采集JavaScript|第09天">https://chensenlin.cn/posts/12496/</a>
+    <a href="https://chensenlin.cn/posts/48039/" title="《学习之道》阅读第1天-学习是一个组块的过程">https://chensenlin.cn/posts/48039/</a>
   </li>
   <li class="post-copyright-license">
     <strong>声明： </strong>
@@ -467,13 +483,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           
-            <a href="/tags/学习/" rel="tag"><i class="fa fa-tag"></i> 学习</a>
+            <a href="/tags/阅读/" rel="tag"><i class="fa fa-tag"></i> 阅读</a>
           
-            <a href="/tags/数据采集/" rel="tag"><i class="fa fa-tag"></i> 数据采集</a>
-          
-            <a href="/tags/爬虫/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
+            <a href="/tags/学习之道/" rel="tag"><i class="fa fa-tag"></i> 学习之道</a>
           
         </div>
       
@@ -486,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/64604/" rel="next" title="Python网络数据采集之登录窗口采集处理|第08天">
-                <i class="fa fa-chevron-left"></i> Python网络数据采集之登录窗口采集处理|第08天
+              <a href="/posts/32089/" rel="next" title="《学习之道》阅读第0天-专注思维和发散思维">
+                <i class="fa fa-chevron-left"></i> 《学习之道》阅读第0天-专注思维和发散思维
               </a>
             
           </div>
@@ -495,10 +509,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/56894/" rel="prev" title="微信使用小技巧">
-                微信使用小技巧 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,17 +566,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点信息
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -671,22 +672,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#采集JavaScript"><span class="nav-number">1.</span> <span class="nav-text">采集JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript简介"><span class="nav-number">1.1.</span> <span class="nav-text">JavaScript简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ajax和动态HTML"><span class="nav-number">1.2.</span> <span class="nav-text">Ajax和动态HTML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理重定向"><span class="nav-number">1.3.</span> <span class="nav-text">处理重定向</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
