@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2018-06-16T14:36:06.724Z</updated>
+  <updated>2018-06-29T02:33:26.701Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一图解决Google Backup备份出错问题</title>
+    <link href="https://chensenlin.cn/posts/28362/"/>
+    <id>https://chensenlin.cn/posts/28362/</id>
+    <published>2018-06-29T02:33:52.000Z</published>
+    <updated>2018-06-29T02:33:26.701Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>超级简单</p><a id="more"></a><h2 id="产生的故障"><a href="#产生的故障" class="headerlink" title="产生的故障"></a>产生的故障</h2><p><img src="http://p6o0wncuf.bkt.clouddn.com/2018-06-29-WechatIMG5889.jpeg" alt="WechatIMG5889"></p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p><img src="http://p6o0wncuf.bkt.clouddn.com/2018-06-29-15302395981652.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;超级简单&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://chensenlin.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Mac" scheme="https://chensenlin.cn/tags/Mac/"/>
+    
+      <category term="Google" scheme="https://chensenlin.cn/tags/Google/"/>
+    
+  </entry>
   
   <entry>
     <title>《学习之道》阅读第5天-学习有道</title>
@@ -499,34 +523,6 @@
     <summary type="html">
     
       &lt;p&gt;利用&lt;code&gt;Requests&lt;/code&gt;库处理&lt;code&gt;Cookie&lt;/code&gt;、&lt;code&gt;session&lt;/code&gt;等方式的登录。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="https://chensenlin.cn/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="https://chensenlin.cn/tags/Python/"/>
-    
-      <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="数据采集" scheme="https://chensenlin.cn/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/"/>
-    
-      <category term="爬虫" scheme="https://chensenlin.cn/tags/%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python网络数据采集之处理自然语言|第07天</title>
-    <link href="https://chensenlin.cn/posts/54692/"/>
-    <id>https://chensenlin.cn/posts/54692/</id>
-    <published>2018-04-04T14:13:44.000Z</published>
-    <updated>2018-04-23T07:31:01.218Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>处理自然语言包括自然语言工具包和数据概括。</p><a id="more"></a><h3 id="处理自然语言"><a href="#处理自然语言" class="headerlink" title="处理自然语言"></a>处理自然语言</h3><h4 id="概括数据"><a href="#概括数据" class="headerlink" title="概括数据"></a>概括数据</h4><p>在之前我们了解了如何把文本内容分解成 <code>n-gram</code> 模型，或者说是<code>n</code>个单词长度的词组。从最基本的功能上说，这个集合可以用来确定这段文字中最常用的单词和短语。另外，还可以提取原文中那些最常用的短语周围的句子，对原文进行看似合理的概括。</p><p>例如我们根据威廉 ·亨利 ·哈里森的就职演全文进行分析。<a href="http://pythonscraping.com/files/inaugurationSpeech.txt" target="_blank" rel="noopener">文章地址</a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cleanSentence</span><span class="params">(sentence)</span>:</span></span><br><span class="line">    sentence = sentence.split(<span class="string">' '</span>)</span><br><span class="line">    sentence = [word.strip(string.punctuation+string.whitespace) <span class="keyword">for</span> word <span class="keyword">in</span> sentence]</span><br><span class="line">    sentence = [word <span class="keyword">for</span> word <span class="keyword">in</span> sentence <span class="keyword">if</span> len(word) &gt; <span class="number">1</span> <span class="keyword">or</span> (word.lower() == <span class="string">'a'</span> <span class="keyword">or</span> word.lower() == <span class="string">'i'</span>)]</span><br><span class="line">    <span class="keyword">return</span> sentence</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cleanInput</span><span class="params">(content)</span>:</span></span><br><span class="line">    content = content.upper()</span><br><span class="line">    content = re.sub(<span class="string">'\n'</span>, <span class="string">' '</span>, content)</span><br><span class="line">    content = bytes(content, <span class="string">'UTF-8'</span>)</span><br><span class="line">    content = content.decode(<span class="string">'ascii'</span>, <span class="string">'ignore'</span>)</span><br><span class="line">    sentences = content.split(<span class="string">'. '</span>)</span><br><span class="line">    <span class="keyword">return</span> [cleanSentence(sentence) <span class="keyword">for</span> sentence <span class="keyword">in</span> sentences]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNgramsFromSentence</span><span class="params">(content, n)</span>:</span></span><br><span class="line">    output = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(content)-n+<span class="number">1</span>):</span><br><span class="line">        output.append(content[i:i+n])</span><br><span class="line">    <span class="keyword">return</span> output</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNgrams</span><span class="params">(content, n)</span>:</span></span><br><span class="line">    content = cleanInput(content)</span><br><span class="line">    ngrams = Counter()</span><br><span class="line">    ngrams_list = []</span><br><span class="line">    <span class="keyword">for</span> sentence <span class="keyword">in</span> content:</span><br><span class="line">        newNgrams = [<span class="string">' '</span>.join(ngram) <span class="keyword">for</span> ngram <span class="keyword">in</span> getNgramsFromSentence(sentence, n)]</span><br><span class="line">        ngrams_list.extend(newNgrams)</span><br><span class="line">        ngrams.update(newNgrams)</span><br><span class="line">    <span class="keyword">return</span>(ngrams)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">content = str(</span><br><span class="line">      urlopen(<span class="string">'http://pythonscraping.com/files/inaugurationSpeech.txt'</span>).read(),</span><br><span class="line">              <span class="string">'utf-8'</span>)</span><br><span class="line">ngrams = getNgrams(content, <span class="number">3</span>)</span><br><span class="line">print(ngrams)</span><br></pre></td></tr></table></figure><h4 id="自然语言工具包"><a href="#自然语言工具包" class="headerlink" title="自然语言工具包"></a>自然语言工具包</h4><p>自然语言工具包(<code>Natural Language Toolkit，NLTK</code>)就是这样一个 <code>Python</code>库，用于识别和标记英语文本中各个词的词性(<code>parts of speech</code>)。</p><h4 id="安装与配置"><a href="#安装与配置" class="headerlink" title="安装与配置"></a>安装与配置</h4><p><code>NLTK</code>网站(<code>http://www.nltk.org/install.html</code>)。安装软件比较简单，例如<code>pip</code>安装。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">➜  psysh git:(master) pip <span class="keyword">install</span> nltk</span><br><span class="line">Collecting nltk</span><br><span class="line">  <span class="keyword">Using</span> cached nltk<span class="number">-3.2</span><span class="number">.5</span>.tar.gz</span><br><span class="line">Requirement already satisfied: six <span class="keyword">in</span> /usr/<span class="keyword">local</span>/lib/python3<span class="number">.6</span>/site-packages (<span class="keyword">from</span> nltk)</span><br><span class="line">Building wheels <span class="keyword">for</span> collected packages: nltk</span><br><span class="line">  Running setup.py bdist_wheel <span class="keyword">for</span> nltk ... done</span><br><span class="line">  <span class="keyword">Stored</span> <span class="keyword">in</span> <span class="keyword">directory</span>: /<span class="keyword">Users</span>/demo/<span class="keyword">Library</span>/Caches/pip/wheels/<span class="number">18</span>/<span class="number">9</span>c/<span class="number">1</span>f/<span class="number">276</span>bc3f421614062468cb1c9d695e6086d0c73d67ea363c501</span><br><span class="line">Successfully built nltk</span><br><span class="line">Installing collected packages: nltk</span><br><span class="line">Successfully installed nltk<span class="number">-3.2</span><span class="number">.5</span></span><br><span class="line">You <span class="keyword">are</span> <span class="keyword">using</span> pip <span class="keyword">version</span> <span class="number">9.0</span><span class="number">.1</span>, however <span class="keyword">version</span> <span class="number">9.0</span><span class="number">.3</span> <span class="keyword">is</span> available.</span><br><span class="line">You should <span class="keyword">consider</span> upgrading via the <span class="string">'pip install --upgrade pip'</span> command.</span><br></pre></td></tr></table></figure><p>检测一下就OK </p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  psysh git:(master) python</span><br><span class="line">Python 3.6.4 (default, Mar  1 2018, 18:36:50)</span><br><span class="line">[GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.39.2)] on darwin</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; import nltk</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure><p>输入<code>nltk.download()</code>就可以看到NLTK下载器。</p><p> <img src="http://p6o0wncuf.bkt.clouddn.com/15228511042439.jpg" alt="NLTK下载器"></p><p>默认下载全部的包，新手减少排除的相关的麻烦。</p><p><img src="http://p6o0wncuf.bkt.clouddn.com/15228513456509.jpg" alt="安装相关包"></p><h4 id="用NLTK做统计分析"><a href="#用NLTK做统计分析" class="headerlink" title="用NLTK做统计分析"></a>用NLTK做统计分析</h4><p>用<code>NLTK</code>做统计分析一般是从<code>Text</code>对象开始的。<code>Text</code>对象可以通过下面的方法用简单的 <code>Python</code>字符串来创建:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> nltk <span class="keyword">import</span> word_tokenize </span><br><span class="line"><span class="keyword">from</span> nltk <span class="keyword">import</span> Text</span><br><span class="line"></span><br><span class="line">tokens = word_tokenize(<span class="string">"哈哈哈哈哈"</span>)</span><br><span class="line">text = Text(tokens)</span><br></pre></td></tr></table></figure><p><code>word_tokenize</code>函数的参数可以是任何<code>Python</code>字符串。如果你手边没有任何长字符串，但是还想尝试一些功能，在<code>NLTK</code>库里已经内置了几本书，可以用<code>import</code>函数导入:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> nltk.book <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure><p>统计文本中不重复的单词，然后与总单词数据进行比较:<code>&gt;&gt;&gt; len(text6)/len(words)</code>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;处理自然语言包括自然语言工具包和数据概括。&lt;/p&gt;
     
     </summary>
     
