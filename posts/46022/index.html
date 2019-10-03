@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="笔记,BitTiger," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="你好我是森林" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="读书会 第五十四期·区块链第五期 读书会·EOS技术与生态">
+<meta name="keywords" content="笔记,BitTiger">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EOS技术及生态系统介绍">
+<meta property="og:url" content="https://chensenlin.cn/posts/46022/index.html">
+<meta property="og:site_name" content="你好我是森林">
+<meta property="og:description" content="读书会 第五十四期·区块链第五期 读书会·EOS技术与生态">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-01T13:52:44.502Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EOS技术及生态系统介绍">
+<meta name="twitter:description" content="读书会 第五十四期·区块链第五期 读书会·EOS技术与生态">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chensenlin.cn/posts/46022/"/>
+
+
+
+
+
+  <title>EOS技术及生态系统介绍 | 你好我是森林</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-115815399-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1025a083eb4acc7895c8c81c666ae91e"";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">你好我是森林</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">你好我是森林，坚持每周一本书，公众号：特立独行的异类</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-mubu">
+          <a href="/mubu/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br />
+            
+            幕布
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-wechat">
+          <a href="/wechat/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            公众号
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chensenlin.cn/posts/46022/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="你好我是森林">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你好我是森林">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">EOS技术及生态系统介绍</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-29T10:25:14+08:00">
+                2018-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/阅读/" itemprop="url" rel="index">
+                    <span itemprop="name">阅读</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+           
+          
+          <span class="post-letters-count">
+            &nbsp; | &nbsp;
+            <span>全文共7k字</span>
+            &nbsp; | &nbsp;
+            <span>阅读时长24分钟</span>
+          </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>读书会</p>
+<p>第五十四期·区块链第五期</p>
+<p>读书会·EOS技术与生态</p>
+<a id="more"></a>
+<h3 id="嘉宾介绍"><a href="#嘉宾介绍" class="headerlink" title="嘉宾介绍"></a>嘉宾介绍</h3><p>哈胜，现任梦起文化传播有限公司技术总监，西北地区区块链技术发起第一人；一直在致力于将区块链技术推广，现为EOS引力区西北区节点竞选人。</p>
+<h3 id="EOS基本介绍"><a href="#EOS基本介绍" class="headerlink" title="EOS基本介绍"></a>EOS基本介绍</h3><p>EOS是Block.One公司正在研发的一个区块链底层公链系统，目的是解决现有的区块链应用性能低、安全性差、开发难度高以及过度依赖手续费的问题，实现分布式应用的性能扩展。EOS提供帐户，身份验证，数据库，异步通信以及在数以万计的CPU或群集上的程序调度。该技术的最终形式是一个区块链体系架构，该区块链每秒可以支持数百万个交易，同时普通用户无需支付使用费用。</p>
+<p>目前的底层公链离真正的大规模商业应用还有很大的差距，主要表现在区块网络转账速度慢、费用高、系统并发处理能力差，稳定性差、数据存储和安全缺陷等。这是目前底层公链需要解决的问题，这些问题解决不了，商业化应用只是一句空话。EOS如果要成为一个真正能支持大量商业级应用的公链，势必要解决这些问题。</p>
+<h3 id="EOS的优势和创新"><a href="#EOS的优势和创新" class="headerlink" title="EOS的优势和创新"></a>EOS的优势和创新</h3><h4 id="大幅提升底层公链的交易速度"><a href="#大幅提升底层公链的交易速度" class="headerlink" title="大幅提升底层公链的交易速度"></a>大幅提升底层公链的交易速度</h4><p>采用了DPOS (股份授权证明）共识算法机制的EOS相对传统公链在速度方面优势明显。正处在开发阶段的 EOS如果能够顺利实现，很可能成为第一个可以处理商业级运算的去中心化底层公链。采用DPOS算法机制的石墨烯技术，在有限制的测试条件下已经实现了每秒上万次的交易量。后续，EOS将使用并发技术来继续扩展其网络性能，有望实现每秒数百万次的交易处理能力。届时，EOS将解决底层公链的速率和拓展性问题，将可同时支持数干个商业级的分布式应用程序 (DAPP) 在其平台上运行。</p>
+<h4 id="提升底层公链的可拓展性，避免硬分叉"><a href="#提升底层公链的可拓展性，避免硬分叉" class="headerlink" title="提升底层公链的可拓展性，避免硬分叉"></a>提升底层公链的可拓展性，避免硬分叉</h4><p>作为一个去中心化的操作系统，当出现分歧时能否达成共识，在避免硬分叉的前提下保持迭代，将成为一个至关重要的问题。</p>
+<p>在区块链中，底层的代码相当于现实中的法律。代码中存在bug是无法避免的，如果一个区块链的底层平台出现bug时没有办法修复将是一件十分可怕的 事情，会失去用户的信任。之前的BTC和ETH都曾出现过分叉问题，BTC因为速率扩容以及网络拥堵，社区无法达成共识，至今已经出现了多种分叉币。而ETH则主要因为DAO黑客事件，造成社区内激烈争论，最终分叉为ETH和ETC两条链。</p>
+<p>而EOS从整体的架构设计上解决了这个问题。EOS的约束性合约相当于“宪法”给整个平台下了明确的定义：在公链的运行中，当系统出错的时候，能够根据可读性意图来区分这个错误是否确实是bug，并且来判断社区的修复是否正确。有了这套机制，如果未来有新技术出现，也可以很容易地增加到EOS系统 中，有利于系统的升级和迭代。</p>
+<p>例如，当EOS中出现了类似之前DAO的黑客事件时，系统中的21个节点将迅速采取行动，冻结黑客账户，然后通过投票采取最有效的处理方式，不会像之前的ETH因无法共识而出现硬分叉的情况。</p>
+<p>从这方面来看，EOS在稳定性和可拓展性上相对已有的底层公链系统是非常有优势的。</p>
+<h4 id="用户免费使用网络资源"><a href="#用户免费使用网络资源" class="headerlink" title="用户免费使用网络资源"></a>用户免费使用网络资源</h4><p>EOS则采用所有权模式，如果你拥有相应比例的代币，就有权免费使用相应比例的网络资源，对你而言，交易将是零成本的。</p>
+<h4 id="安全性高，避免DOS攻击"><a href="#安全性高，避免DOS攻击" class="headerlink" title="安全性高，避免DOS攻击"></a>安全性高，避免DOS攻击</h4><p>DOS攻击在众多网络攻击技术中是—种常见并且具有很大危害性的攻击方式。它通过各种手段消耗系统资源和堵塞网络带宽，使正常网络服务陷千瘫痪状态。在近几年的实践中以太坊网络已经被证明非常容易受到DOS攻击的影响。</p>
+<p>EOS的代币则相当于网络资源的所有权，用户只能使用相应比例的网络资源。因此，DOS攻击者只能使用到其EOS代币相应比例的带宽资源，形成了天然的制度屏障，使DOS攻击仅可能出现在某一个应用程序上，但这些攻击永远不会破坏整个网络运行，因此EOS从设计上提升了整个基础链的安全性。</p>
+<h4 id="提升公链系统的兼容性"><a href="#提升公链系统的兼容性" class="headerlink" title="提升公链系统的兼容性"></a>提升公链系统的兼容性</h4><p>为了实现更好的兼容性，EOS中设计了跨链交互和虚拟机独立架构机制。例如，在EOS系统中设置了以太虚拟机 ( EVM )。它能够支持现有的以太坊合约。也就是说，现有的以太坊平台上的应用，只需要稍加配置，未来就能够在EOS上面运行。</p>
+<p>对于开发者来说，目前在其他公链上开发DAPP并不容易，需要自己写很多基础模块才能实现。而EOS的设计目标是成为区块链的底层操作系统，已经为开发者提供了各类底层开发模块。简单来说，各类基础功能EOS都已经帮你设计好了，你只需要知道怎么使用这些基础工具就可以完成自己的开发了。这样也就大大降低了开发者门槛，再加上EOS平台并发处理速度快，没有手续费的特点，将会吸引更多的普通开发者，有助于EOS平台上涌现大量的商业级应用，快速形成平台生态系统。</p>
+<p>通过以上分析，我们不难得出结论，从架构设计的角度EOS非常有潜力成为能够支撑大盘商业级应用的超级底层公链。</p>
+<p>但EOS还只是一个开发中的项目，在主网没有上线的情况下，列举这些技术解决方案及实现方式，只是出于概念上的论证，至于这种可能性能否最终实现，我们并不确定，作为投资者，想分析清楚一个项目的投资价值，我们还需要从可行性，进展情况等各方面进行多维度的考量。</p>
+<h4 id="EOSIO-Dawn-3-0简介"><a href="#EOSIO-Dawn-3-0简介" class="headerlink" title="EOSIO Dawn 3.0简介"></a>EOSIO Dawn 3.0简介</h4><p>BM在Medium宣布EOSIO Dawn (EOS黎明）3.0正式发布，做为EOSI O主网正式发布之前的一个里程碑式的版本，Dawn 3.0版本是第一个功能完整的预发布。</p>
+<p>Dawn 3. 0在这三个方面有巨大的提升：可扩展性；安全性；智能合约开发，并极大地改善了开发者的体验。</p>
+<h5 id="可扩展性"><a href="#可扩展性" class="headerlink" title="可扩展性"></a>可扩展性</h5><p>可扩展性意味着通过扩展来不断满足市场需求。BM说：“我们的团队在每一步都将未来扩展需求纳入设计中。也就是说，Dawn 3.0只实现了一小部分潜在的优化，可以让EOSIO进行扩展。我们设计了EOSIO，以便将来的实现可以利用并行计算来加速吞吐量，不需要通过硬分叉就  能继续升级。”</p>
+<h5 id="安全特性"><a href="#安全特性" class="headerlink" title="安全特性"></a>安全特性</h5><p>安全对于任何计算系统都至关重要，BM说：“我们设计EOSIO是市场上最安全的区块链。安全是一个多维问题，必须考虑到黑客攻击，硬件故障，硬件丢失和密码丢失的风险。硬件钱包擅长防范黑客入侵，但如果失败，可能会将您锁定在帐户外。此外，硬件钱包的纸张备份可能会丢失或被盗。”</p>
+<h5 id="简易合约开发"><a href="#简易合约开发" class="headerlink" title="简易合约开发"></a>简易合约开发</h5><p>对于EOSIO，BM说：“我们的许多目标之一就是让合约的开发尽一切可能轻松。如果开发人员知道如何编写一个C++类的方法，那么他们应该能够编写一个尽可能不复杂的智能合约。”<br>“我们很高兴已经简化我们的 “hello world” 合约到几行简单的代码。我们的 工具链已经自动化生成合约ABI的过程，并且调用用户action到定义于你类目的方法。”</p>
+<h3 id="EOS和ETH、ADA的对比"><a href="#EOS和ETH、ADA的对比" class="headerlink" title="EOS和ETH、ADA的对比"></a>EOS和ETH、ADA的对比</h3><h4 id="EOS-VS-ETH的优缺点"><a href="#EOS-VS-ETH的优缺点" class="headerlink" title="EOS VS ETH的优缺点"></a>EOS VS ETH的优缺点</h4><p>在区块链领域，除了BTC这老大外，还有两璀璨的明星，那就是ETH和EOS，如果说BTC是区块链1.0的代表的话，那ETH和EOS就代表着区块链2.0、3.0；一直有种说法：BTC让人们见证了什么是虚拟货币、共识机制、公有的分布式账本， ET H让人们见证了什么是智能合约，即在这个共同的分布式账本上进行复杂交易的能力，而EOS则要将区块链推向我们的生活，使区块链应用能够大规模商业化。</p>
+<p>通俗一点说，ETH是开源平台数字货币和区块链的智能合约平台，它为开发者提供在区块链上搭建和发布应用的平台，可以把以太坊当作是一个用于开发和运行去中心化应用。</p>
+<p>EOS则是一个面积接近无限大的地基，这个地基牢固、精致、设计优美，并且在地基之上还提供了各种“积木”，开发商 ( Dapp应用团队）可以用这些“积木”轻易地搭出自己设计稿上的商业大厦、电影院、办公楼或者小木屋，而用户想进入这些房地产项目消费，也不需要先买门票，反而可以尽清领略各种景观。</p>
+<h5 id="设计理念"><a href="#设计理念" class="headerlink" title="设计理念"></a>设计理念</h5><p>假如说ETH是简单开发的荒野，EOS则是功能齐全的大都会。ETH被设计为一个对于所有潜在的应用中立的平台。以太坊在github上的设计原理文档中如此说道：以太坊“没有特性”，拒绝在协议中加入即使是常用的高级别的用例。这使得应用没那么擁肿，但是它依然要求不同的应用重用代码。但是如果平台本身提供了那些常用的功能，将能提高应用开发者的效率。</p>
+<p>与ETH不同，EOS意识到不同的应用都需要一些相同的功能，EOS就提供了这些功能，比如基于角色的许可功能，用于开发界面的一套web工具，自描述接口，自描述数据库，声明式许可scheme。</p>
+<h5 id="共识机制与治理"><a href="#共识机制与治理" class="headerlink" title="共识机制与治理"></a>共识机制与治理</h5><p>以太坊目前使用的的POW共识机制，运行在以太坊上的坏掉的应用导致投资人遭遇重大损失，慌乱的硬分叉。每次硬分叉都可能大量出现竞争链，更重要的，为了修复一个坏掉的应用而慌乱地进行硬分叉都会打乱整个以太坊网络。</p>
+<p>EOS包含一套冻结并修复坏掉的应用的机制。坏掉的应用会被冻结，修复，然后更新，而不会干扰到其他的EOS应用。基于DPOS共识机制的EOS，即使硬分叉也不会大量产生竞争链而且，EOS将包含一个合法绑定宪法，用于解决争端，它同样包含一个基于股权权重投票产生的社区。</p>
+<h5 id="扩展性-速度"><a href="#扩展性-速度" class="headerlink" title="扩展性-速度"></a>扩展性-速度</h5><p>以太坊网络受限于CPU的单线程性能。早期的测试网络达到每秒25次交易(还是在优化了的情况下)，经过优化，可以增加到50次或100次交易/秒。然而，在实际应用中，以太坊网络的交易差不多是10次交易/秒，甚至更少。</p>
+<p>EOS将依赖于石墨烯技术，在压力测试中，石墨烯技术已能达到每秒3000笔交易。第二，EOS将使用并行技术来拓展网络，处理能力将到达每秒百万笔交易。如果这些都能实现，EOS将能支持上千个商业级Dapps。</p>
+<h5 id="安全性：DOS攻击"><a href="#安全性：DOS攻击" class="headerlink" title="安全性：DOS攻击"></a>安全性：DOS攻击</h5><p>以太坊网络已经被证明了非常容易受DOS攻击，在以太坊网络中，矿工倾向于优先处理那些高费用的交易。由于带宽和算力是有限的，可以预见出如果网络中被塞入大量高费用的交易，这将会把低费用的合法交易踢掉。这就会诱使有钱的玩家用高费用的交易堵塞网络，以保证他们的交易能被执行。</p>
+<p>EOS不易受DOS攻击，EOS代币的持有者会在网络带宽，存储和算力方面给予用户一定比例的股权，恶意攻击者只会消耗掉他们的EOS代币赋予他们的那部分网络。某个应用或许会遭到DOS攻击，但是这些攻击不会干扰整个网络。</p>
+<h5 id="GAS燃烧费用VS股权拥有制"><a href="#GAS燃烧费用VS股权拥有制" class="headerlink" title="GAS燃烧费用VS股权拥有制"></a>GAS燃烧费用VS股权拥有制</h5><p>以太坊中，交易，存储，操作，带宽使用的每次计算都需要gas费用，而且矿工倾向于选择那些高费用的交易来处理，这种经济模式会出现一种情况：富有的玩家可以向网络中发送大量高费用的交易从而导致网络瘫痪。</p>
+<p>EOS使用所有权模式，持有EOS代币将在网络带宽，存储，处理能力方面给予用于一定的份额。这意味着如果某人拥有1%的EOS代币，那么他就永远只能获得1%的网络带宽，而不论网络剩余部分的负载情况。</p>
+<h4 id="EOS与ADA的优劣"><a href="#EOS与ADA的优劣" class="headerlink" title="EOS与ADA的优劣"></a>EOS与ADA的优劣</h4><h5 id="ADA简介"><a href="#ADA简介" class="headerlink" title="ADA简介"></a>ADA简介</h5><p>卡尔达诺（Cardano）是一个正在开发中的新一代区块链智能合约平台，ADA是卡尔达诺平台的数字代币。</p>
+<p>Cardano的哲学是在学习和继承现有基础公链优点的基础上，进行概念和技术的创新，希望能最终解决上述三方面问题，成为更便捷、更高速、更智能的新一代底层基础公链，也就是大家常说的区块链3.0。</p>
+<p>Cardano不仅是加密货币，也是一个完全开源的区块链平台。其中心思想是要构建一个分层次的区块链生态系统。有些人甚至认为如果后续能够进展顺利，Cardano 有望成为一个史诗级项目。<br>从底层基础公链的竞争角度来看，ADA显然是一个非常有实力的竞争者，国际化的团队做事扎实，透明度高，无论规模还是技术能力，都可以被称为区块链领域的豪华团队，完全有条件成为未来的顶级基础公链。</p>
+<p>ADA的整体目标宏大，如果项目顺利完成，价值和意义都非常巨大，同时，项目的复杂度高，也必然带来很大的开发难度，对此，投资者也应适当审视。ADA是和EOS属于同一量级的项目，它们都有机会成为未来最好的基础公链，但相比于EOS，ADA在市场热度和认知度上都还有明显的差距。</p>
+<h4 id="目标宏大、复杂、难度大、周期长"><a href="#目标宏大、复杂、难度大、周期长" class="headerlink" title="目标宏大、复杂、难度大、周期长"></a>目标宏大、复杂、难度大、周期长</h4><p>Cardano目标宏大，可以简单理解为改进版比特币+下一代以太坊。从软件工程的角度看，项目是非常复杂的，需要很扎实的开发推进和很长的开发周期。在一日千里高速变化的区块链领域，这种高难度长周期的项目定位本身也是一种风险，需要各方面的有力支撑才能顺利完成。</p>
+<h4 id="共识机制有待实践的检验"><a href="#共识机制有待实践的检验" class="headerlink" title="共识机制有待实践的检验"></a>共识机制有待实践的检验</h4><p>共识算法是一个基础公链的价值观，Cardano的Ouroboros算法是自己独创的，目前并没有开发完成，整体的理念也还存在一些争论，这从BM与霍斯金森关于算法的互怼也可以看出一些端倪。EOS的DPOS算法，已经在两个项目中有过应用，但近期的投票机制依然引起了轩然大波和整个生态的争论。可见，一个共识算法的成熟和完善，重要而且漫长，对Cardano的共识算法我们仍需要拭目以待。</p>
+<h4 id="中心化倾向能否成为主流共识？"><a href="#中心化倾向能否成为主流共识？" class="headerlink" title="中心化倾向能否成为主流共识？"></a>中心化倾向能否成为主流共识？</h4><p>对EOS的21个超级节点是否是中心化的争议仿佛一直没有停止过，在Cardano的设计中包含了接受监管，合规审查等思想，貌似是与区块链的去中心化思路相背离的，整个市场对于这种思路的接纳程度也是一个有趣的话题。</p>
+<h4 id="偏重技术，对营销的重视程度低"><a href="#偏重技术，对营销的重视程度低" class="headerlink" title="偏重技术，对营销的重视程度低"></a>偏重技术，对营销的重视程度低</h4><p>清高、严谨、注重声誉，我一直觉得ADA是区块链领域的异类，尤其与那90%只想着快速圈钱的项目方相比实在反差太大。有人形容ADA团队“不在乎钱，而更在乎是不是在人类知识的边界上又突破了一步”，一个开发团队拥有这样的格局和气度，小姐姐由衷的欣赏和敬佩。但毕竟投资市场是浮躁的，很大一部分投机者不管你项目好不好，只要项目方能拉盘，币价明天能涨就是好项目。即使你是踏实做事的清流，币价不涨也会被骂。因此，ADA这类埋头做事的项目能否取得更大的共识，做好市值管理，其实与投资者的心态和整个市场的理性程度有很大关联。</p>
+<h4 id="需要面对EOS和以太坊等强大对手的竞争"><a href="#需要面对EOS和以太坊等强大对手的竞争" class="headerlink" title="需要面对EOS和以太坊等强大对手的竞争"></a>需要面对EOS和以太坊等强大对手的竞争</h4><p>说到竞争，我们不得不提BM的EOS。在团队能力、项目定位、甚至共识算法方面，ADA与EOS都属于同一量级的，可能会成为较长一个阶段的直接竞争者。但目前EOS是遥遥领先的，已经实现了广泛共识。EOS 4月6日新发布了EOSIO DAWN 3.0版本，主网也即将在6月上线，似乎在落地进度上也领先了一步。这些无形中都是对ADA的巨大挑战，ADA需要在营销、落地、取得广泛共识等几个维度上尽力追赶。</p>
+<h3 id="EOS的生态建设方法"><a href="#EOS的生态建设方法" class="headerlink" title="EOS的生态建设方法"></a>EOS的生态建设方法</h3><h4 id="EOS生态的目标"><a href="#EOS生态的目标" class="headerlink" title="EOS生态的目标"></a>EOS生态的目标</h4><p>在所有具有共识的人中，公平发放、公平使用Token。权益的公平性是维系EOS生态健康的第一要务，这个目标具体体现在了众筹、公链后的节点投票、通货膨胀等一系列运转细节的设计。</p>
+<p>保证EOS生态具有和其他生态相比更先进的生产力。任何人和群体都有特质和局限性，曾经先进的公司变得落后，曾经天才的人物变衰老，都是可预期的客观事实。共识在凝聚和分裂中不断转化，社区需要有足够的包容性容纳不同价值观并为其提供充分的发展空间。在这个问题上，BM选择了多链自由竞争的路，具体如下：</p>
+<p>自由竞争：Block.one不发起、不指定、不倾向任何公链，任何基于EOS.io的公链必须是由与Block.one无关的成员完成。由市场决定有哪一条或哪几条公链存活。</p>
+<p>DAPP用链方式：Dapp可以自由选择和其他Dapp共享一条EOS公链、可以自己独占一条，甚至一个DAPP独占多条公链。</p>
+<p>修改EOS.io：任何人都可以以任何方式删除、修改、补充EOS.io软件。就MIT协议来说，这是一个相对宽松的开源协议，任何人都有权使用，修改，复制，再分发（再分发版本无论是否开源都可以），销售这个软件。</p>
+<p>在多链自由竞争的格局下，Eos.io同时具有的跨链功能。从而EOS社区真正成为一个求同存异，既有竞争又有合作的链网结构，任何人的新想法都可以在这个生态中得以实现。</p>
+<h4 id="运转"><a href="#运转" class="headerlink" title="运转"></a>运转</h4><h5 id="Token的发放"><a href="#Token的发放" class="headerlink" title="Token的发放"></a>Token的发放</h5><p>POW在项目运行早期可以实现发放公平，但在形成矿池后会因算力集中造成对普通人的不公平。POS在项目后期公平，但在初期受众面小的时候，考虑到公众对项目有认知周期，如何尽量降低由于信息扩散、信息不对称造成的早期权益集中是POS最重要的问题。EOS的Token发放通过以下几个设计完善的解决了这个问题：</p>
+<p>除团队预留以外，不设任何预售和私募，绝大多数Token全部公平向公众发行。超长发放周期，让更多人有机会接触到项目，甚至有机会在几个牛熊转换中充分思考项目的价值，及其与自己价值观的匹配度，十分重要。1、为众筹前对项目感兴趣产生的需求提供供给。2、更精准发现EOS Tokens的价格。</p>
+<p>不操纵币价。众筹期内，Block.one不可以交易或转账。在公链上线后，每年Block.one可与新的创始人将不可交易EOS token置换为可交易EOS token（不多于1000万）。整个众筹期内，Block.one会请第三方独立审计保证以下事项：Block.one不会用任何方式购买EOS，不会给Block.one的股东分红，不会进行任何股权回购行为。</p>
+<h4 id="DPOS和节点运行"><a href="#DPOS和节点运行" class="headerlink" title="DPOS和节点运行"></a>DPOS和节点运行</h4><p>如前文所讲，EOS.io是一个高度自治的软件。节点是维系EOS生态运转的最重要角色。在设计节点角色时，系统遵从了如下的原则：</p>
+<p>高速轮转，自由进出：节点是在持续投票过程中不间断产生的。“任何人”只要在某一轮获得足够的投票，都可以参与到当个周期的区块生产中去。每一轮63秒（0.5秒<em>21个节点</em>每个节点出6个块）都可以有新的节点选出来，旧的节点被踢出去。</p>
+<p>Token Holder对于节点具有最终的决定权。一切经TokenHolder通过的决定，节点必须无条件执行、不执行的节点将被自动踢出生产节点序列。</p>
+<p>节点在获得15/21票后可对一些异常账户、代码进行暂停。控制节点收益的比例。</p>
+<h4 id="通货膨胀的用意"><a href="#通货膨胀的用意" class="headerlink" title="通货膨胀的用意"></a>通货膨胀的用意</h4><p>EOS本身的软件功能在增强、EOS所代表的计算资源在扩张，相应的工作投入需要给予激励回报。上述是提升整个EOS 社区成员福祉的行为，而并非针对个别Token Holder的行为，因此应以面向整个社区收取铸币税的形式来完成。换言之经济体的规模在增大，需要一定量的通货增加维持EOS的购买力平稳。</p>
+<p>每年增发不超过5%的Eos Token，Token Holder投票决定具体数字。这部分Token 有三个用途：第一部分是节点奖励，完全用于扩大EOS生态计算能力，第二部分是Worker Proposal，第三部分是销毁掉。重点在第二部分，Token holder 可以投票发出申请（包括Community Benefit、Arbitration Fund、System Improvement三类），然后有开发者接单并提出报价。完工后开发者从Worker Proposal 账户中取得报酬。</p>
+<h4 id="宪法及宪法的升级"><a href="#宪法及宪法的升级" class="headerlink" title="宪法及宪法的升级"></a>宪法及宪法的升级</h4><p>生态中还有一部分是不能完全通过算法促成的共识。将以英文版书写的宪法Hash后，作为交易的一部分嵌入每笔交易中，作为交易双方对共识的完全认可。</p>
+<p>宪法升级有一个Token Holder和BP配合操作的流程，简单来说投票选节点，节点来执行，节点执行结果维持同一个状态一段时间后，新宪法生效。不按照Token holder决定做的BP会被踢出。如果节点在未经token hodler授权时 ，其他所有非生产的全节点会拒绝这个改变。</p>
+<h3 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h3><p>Q:老师,对于现在区块链这么火热，同时也产生了很多区块链+内容的产品，但是大多人都是薅羊毛（通过文章获取代币）的，而这样的产品出发点是什么呢？是不是有点不符合区块链本质（去中心化的分布式记账系统）呢？</p>
+<p>A:你说的这个问题确实有的，尤其是今年被称为区块链元年，很多人趁着大家不懂和不了解，做了很多假项目，你说的那种通过文章获取代币的就是明显的，他们很不符合区块链技术本质。是一种伪去中心。</p>
+<p>Q:老师，你认为eos相关的空投项目对整个eos生态的发展会有怎么样的影响？</p>
+<p>A:EOS空投项目，对于整个生态和社区的壮大发展是有好处，但同时也要防止那些空投骗局。最近EOS发售的糖果eosDAC就很受大欢迎。</p>
+<p>osDAC，由一个名叫“BlockMaker”的公司建立，希望这个社区有组织有纪律，有很好基础设施、能良好的发展下去，继而汇集大家的力量，来促进 EOS 的发展。 这个 eosDAC 会为大家准备好开发工具，将会和其他社区一同促使 EOS 成为一个真正的，方便大家使用的公链。 拥有多少 Token 也一定程度上代表着你在这个社区的话语权。</p>
+<p>总的来说 eosDAC 致力于打造一个民主，有序、自治、去中心化的 EOS 社区，以此促进 EOS 生态的发展。</p>
+<p>关于 EOS 技术方面的文章已经很多了，这里不做过多阐述，大体意思就是定位区块链 3.0，建立一个比以太坊牛逼很多的 DAPP 开发平台，TPS 达到百万级，来适应更多的实际应用，据称目前的在测试节点上已能跑到 1300 的样子。</p>
+<p>对于公链这样的开源项目，除了技术外，生态建设格外重要，而生态是需要整个社区共同推进的 ，EOS 作为一项明星项目自带光环，还未上线，已吸引了全球数个团队的参与，形成了多个 EOS 社区，eosDAC 就是其中之一（更加紧密的社区），而 21 个节点同样是繁荣 EOS 生态的重要力量，可以提供更多的开发工具，吸引更多的 DAPP 开发人员，从而推动 EOS 不断向前，搞出杀手级应用也不无可能。</p>
+<p>良好的空投项目发展可以很好的补充主链的反展。同时促进主链社区的推动。</p>
+<p>本文所有内容来自哈胜老师在读书会关于EOS部分的分享。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>一分支持，也是鼓励！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://upload-images.jianshu.io/upload_images/1262381-ae2badc5a986aa16.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="你好我是森林 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>作者：</strong>
+    你好我是森林
+  </li>
+  <li class="post-copyright-link">
+    <strong>链接：</strong>
+    <a href="https://chensenlin.cn/posts/46022/" title="EOS技术及生态系统介绍">https://chensenlin.cn/posts/46022/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处!
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/BitTiger/" rel="tag"><i class="fa fa-tag"></i> BitTiger</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/17224/" rel="next" title="《原则》·塑造你的生活与工作原则">
+                <i class="fa fa-chevron-left"></i> 《原则》·塑造你的生活与工作原则
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/36403/" rel="prev" title="Mac搭建yaf项目">
+                Mac搭建yaf项目 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点信息
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="你好我是森林" />
+            
+              <p class="site-author-name" itemprop="name">你好我是森林</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:admin@chensenlin.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/2014CSL" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/b0a05ed835cf" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.eckes.site/" title="左手bug，右手情歌" target="_blank">左手bug，右手情歌</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuehuaxw.com/" title="Hello 广华" target="_blank">Hello 广华</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://felixxiong.github.io/" title="故事熊" target="_blank">故事熊</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.forecho.com/" title="forecho" target="_blank">forecho</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://darerd.github.io/" title="Darer" target="_blank">Darer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://atjason.com/" title="Jason" target="_blank">Jason</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.102no.com" title="把酒诗代码，趁乱写年华。" target="_blank">把酒诗代码，趁乱写年华。</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sergiojune.com/" title="sergiojune" target="_blank">sergiojune</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://vulgur.github.io" title="Wang Shudao" target="_blank">Wang Shudao</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jarodise.com/" title="数字游民部落" target="_blank">数字游民部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dsx2016.com/" title="大师兄" target="_blank">大师兄</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.happysir.com/" title="To be a happy sir" target="_blank">To be a happy sir</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chorder.net/" title="Chorder" target="_blank">Chorder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wmdpd.com/" title="完美的胖达" target="_blank">完美的胖达</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xyzghio.xyz/" title="Aaron Zhu" target="_blank">Aaron Zhu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.searchinfogo.com/" title="Junhua's Blog" target="_blank">Junhua's Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#嘉宾介绍"><span class="nav-number">1.</span> <span class="nav-text">嘉宾介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EOS基本介绍"><span class="nav-number">2.</span> <span class="nav-text">EOS基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EOS的优势和创新"><span class="nav-number">3.</span> <span class="nav-text">EOS的优势和创新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#大幅提升底层公链的交易速度"><span class="nav-number">3.1.</span> <span class="nav-text">大幅提升底层公链的交易速度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提升底层公链的可拓展性，避免硬分叉"><span class="nav-number">3.2.</span> <span class="nav-text">提升底层公链的可拓展性，避免硬分叉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户免费使用网络资源"><span class="nav-number">3.3.</span> <span class="nav-text">用户免费使用网络资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安全性高，避免DOS攻击"><span class="nav-number">3.4.</span> <span class="nav-text">安全性高，避免DOS攻击</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提升公链系统的兼容性"><span class="nav-number">3.5.</span> <span class="nav-text">提升公链系统的兼容性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EOSIO-Dawn-3-0简介"><span class="nav-number">3.6.</span> <span class="nav-text">EOSIO Dawn 3.0简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#可扩展性"><span class="nav-number">3.6.1.</span> <span class="nav-text">可扩展性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安全特性"><span class="nav-number">3.6.2.</span> <span class="nav-text">安全特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简易合约开发"><span class="nav-number">3.6.3.</span> <span class="nav-text">简易合约开发</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EOS和ETH、ADA的对比"><span class="nav-number">4.</span> <span class="nav-text">EOS和ETH、ADA的对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#EOS-VS-ETH的优缺点"><span class="nav-number">4.1.</span> <span class="nav-text">EOS VS ETH的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#设计理念"><span class="nav-number">4.1.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#共识机制与治理"><span class="nav-number">4.1.2.</span> <span class="nav-text">共识机制与治理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩展性-速度"><span class="nav-number">4.1.3.</span> <span class="nav-text">扩展性-速度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安全性：DOS攻击"><span class="nav-number">4.1.4.</span> <span class="nav-text">安全性：DOS攻击</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GAS燃烧费用VS股权拥有制"><span class="nav-number">4.1.5.</span> <span class="nav-text">GAS燃烧费用VS股权拥有制</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EOS与ADA的优劣"><span class="nav-number">4.2.</span> <span class="nav-text">EOS与ADA的优劣</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ADA简介"><span class="nav-number">4.2.1.</span> <span class="nav-text">ADA简介</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目标宏大、复杂、难度大、周期长"><span class="nav-number">4.3.</span> <span class="nav-text">目标宏大、复杂、难度大、周期长</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#共识机制有待实践的检验"><span class="nav-number">4.4.</span> <span class="nav-text">共识机制有待实践的检验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中心化倾向能否成为主流共识？"><span class="nav-number">4.5.</span> <span class="nav-text">中心化倾向能否成为主流共识？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#偏重技术，对营销的重视程度低"><span class="nav-number">4.6.</span> <span class="nav-text">偏重技术，对营销的重视程度低</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需要面对EOS和以太坊等强大对手的竞争"><span class="nav-number">4.7.</span> <span class="nav-text">需要面对EOS和以太坊等强大对手的竞争</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EOS的生态建设方法"><span class="nav-number">5.</span> <span class="nav-text">EOS的生态建设方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#EOS生态的目标"><span class="nav-number">5.1.</span> <span class="nav-text">EOS生态的目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运转"><span class="nav-number">5.2.</span> <span class="nav-text">运转</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Token的发放"><span class="nav-number">5.2.1.</span> <span class="nav-text">Token的发放</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DPOS和节点运行"><span class="nav-number">5.3.</span> <span class="nav-text">DPOS和节点运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通货膨胀的用意"><span class="nav-number">5.4.</span> <span class="nav-text">通货膨胀的用意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#宪法及宪法的升级"><span class="nav-number">5.5.</span> <span class="nav-text">宪法及宪法的升级</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">6.</span> <span class="nav-text">Q&amp;A</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章阅读密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">你好我是森林</span>
+
+  
+</div>
+
+
+<!--  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> -->
+
+
+
+<i class="fa fa-pencil"></i>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共103.1k字，欢迎访问</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
