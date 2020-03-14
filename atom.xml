@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2020-03-14T15:51:02.704Z</updated>
+  <updated>2020-03-14T15:55:23.600Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>分享一些有趣的事情（二）</title>
+    <link href="https://chensenlin.cn/posts/1116/"/>
+    <id>https://chensenlin.cn/posts/1116/</id>
+    <published>2020-03-11T07:41:55.000Z</published>
+    <updated>2020-03-14T15:55:23.600Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;生活中有趣的事情，有意思的想法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="https://chensenlin.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>分享一些有趣的事情（一）</title>
@@ -412,30 +432,6 @@
       <category term="Mac" scheme="https://chensenlin.cn/tags/Mac/"/>
     
       <category term="Google" scheme="https://chensenlin.cn/tags/Google/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《学习之道》阅读第5天-学习有道</title>
-    <link href="https://chensenlin.cn/posts/19750/"/>
-    <id>https://chensenlin.cn/posts/19750/</id>
-    <published>2018-06-16T14:33:52.000Z</published>
-    <updated>2019-04-01T13:52:44.533Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;十好十坏&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
-      <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="学习之道" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E9%81%93/"/>
     
   </entry>
   
