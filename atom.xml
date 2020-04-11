@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2020-03-14T15:55:23.600Z</updated>
+  <updated>2020-04-11T14:20:55.971Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>游戏化是自我决定系统最完美的一种诠释</title>
+    <link href="https://chensenlin.cn/posts/1119/"/>
+    <id>https://chensenlin.cn/posts/1119/</id>
+    <published>2020-04-10T03:41:55.000Z</published>
+    <updated>2020-04-11T14:20:55.971Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;你好，这是公众号（特立独行的异类）分享的第 10 本书。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+      <category term="游戏化" scheme="https://chensenlin.cn/tags/%E6%B8%B8%E6%88%8F%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>分享一些有趣的事情（二）</title>
@@ -410,28 +432,6 @@
       <category term="学习" scheme="https://chensenlin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="生活" scheme="https://chensenlin.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一图解决Google Backup备份出错问题</title>
-    <link href="https://chensenlin.cn/posts/28362/"/>
-    <id>https://chensenlin.cn/posts/28362/</id>
-    <published>2018-06-29T02:33:52.000Z</published>
-    <updated>2019-04-01T13:52:44.536Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;超级简单&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://chensenlin.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Mac" scheme="https://chensenlin.cn/tags/Mac/"/>
-    
-      <category term="Google" scheme="https://chensenlin.cn/tags/Google/"/>
     
   </entry>
   
