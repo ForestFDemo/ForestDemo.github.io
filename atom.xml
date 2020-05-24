@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2020-05-03T00:48:19.209Z</updated>
+  <updated>2020-05-24T14:07:00.790Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>延展者，释放有限资源的无限潜能</title>
+    <link href="https://chensenlin.cn/posts/1121/"/>
+    <id>https://chensenlin.cn/posts/1121/</id>
+    <published>2020-05-24T14:01:55.000Z</published>
+    <updated>2020-05-24T14:07:00.790Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;抱怨现实的不公平？抱怨环境的不如意？抱怨….&lt;br&gt;现实生活中，我和大多数人一样，也会「抱怨」，也会觉得不如意。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+      <category term="思考" scheme="https://chensenlin.cn/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
   
   <entry>
     <title>MacBook Pro 免费更换电池和键盘指南</title>
@@ -397,33 +419,9 @@
       <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
     
     
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
       <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
-  </entry>
-  
-  <entry>
-    <title>利用「微信读书」管理公众号的些许经验</title>
-    <link href="https://chensenlin.cn/posts/26375/"/>
-    <id>https://chensenlin.cn/posts/26375/</id>
-    <published>2018-10-15T03:54:22.000Z</published>
-    <updated>2019-04-01T13:52:44.537Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一些意想不到的技巧分享。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://chensenlin.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
       <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
-      <category term="微信" scheme="https://chensenlin.cn/tags/%E5%BE%AE%E4%BF%A1/"/>
-    
-      <category term="工具" scheme="https://chensenlin.cn/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
