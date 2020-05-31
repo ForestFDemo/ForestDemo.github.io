@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2020-05-30T06:25:33.561Z</updated>
+  <updated>2020-05-31T01:16:56.536Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大数据时代的数据</title>
+    <link href="https://chensenlin.cn/posts/1122/"/>
+    <id>https://chensenlin.cn/posts/1122/</id>
+    <published>2020-05-31T02:14:20.000Z</published>
+    <updated>2020-05-31T01:16:56.536Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大数据开启了一次重大的时代转型。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="大数据" scheme="https://chensenlin.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>爱情，就是生活</title>
@@ -398,26 +418,6 @@
     
     
       <category term="微信" scheme="https://chensenlin.cn/tags/%E5%BE%AE%E4%BF%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>行为设计学，掌控关键决策</title>
-    <link href="https://chensenlin.cn/posts/13665/"/>
-    <id>https://chensenlin.cn/posts/13665/</id>
-    <published>2019-01-11T22:34:41.000Z</published>
-    <updated>2019-04-01T13:52:44.543Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;阅读目的：了解决策的基本流程和四个陷阱，掌握 WRAP 决策流程。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   

@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="Python,学习,Python从入门到实践," />
+  <meta name="keywords" content="大数据," />
 
 
 
@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="主要内容： 用户输入和while循环； 利用while处理列表和字典。">
-<meta name="keywords" content="Python,学习,Python从入门到实践">
+<meta name="description" content="大数据开启了一次重大的时代转型。">
+<meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础学习06天">
-<meta property="og:url" content="https://chensenlin.cn/posts/4583/index.html">
+<meta property="og:title" content="大数据时代的数据">
+<meta property="og:url" content="https://chensenlin.cn/posts/1122/index.html">
 <meta property="og:site_name" content="你好我是森林">
-<meta property="og:description" content="主要内容： 用户输入和while循环； 利用while处理列表和字典。">
+<meta property="og:description" content="大数据开启了一次重大的时代转型。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-13T00:23:27.912Z">
+<meta property="og:updated_time" content="2020-05-31T01:16:56.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python基础学习06天">
-<meta name="twitter:description" content="主要内容： 用户输入和while循环； 利用while处理列表和字典。">
+<meta name="twitter:title" content="大数据时代的数据">
+<meta name="twitter:description" content="大数据开启了一次重大的时代转型。">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://chensenlin.cn/posts/4583/"/>
+  <link rel="canonical" href="https://chensenlin.cn/posts/1122/"/>
 
 
 
 
 
-  <title>Python基础学习06天 | 你好我是森林</title>
+  <title>大数据时代的数据 | 你好我是森林</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chensenlin.cn/posts/4583/">
+    <link itemprop="mainEntityOfPage" href="https://chensenlin.cn/posts/1122/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="你好我是森林">
@@ -314,7 +314,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Python基础学习06天</h2>
+          <h2 class="post-title" itemprop="name headline">大数据时代的数据</h2>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T12:03:31+08:00">
-                2017-03-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-31T10:14:20+08:00">
+                2020-05-31
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/开发/" itemprop="url" rel="index">
-                    <span itemprop="name">开发</span>
+                  <a href="/categories/阅读/" itemprop="url" rel="index">
+                    <span itemprop="name">阅读</span>
                   </a>
                 </span>
 
@@ -363,9 +363,9 @@
           
           <span class="post-letters-count">
             &nbsp; | &nbsp;
-            <span>全文共1.3k字</span>
+            <span>全文共1k字</span>
             &nbsp; | &nbsp;
-            <span>阅读时长4分钟</span>
+            <span>阅读时长3分钟</span>
           </span>
           
 
@@ -395,37 +395,22 @@
       
 
       
-        <p>主要内容：</p>
-<p>用户输入和<code>while</code>循环；</p>
-<p>利用<code>while</code>处理列表和字典。</p>
+        <p>大数据开启了一次重大的时代转型。</p>
 <a id="more"></a>
-<h3 id="用户输入和while循环"><a href="#用户输入和while循环" class="headerlink" title="用户输入和while循环"></a>用户输入和while循环</h3><h4 id="函数input-的工作原理"><a href="#函数input-的工作原理" class="headerlink" title="函数input()的工作原理"></a>函数<code>input()</code>的工作原理</h4><p>函数<code>input()</code>让程序暂停运行，等待用户输入一些文本。获取用户输入后，<code>Python</code>将其存储在 一个变量中，以方便你使用。</p>
-<p>代码示例:</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">input_res = input(<span class="string">"输入你最喜欢的食物:"</span>)</span><br><span class="line">print(<span class="name">input_res</span>)</span><br></pre></td></tr></table></figure>
-<h5 id="编写清晰的程序"><a href="#编写清晰的程序" class="headerlink" title="编写清晰的程序"></a>编写清晰的程序</h5><p>有时候，提示可能超过一行，例如，你可能需要指出获取特定输入的原因。在这种情况下， 可将提示存储在一个变量中，再将该变量传递给函数<code>input()</code>。</p>
-<p>代码示例:</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">prompt = <span class="string">"If you tell us who you are, we can personalize the messages you see."</span></span><br><span class="line">prompt += <span class="string">"\nWhat is your first name? "</span></span><br><span class="line">name = input(prompt)</span><br><span class="line">print(<span class="string">"\nHello, "</span> + name + <span class="string">"!"</span>)</span><br></pre></td></tr></table></figure>
-<p>第1行将消息的前半部分存储在变量<code>prompt</code>中; 在第2行中，运算符+=在存储在<code>prompt</code>中的字符串末尾附加一个字符串。</p>
-<h5 id="使用int-来获取数值输入"><a href="#使用int-来获取数值输入" class="headerlink" title="使用int()来获取数值输入"></a>使用<code>int()</code>来获取数值输入</h5><p>使用函数<code>input()</code>时，<code>Python</code>将用户输入解读为字符串。如果用户输入的值需要进行和数字比较，就会发生错误，这个时候就需要转换一下。可以采用<code>int()</code>来进行字符串和整型之间的转换</p>
-<p>代码示例:<br><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="keyword">input</span>(<span class="string">"请输入你的年龄: "</span>)</span><br><span class="line">age = <span class="keyword">int</span>(age)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">18</span>:</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">"你已经成年"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">"你还未成年"</span>)</span><br></pre></td></tr></table></figure></p>
-<p>运行示例:</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  day6 <span class="keyword">python</span> <span class="keyword">int</span>.<span class="keyword">py</span></span><br><span class="line">请输入你的年龄: <span class="number">12</span></span><br><span class="line">你还未成年</span><br><span class="line">➜  day6 <span class="keyword">python</span> <span class="keyword">int</span>.<span class="keyword">py</span></span><br><span class="line">请输入你的年龄: <span class="number">18</span></span><br><span class="line">你已经成年</span><br></pre></td></tr></table></figure>
-<h5 id="求模运算符"><a href="#求模运算符" class="headerlink" title="求模运算符"></a>求模运算符</h5><p>处理数值信息时，求模运算符<code>(%)</code>是一个很有用的工具，它将两个数相除并返回余数。求模运算符不会指出一个数是另一个数的多少倍，而只指出余数是多少。如果一个数可被另一个数整除，余数就为<code>0</code>，因此求模运算符将返回<code>0</code>。</p>
-<p>代码示例:</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="number">4</span> % <span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line">&gt;&gt;&gt; <span class="number">5</span> % <span class="number">1</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line">&gt;&gt;&gt; <span class="number">4</span> % <span class="number">2</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>利用这一点来判 断一个数是奇数还是偶数:</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">number</span> = <span class="built_in">input</span>(<span class="string">"Enter a number, and I'll tell you if it's even or odd: "</span>) <span class="number">13</span> </span><br><span class="line"><span class="keyword">number</span> = <span class="keyword">int</span>(<span class="keyword">number</span>)</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">number</span> % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">"\nThe number "</span> + str(<span class="keyword">number</span>) + <span class="string">" is even."</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">"\nThe number "</span> + str(<span class="keyword">number</span>) + <span class="string">" is odd."</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="while-循环简介"><a href="#while-循环简介" class="headerlink" title="while 循环简介"></a><code>while</code> 循环简介</h4><p><code>for</code>循环用于针对集合中的每个元素都一个代码块，而<code>while</code>循环不断地运行，直到指定的条 件不满足为止。</p>
-<h5 id="使用while循环"><a href="#使用while循环" class="headerlink" title="使用while循环"></a>使用<code>while</code>循环</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">current_number = 1</span><br><span class="line"><span class="keyword">while</span> current_number &lt;= 5:</span><br><span class="line">    <span class="builtin-name">print</span>(current_number) </span><br><span class="line">    current_number += 1</span><br></pre></td></tr></table></figure>
-<p>在第<code>1</code>行，我们将<code>current_number</code>设置为<code>1</code>，从而指定从<code>1</code>开始数。接下来的<code>while</code>循环被设置 成这样:只要<code>current_number</code>小于或等于<code>5</code>，就接着运行这个循环。循环中的代码打印 <code>current_number</code>的值，再使用代码<code>current_number += 1</code>(代码<code>current_number = current_number + 1</code>的简写)将其值加<code>1</code>。只要满足条件<code>current_number &lt;= 5</code>，<code>Python</code>就接着运行这个循环。</p>
-<h5 id="让用户选择何时退出"><a href="#让用户选择何时退出" class="headerlink" title="让用户选择何时退出"></a>让用户选择何时退出</h5><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">prompt = <span class="string">"\nTell me something, and I will repeat it back to you:"</span></span><br><span class="line">prompt += <span class="string">"\nEnter 'quit' to end the program. "</span></span><br><span class="line">message = <span class="string">""</span> </span><br><span class="line">while message != 'quit':</span><br><span class="line">        message = input(prompt) </span><br><span class="line">        print(message)</span><br></pre></td></tr></table></figure>
-<p>只有当用户输入<code>quit</code>的时候才能推出，否者一直不能退出。</p>
-<h5 id="采用标志"><a href="#采用标志" class="headerlink" title="采用标志"></a>采用标志</h5><p>在要求很多条件都满足才继续运行的程序中，可定义一个变量，用于判断整个程序是否处于活动状态。这个变量被称为<strong>标志</strong>，充当了程序的交通信号灯。你可让程序在标志为<code>True</code>时继续运 行，并在任何事件导致标志的值为<code>False</code>时让程序停止运行。这样，在<code>while</code>语句中就只需检查一 个条件——标志的当前值是否为<code>True</code>，并将所有测试(是否发生了应将标志设置为<code>False</code>的事件) 都放在其他地方，从而让程序变得更为整洁。</p>
-<h5 id="使用break退出循环"><a href="#使用break退出循环" class="headerlink" title="使用break退出循环"></a>使用<code>break</code>退出循环</h5><p>要立即退出<code>while</code>循环，不再运行循环中余下的代码，也不管条件测试的结果如何，可使用<code>break</code>语句。<code>break</code>语句用于控制程序流程，可使用它来控制哪些代码行将执行，哪些代码行不执行，从而让程序按你的要求执行你要执行的代码。</p>
-<h5 id="在循环中使用continue"><a href="#在循环中使用continue" class="headerlink" title="在循环中使用continue"></a>在循环中使用<code>continue</code></h5><p>要返回到循环开头，并根据条件测试结果决定是否继续执行循环，可使用continue语句，它 不像break语句那样不再执行余下的代码并退出整个循环。</p>
-<h5 id="避免无限循环"><a href="#避免无限循环" class="headerlink" title="避免无限循环"></a>避免无限循环</h5><p>每个<code>while</code>循环都必须有停止运行的途径，这样才不会没完没了地执行下去。每一个循环必须要有一个可结束的条件。</p>
-<h4 id="使用while循环来处理列表和字典"><a href="#使用while循环来处理列表和字典" class="headerlink" title="使用while循环来处理列表和字典"></a>使用while循环来处理列表和字典</h4><p><code>for</code>循环是一种遍历列表的有效方式，但在<code>for</code>循环中不应修改列表，否则将导致<code>Python</code>难以跟踪其中的元素。要在遍历列表的同时对其进行修改，可使用<code>while</code>循环。通过将<code>while</code>循环同列表和字典结合起来使用，可收集、存储并组织大量输入，供以后查看和显示。<br>主要的处理有：在列表之间移动元素；删除包含特定值的所有列表元素；使用用户输入来填充字典等。</p>
-
+<p>随着互联网的发展，大量数据的产生，人与人之间的可以通过数据产生联系。</p>
+<p>大数据开启了一次重大的时代转型。就像望远镜让我们能够感受宇宙，显微镜让我们能够观测微生物一样，大数据正在改变我们的生活以及理解世界的方式，成为新发明和新服务的源泉，而更多的改变正蓄势待发。</p>
+<p>今天分享《大数据时代》给我们带来的一些改变，如思维改变、商业改变以及管理改变。本书的作者<strong>舍恩伯格</strong> 被誉为“大数据商业应用第一人”，拥有在哈佛大学、牛津大学、耶鲁大学和新加坡国立大学等多个互联网研究重镇任教的经历。</p>
+<h2 id="不是随机样本，而是全体数据"><a href="#不是随机样本，而是全体数据" class="headerlink" title="不是随机样本，而是全体数据"></a>不是随机样本，而是全体数据</h2><p>记得中学的时候，我们学习概率、样本、抽样调查等，样本是观测或调查的一部分个体，总体是研究对象的全部。例如要调查北京地区 8000 个程序员中有对象的情况，样本就是 8000个程序员的视力情况。</p>
+<p>大数据时代不一样，我们可以拥有全部的数据体量。我们可以利用所有的数据，而不再仅仅依靠一小部分数据。随机采样取得了巨大的成功，成为现代社会、现代测量领域的主心骨。但这只是一条捷径，是在不可收集和分析全部数据的情况下的选择，它本身存在许多固有的缺陷。</p>
+<p>如果你无法得到一些微观细节的信息，甚至还会失去对某些特定子类别进行进一步研究的能力。分析整个数据库，而不是对一个小样本进行分析，能够提高微观层面分析的准确性，甚至能够推测出某个特定城市的流感状况，而不只是一个州或是整个国家的情况。</p>
+<p>所以，我们现在经常会放弃样本分析这条捷径，选择收集全面而完整的数据。我们需要足够的数据处理和存储能力，也需要最先进的分析技术。在某些特定的情况下，我们依然可以使用样本分析法，但这不再是我们分析数据的主要方式。慢慢地，我们会完全抛弃样本分析。</p>
+<h2 id="不是精确性，而是混杂性"><a href="#不是精确性，而是混杂性" class="headerlink" title="不是精确性，而是混杂性"></a>不是精确性，而是混杂性</h2><p>对「小数据」而言，最基本、最重要的要求就是减少错误，保证质量。因为收集的信息量比较少，所以我们必须确保记录下来的数据尽量精确。</p>
+<p>「大数据」通常用概率说话，而不是板着「确凿无疑」的面孔。整个社会要习惯这种思维需要很长的时间，其中也会出现一些问题。但现在，有必要指出的是，当我们试图扩大数据规模的时候，要学会拥抱混乱。</p>
+<blockquote>
+<p>当数据只有500万的时候，有一种简单的算法表现得很差，但当数据达10亿的时候，它变成了表现最好的，准确率从原来的75%提高到了95%以上。与之相反地，在少量数据情况下运行得最好的算法，当加入更多的数据时，也会像其他的算法一样有所提高，但是却变成了在大量数据条件下运行得最不好的。它的准确率会从86%提高到94%。</p>
+</blockquote>
+<p>大数据要求我们有所改变，我们必须能够接受混乱和不确定性。精确性似乎一直是我们生活的支撑，就像我们常说的「钉是钉，铆是铆」。但认为每个问题只有一个答案的想法是站不住脚的，不管我们承不承认。一旦我们承认了这个事实甚至拥护这个事实的话，我们离真相就又近了一步。</p>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>
       
     </div>
     
@@ -445,7 +430,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>链接：</strong>
-    <a href="https://chensenlin.cn/posts/4583/" title="Python基础学习06天">https://chensenlin.cn/posts/4583/</a>
+    <a href="https://chensenlin.cn/posts/1122/" title="大数据时代的数据">https://chensenlin.cn/posts/1122/</a>
   </li>
   <li class="post-copyright-license">
     <strong>声明： </strong>
@@ -460,11 +445,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
-          
-            <a href="/tags/学习/" rel="tag"><i class="fa fa-tag"></i> 学习</a>
-          
-            <a href="/tags/Python从入门到实践/" rel="tag"><i class="fa fa-tag"></i> Python从入门到实践</a>
+            <a href="/tags/大数据/" rel="tag"><i class="fa fa-tag"></i> 大数据</a>
           
         </div>
       
@@ -477,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/21991/" rel="next" title="Python基础学习05天">
-                <i class="fa fa-chevron-left"></i> Python基础学习05天
+              <a href="/posts/520/" rel="next" title="爱情，就是生活">
+                <i class="fa fa-chevron-left"></i> 爱情，就是生活
               </a>
             
           </div>
@@ -486,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/60902/" rel="prev" title="Python基础学习07天">
-                Python基础学习07天 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -547,17 +524,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点信息
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -730,22 +698,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户输入和while循环"><span class="nav-number">1.</span> <span class="nav-text">用户输入和while循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数input-的工作原理"><span class="nav-number">1.1.</span> <span class="nav-text">函数input()的工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#编写清晰的程序"><span class="nav-number">1.1.1.</span> <span class="nav-text">编写清晰的程序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用int-来获取数值输入"><span class="nav-number">1.1.2.</span> <span class="nav-text">使用int()来获取数值输入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#求模运算符"><span class="nav-number">1.1.3.</span> <span class="nav-text">求模运算符</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while-循环简介"><span class="nav-number">1.2.</span> <span class="nav-text">while 循环简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用while循环"><span class="nav-number">1.2.1.</span> <span class="nav-text">使用while循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#让用户选择何时退出"><span class="nav-number">1.2.2.</span> <span class="nav-text">让用户选择何时退出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#采用标志"><span class="nav-number">1.2.3.</span> <span class="nav-text">采用标志</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用break退出循环"><span class="nav-number">1.2.4.</span> <span class="nav-text">使用break退出循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在循环中使用continue"><span class="nav-number">1.2.5.</span> <span class="nav-text">在循环中使用continue</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#避免无限循环"><span class="nav-number">1.2.6.</span> <span class="nav-text">避免无限循环</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用while循环来处理列表和字典"><span class="nav-number">1.3.</span> <span class="nav-text">使用while循环来处理列表和字典</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
