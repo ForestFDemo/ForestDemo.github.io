@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2020-05-31T01:16:56.536Z</updated>
+  <updated>2020-06-07T05:59:56.950Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为什么读了这么多书，依旧过不好这一生？</title>
+    <link href="https://chensenlin.cn/posts/112211/"/>
+    <id>https://chensenlin.cn/posts/112211/</id>
+    <published>2020-06-07T04:34:05.000Z</published>
+    <updated>2020-06-07T05:59:56.950Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;听过太多大道理，仍然过不好这一生。&lt;/p&gt;
+&lt;p&gt;韩寒&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+      <category term="好好学习" scheme="https://chensenlin.cn/tags/%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>大数据时代的数据</title>
@@ -398,26 +423,6 @@
     
     
       <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信消息「引用」功能</title>
-    <link href="https://chensenlin.cn/posts/31526/"/>
-    <id>https://chensenlin.cn/posts/31526/</id>
-    <published>2019-01-18T02:23:55.000Z</published>
-    <updated>2019-05-15T10:25:02.671Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;让「引用」更好用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://chensenlin.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="微信" scheme="https://chensenlin.cn/tags/%E5%BE%AE%E4%BF%A1/"/>
     
   </entry>
   
