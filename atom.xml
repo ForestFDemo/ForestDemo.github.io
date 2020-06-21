@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2020-06-13T23:53:34.338Z</updated>
+  <updated>2020-06-21T13:20:55.132Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>批量删除 Safari 浏览器的阅读列表</title>
+    <link href="https://chensenlin.cn/posts/60092/"/>
+    <id>https://chensenlin.cn/posts/60092/</id>
+    <published>2020-06-22T13:25:28.000Z</published>
+    <updated>2020-06-21T13:20:55.132Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;真的是太简单了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://chensenlin.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="macOS" scheme="https://chensenlin.cn/tags/macOS/"/>
+    
+      <category term="Safari" scheme="https://chensenlin.cn/tags/Safari/"/>
+    
+      <category term="iPhone" scheme="https://chensenlin.cn/tags/iPhone/"/>
+    
+  </entry>
   
   <entry>
     <title>再读《原则》后，这是我的践行清单</title>
@@ -405,26 +429,6 @@
     
     
       <category term="经济" scheme="https://chensenlin.cn/tags/%E7%BB%8F%E6%B5%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>尝试解释「反脆弱」</title>
-    <link href="https://chensenlin.cn/posts/33077/"/>
-    <id>https://chensenlin.cn/posts/33077/</id>
-    <published>2019-03-22T03:35:04.000Z</published>
-    <updated>2019-04-01T13:52:44.538Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;受不利影响是脆弱的；能恢复原貌是坚韧的；能从中获得益处的是反脆弱的。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
