@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2020-06-21T13:26:59.709Z</updated>
+  <updated>2020-07-05T06:55:44.673Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通识：学问的门类｜经济学</title>
+    <link href="https://chensenlin.cn/posts/60093/"/>
+    <id>https://chensenlin.cn/posts/60093/</id>
+    <published>2020-07-05T06:55:28.000Z</published>
+    <updated>2020-07-05T06:55:44.673Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如何系统的学习一门学科，掌握不同学科的体系呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+      <category term="经济学" scheme="https://chensenlin.cn/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>批量删除 Safari 浏览器的阅读列表</title>
@@ -37,28 +59,6 @@
       <category term="Safari" scheme="https://chensenlin.cn/tags/Safari/"/>
     
       <category term="iPhone" scheme="https://chensenlin.cn/tags/iPhone/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>通识：学问的门类｜经济学</title>
-    <link href="https://chensenlin.cn/posts/60093/"/>
-    <id>https://chensenlin.cn/posts/60093/</id>
-    <published>2020-06-22T13:25:28.000Z</published>
-    <updated>2020-07-05T06:52:28.878Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如何系统的学习一门学科，掌握不同学科的体系呢？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
-      <category term="经济学" scheme="https://chensenlin.cn/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
     
   </entry>
   
