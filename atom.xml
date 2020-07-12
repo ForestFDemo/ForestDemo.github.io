@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2020-07-05T06:55:44.673Z</updated>
+  <updated>2020-07-12T06:39:09.548Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最近读的一些书（一）</title>
+    <link href="https://chensenlin.cn/posts/600912/"/>
+    <id>https://chensenlin.cn/posts/600912/</id>
+    <published>2020-07-12T05:25:28.000Z</published>
+    <updated>2020-07-12T06:39:09.548Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;芋头说：&lt;strong&gt;森林的一切都是系统化的。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>通识：学问的门类｜经济学</title>
@@ -101,9 +123,9 @@
       <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
     
     
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
       <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
       <category term="好好学习" scheme="https://chensenlin.cn/tags/%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0/"/>
     
@@ -411,26 +433,6 @@
     
     
       <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最近拍的 10 张照片</title>
-    <link href="https://chensenlin.cn/posts/2311212/"/>
-    <id>https://chensenlin.cn/posts/2311212/</id>
-    <published>2019-04-27T08:06:10.000Z</published>
-    <updated>2019-04-27T08:22:29.854Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;于 2019 年 4 月采用 iPhone 7Plus 拍摄。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="https://chensenlin.cn/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="摄影" scheme="https://chensenlin.cn/tags/%E6%91%84%E5%BD%B1/"/>
     
   </entry>
   
