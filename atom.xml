@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2020-07-12T06:39:09.548Z</updated>
+  <updated>2021-01-24T10:36:58.453Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>读纸质书，如何做笔记？</title>
+    <link href="https://chensenlin.cn/posts/6231/"/>
+    <id>https://chensenlin.cn/posts/6231/</id>
+    <published>2021-01-24T10:25:28.000Z</published>
+    <updated>2021-01-24T10:36:58.453Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;真的是头疼的问题，尝试了好几种方式。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="笔记" scheme="https://chensenlin.cn/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+      <category term="工具" scheme="https://chensenlin.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>最近读的一些书（一）</title>
     <link href="https://chensenlin.cn/posts/600912/"/>
     <id>https://chensenlin.cn/posts/600912/</id>
     <published>2020-07-12T05:25:28.000Z</published>
-    <updated>2020-07-12T06:39:09.548Z</updated>
+    <updated>2021-01-24T10:37:07.849Z</updated>
     
     <summary type="html">
     
@@ -43,7 +67,7 @@
     <link href="https://chensenlin.cn/posts/60093/"/>
     <id>https://chensenlin.cn/posts/60093/</id>
     <published>2020-07-05T06:55:28.000Z</published>
-    <updated>2020-07-05T06:55:44.673Z</updated>
+    <updated>2021-01-24T10:37:07.854Z</updated>
     
     <summary type="html">
     
@@ -198,7 +222,7 @@
     <link href="https://chensenlin.cn/posts/1120/"/>
     <id>https://chensenlin.cn/posts/1120/</id>
     <published>2020-05-03T00:41:55.000Z</published>
-    <updated>2020-05-03T00:48:19.209Z</updated>
+    <updated>2020-11-24T03:37:10.027Z</updated>
     
     <summary type="html">
     
@@ -406,26 +430,6 @@
     <summary type="html">
     
       &lt;p&gt;发现自己的优势，建立自己的人生护城河。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2019 年上半年我读了哪些书？</title>
-    <link href="https://chensenlin.cn/posts/542671234/"/>
-    <id>https://chensenlin.cn/posts/542671234/</id>
-    <published>2019-06-27T04:23:55.000Z</published>
-    <updated>2019-09-14T09:08:05.655Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;据不完全统计。&lt;/p&gt;
     
     </summary>
     
