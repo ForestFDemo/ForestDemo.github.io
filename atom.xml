@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2021-02-28T07:58:14.472Z</updated>
+  <updated>2021-04-05T02:35:04.436Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何导出微信读书笔记？</title>
+    <link href="https://chensenlin.cn/posts/62314/"/>
+    <id>https://chensenlin.cn/posts/62314/</id>
+    <published>2021-03-06T10:25:28.000Z</published>
+    <updated>2021-04-05T02:35:04.436Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;只要开始做事，一个人就要面临做错、做不好的风险。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2021年2月，我读了7本书</title>
     <link href="https://chensenlin.cn/posts/62312/"/>
     <id>https://chensenlin.cn/posts/62312/</id>
     <published>2021-02-28T10:25:28.000Z</published>
-    <updated>2021-02-28T07:58:14.472Z</updated>
+    <updated>2021-04-05T02:33:11.472Z</updated>
     
     <summary type="html">
     
@@ -418,26 +440,6 @@
     
       &lt;p&gt;社会带来的压力是我们道德价值的重要支柱。&lt;/p&gt;
 &lt;p&gt;—— 华盛顿大学社会学教授埃齐奥尼（Amitai Etzioni）《社会精神》1993&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我们是如何解释他人？</title>
-    <link href="https://chensenlin.cn/posts/667/"/>
-    <id>https://chensenlin.cn/posts/667/</id>
-    <published>2020-01-10T02:23:55.000Z</published>
-    <updated>2020-02-18T12:12:42.691Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一个人是什么样的人就会做什么样的事，他做什么样的事就是什么样的人。&lt;/p&gt;
     
     </summary>
     
