@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chensenlin.cn/posts/123321/</loc>
+    
+    <lastmod>2021-06-14T07:03:56.443Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://chensenlin.cn/posts/62315/</loc>
     
-    <lastmod>2021-04-05T14:16:56.926Z</lastmod>
+    <lastmod>2021-06-14T07:00:02.912Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://chensenlin.cn/posts/62312/</loc>
+    
+    <lastmod>2021-06-14T07:00:02.902Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>https://chensenlin.cn/posts/62314/</loc>
     
     <lastmod>2021-04-05T02:35:04.436Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chensenlin.cn/posts/62312/</loc>
-    
-    <lastmod>2021-04-05T02:33:11.472Z</lastmod>
     
   </url>
   
@@ -443,14 +450,14 @@
   </url>
   
   <url>
-    <loc>https://chensenlin.cn/categories/index.html</loc>
+    <loc>https://chensenlin.cn/archives/index.html</loc>
     
     <lastmod>2019-04-01T13:52:44.546Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://chensenlin.cn/archives/index.html</loc>
+    <loc>https://chensenlin.cn/categories/index.html</loc>
     
     <lastmod>2019-04-01T13:52:44.546Z</lastmod>
     

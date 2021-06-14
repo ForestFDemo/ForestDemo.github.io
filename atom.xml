@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chensenlin.cn/"/>
-  <updated>2021-04-05T14:16:56.926Z</updated>
+  <updated>2021-06-14T07:03:56.443Z</updated>
   <id>https://chensenlin.cn/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>飞书妙记，解决我学习中一大难题</title>
+    <link href="https://chensenlin.cn/posts/123321/"/>
+    <id>https://chensenlin.cn/posts/123321/</id>
+    <published>2021-06-14T07:00:28.000Z</published>
+    <updated>2021-06-14T07:03:56.443Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对我来说，看文字稿比看视频高效得多。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://chensenlin.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="工具" scheme="https://chensenlin.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="软件" scheme="https://chensenlin.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2021年3月，我读了 10 本书</title>
     <link href="https://chensenlin.cn/posts/62315/"/>
     <id>https://chensenlin.cn/posts/62315/</id>
     <published>2021-04-05T12:25:28.000Z</published>
-    <updated>2021-04-05T14:16:56.926Z</updated>
+    <updated>2021-06-14T07:00:02.912Z</updated>
     
     <summary type="html">
     
@@ -65,7 +87,7 @@
     <link href="https://chensenlin.cn/posts/62312/"/>
     <id>https://chensenlin.cn/posts/62312/</id>
     <published>2021-02-28T10:25:28.000Z</published>
-    <updated>2021-04-05T02:33:11.472Z</updated>
+    <updated>2021-06-14T07:00:02.902Z</updated>
     
     <summary type="html">
     
@@ -421,26 +443,6 @@
     <summary type="html">
     
       &lt;p&gt;《社会心理学》主要分四个模块：社会思维、社会影响、社会关系和心理学的应用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://chensenlin.cn/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="阅读" scheme="https://chensenlin.cn/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正视偏见，解决冲突，保持亲密的关系</title>
-    <link href="https://chensenlin.cn/posts/1113/"/>
-    <id>https://chensenlin.cn/posts/1113/</id>
-    <published>2020-01-19T01:13:55.000Z</published>
-    <updated>2020-02-18T12:12:39.280Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一个人对另一个人可能存在好感，也可以存在冲突。&lt;/p&gt;
     
     </summary>
     
